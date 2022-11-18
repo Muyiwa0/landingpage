@@ -243,6 +243,7 @@ const Faq = () => {
       )
       data.map((item) => item.map((i) => setAnswer(i)))
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [link])
 
   useEffect(() => {
@@ -259,6 +260,7 @@ const Faq = () => {
       item.links.filter((i) => i.link === linkData.replaceAll('"', ''))
     )
     data.map((item) => item.map((i) => setAnswer(i)))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

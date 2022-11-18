@@ -38,18 +38,18 @@ const SecondRulesBlock = () => {
 
 2ND CHANCE ACCOUNTS
             <br/>
-'2nd Chance Accounts' are not eligible for the Talent Bonus.
+            &apos; 2nd Chance Account s&apos; are not eligible for the Talent Bonus.
 <br/>
             <br/>
 PAYOUT DATE
 <br/>
-FT9ja processes payouts on Fridays, even if it's requested before Friday.
+FT9ja processes payouts on Fridays, even if it&apos;s requested before Friday.
 <br/>
             <br/>
 PROFIT SPLIT
 <br/>
 Profit Split percentage in Aso Account is based on when you qualify for Aso
-Account -- counted from when you place your first trade in the "1st chance account".
+Account -- counted from when you place your first trade in the &ldquo;1st chance account&ldquo;.
 <br/>
             <br/>
 ONE-TIME FEE REFUND
@@ -64,7 +64,7 @@ No one-time fee refund for FT9ja Classic Traders
             <br/>
             PAYOUT DATE
 <br/>
-FT9ja processes payouts on Fridays, even if it's requested before Friday.
+FT9ja processes payouts on Fridays, even if it&apos;s requested before Friday.
 <br/>
             <br/>
             ONE-TIME FEE REFUND
