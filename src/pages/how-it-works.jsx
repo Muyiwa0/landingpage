@@ -26,7 +26,7 @@ const HowItWorks = () => {
             value={activePeriod}
             onClick={() => setPrevPeriod(activePeriod)}
             onChange={setActivePeriod}
-            className="grid grid-cols-3 text-center"
+            className="grid grid-cols-3  text-center"
           >
             <RadioGroup.Option
               value={'FT9ja Classic'}
