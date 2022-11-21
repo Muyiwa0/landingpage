@@ -71,7 +71,7 @@ export function Footer() {
               <p className="text-center md:text-left">
                 <a
                   className="text-sm text-[#28a745]"
-                  href="https://calendly.com/ft9ja-lagos"
+                  href="https://calendly.com/ft9ja"
                 >
                   (Appointments only)
                 </a>

@@ -91,13 +91,6 @@ const faqs = [
     ],
   },
   {
-    id: 3,
-    question: 'What is the Aso Account?',
-    lists: '',
-    list: '',
-    answer: `Every Trader starts with a ZumaRock Account. ZumaRock Accounts are the gateway to AsoRock Accounts. Although ZumaRock Accounts are demo accounts, you still get paid 5% weekly or 10% monthly on the profit you make! That's the Talent Bonus.`,
-  },
-  {
     id: 4,
     question: 'What is the Aso Account?',
     lists: '',
@@ -196,9 +189,10 @@ export function Faqs() {
             Frequently asked questions
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-          open to a new tab,{' '}
+          If you have anything else,{' '}
             <Link
-              href="mailto:info@ft9ja.com"
+            target={'_blank'}
+              href="/contact"
               className="text-gray-900 underline"
             >
               reach out to us

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import img from '../images/cyber-bg.png'
+import img from '../images/noterr.png'
 
 const SecondRulesBlock = () => {
   const Animations = {

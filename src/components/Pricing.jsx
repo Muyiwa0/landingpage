@@ -26,8 +26,26 @@ const plans = [
       {
         id: 1,
         title: 'Evaluation',
-        step: '',
-        text: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
+        step: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
+        // text: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
+        text: [
+          {
+            id: 1,
+            text: '80% Profit Split: if you qualify for the Aso Account within 1 months of placing your first trade.',
+          },
+          {
+            id: 1,
+            text: '60% Profit Split: if you qualify for the Aso Account within 1-3 months.',
+          },
+          {
+            id: 1,
+            text: '40% Profit Split: if you qualify for the Aso Account after 3 months.',
+          },
+          {
+            id: 1,
+            text: "NOTE: 4 trading weeks is regarded as 1 month"
+          }
+        ],
         desc: '',
         points: '',
       },
@@ -111,7 +129,7 @@ const plans = [
         title: 'Min. Trading Days',
         step: '',
         text: '2 days per week or 10 days per month',
-        desc: '',
+        desc: 'You are required to open and close trading positions for 2 or more days in a trading week. And at least 10 seperate days in a trading month',
       },
       {
         id: 9,
@@ -213,7 +231,7 @@ const plans = [
         title: 'Profit Split',
         step: '',
         text: '80% to the Trader',
-        desc: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
+        desc: '',
         points: [
           {
             id: 1,
@@ -539,6 +557,7 @@ function Plan({ plan }) {
             </thead>
             <tbody className="divide-y divide-gray-200">
               {features.map(({ id, title, text, step, desc, points }) => (
+                console.log(title),
                 <>
                   {desc ? (
                     <>
