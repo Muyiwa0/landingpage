@@ -27,27 +27,46 @@ const plans = [
         id: 1,
         title: 'Evaluation',
         step: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
-        // text: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
-        text: [
+        text: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
+        
+        points: [
           {
             id: 1,
-            text: '80% Profit Split: if you qualify for the Aso Account within 1 months of placing your first trade.',
+            point:
+              '80% Profit Split: if you qualify for the Aso Account within 1 months of placing your first trade.',
           },
           {
-            id: 1,
-            text: '60% Profit Split: if you qualify for the Aso Account within 1-3 months.',
+            id: 2,
+            point:
+              '60% Profit Split: if you qualify for the Aso Account within 1-3 months.',
           },
           {
-            id: 1,
-            text: '40% Profit Split: if you qualify for the Aso Account after 3 months.',
+            id: 4,
+            point:
+              '40% Profit Split: if you qualify for the Aso Account after 3 months.',
           },
-          {
-            id: 1,
-            text: "NOTE: 4 trading weeks is regarded as 1 month"
-          }
         ],
-        desc: '',
-        points: '',
+        desc: 'NOTE: 4 trading weeks is regarded as 1 month',
+        
+        // desc: [
+        //   {
+        //     id: 1,
+        //     text: '80% Profit Split: if you qualify for the Aso Account within 1 months of placing your first trade.',
+        //   },
+        //   {
+        //     id: 1,
+        //     text: '60% Profit Split: if you qualify for the Aso Account within 1-3 months.',
+        //   },
+        //   {
+        //     id: 1,
+        //     text: '40% Profit Split: if you qualify for the Aso Account after 3 months.',
+        //   },
+        //   {
+        //     id: 1,
+        //     text: "NOTE: 4 trading weeks is regarded as 1 month"
+        //   }
+        // ],
+        
       },
       {
         id: 2,

@@ -17,6 +17,9 @@ import logoHuffpost from '@/images/logos/huffpost.svg'
 import logoTechcrunch from '@/images/logos/techcrunch.svg'
 import logoWired from '@/images/logos/wired.svg'
 import Link from 'next/link'
+import ReactPlayer from 'react-player'
+import Modal from "react-responsive-modal"; 
+import ModalVideo from 'react-modal-video'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -348,6 +351,7 @@ const Animations = {
 }
 
 export function Hero() {
+  const [open, setOpen] = useState(false)
   return (
     <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
       <Container>
@@ -368,17 +372,23 @@ export function Hero() {
                   Start Trading
                 </a>
               </Link>
+              
+              
+      <>
+			<ModalVideo channel='youtube' autoplay isOpen={open} videoId="OXFym18nXbY" onClose={() => setOpen(false)} />
+		</>
               <Button
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                // href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 variant="outline"
+                onClick={()=> setOpen(true)}
               >
-                <a
+                {/* <a
                   target="_blank"
-                  className="flex cursor-pointer items-center rounded-md border-[1px] border-slate-200 py-2 px-2"
-                >
+                 
+                > */}
                   <PlayIcon className="h-6 w-6 flex-none" />
                   <span className="ml-2">Why FT9ja?</span>
-                </a>
+                {/* </a> */}
               </Button>
             </div>
           </div>

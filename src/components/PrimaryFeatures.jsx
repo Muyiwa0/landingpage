@@ -569,8 +569,7 @@ export function PrimaryFeatures() {
             How FT9ja Classic Works?
             </h2>
             <p className="mt-2 text-lg text-gray-400">
-            FT9ja Classic is the revolutionary funding model pioneered by FT9ja. 1 step evaluation, get paid
-during evaluation, trade synthetic indices, and get a Free 2nd Chance Account.
+            We believe you have what it takes to be successful. Sign up for a funding model, choose an account size, and start trading to earn as soon as 10 days.
             </p>
           </div>
         </Container>
