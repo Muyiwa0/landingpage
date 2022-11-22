@@ -1,12 +1,13 @@
 import Image from 'next/future/image'
 import Link from 'next/link'
-
+import { useId, useRef, useState } from 'react'
+import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { useRouter } from 'next/router'
 import logo from '../images/logo.png'
 import { ImFacebook, ImTwitter, ImYoutube } from 'react-icons/im'
 import { GrInstagram } from 'react-icons/gr'
-
+import ModalVideo from 'react-modal-video'
 function PlayIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
@@ -22,6 +23,7 @@ function PlayIcon(props) {
 
 export function Footer() {
   const router = useRouter()
+  const [open, setOpen] = useState(false)
   return (
     <footer className="bg-white">
       <Container>
@@ -99,15 +101,22 @@ export function Footer() {
                   Start Trading
                 </a>
               </Link>
-              <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                <a
+              <Button
+                // href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                variant="outline"
+                onClick={()=> setOpen(true)}
+              >
+                {/* <a
                   target="_blank"
-                  className="flex cursor-pointer items-center py-3 rounded-md border-[1px] border-slate-300 px-2"
-                >
+                 
+                > */}
                   <PlayIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2 text-center">Why FT9ja?</span>
-                </a>
-              </Link>
+                  <span className="ml-2">Why FT9ja?</span>
+                {/* </a> */}
+              </Button>
+              <>
+			<ModalVideo channel='youtube' autoplay isOpen={open} videoId="OXFym18nXbY" onClose={() => setOpen(false)} />
+		</>
             </div>
           </div>
         </div>
