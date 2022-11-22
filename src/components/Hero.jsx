@@ -17,7 +17,7 @@ import logoHuffpost from '@/images/logos/huffpost.svg'
 import logoTechcrunch from '@/images/logos/techcrunch.svg'
 import logoWired from '@/images/logos/wired.svg'
 import Link from 'next/link'
-// import ModalVideo from 'react-modal-video'
+import ModalVideo from 'react-modal-video'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -372,9 +372,9 @@ export function Hero() {
               </Link>
               
               
-      {/* <>
+      <>
 			<ModalVideo channel='youtube' autoplay isOpen={open} videoId="OXFym18nXbY" onClose={() => setOpen(false)} />
-		</> */}
+		</>
               <Button
                 // href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 variant="outline"
