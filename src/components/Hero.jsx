@@ -17,8 +17,6 @@ import logoHuffpost from '@/images/logos/huffpost.svg'
 import logoTechcrunch from '@/images/logos/techcrunch.svg'
 import logoWired from '@/images/logos/wired.svg'
 import Link from 'next/link'
-import ReactPlayer from 'react-player'
-import Modal from "react-responsive-modal"; 
 import ModalVideo from 'react-modal-video'
 
 function BackgroundIllustration(props) {
