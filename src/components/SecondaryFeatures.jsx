@@ -1,5 +1,5 @@
 import { useId } from 'react'
-
+import { FaHandHoldingUsd,FaRegClock,FaRegHandshake, FaCommentDollar,FaOpencart, FaMailBulk } from "react-icons/fa";
 import { Container } from '@/components/Container'
 
 const features = [
@@ -7,37 +7,37 @@ const features = [
     name: 'Talent Bonus',
     description:
       'Get paid during evaluation',
-    icon: DeviceArrowIcon,
+    icon: FaHandHoldingUsd,
   },
   {
     name: 'Fast Payout',
     description:
       'Weekly or monthly payout (after the first 10 days)',
-    icon: DeviceCardsIcon,
+    icon: FaOpencart,
   },
   {
     name: 'Flexible',
     description:
       'No time limit to achieve 25% profit target.',
-    icon: DeviceClockIcon,
+    icon: FaRegClock,
   },
   {
     name: 'One-time Payment',
     description:
       'No hidden fee or monthly payment',
-    icon: DeviceListIcon,
+    icon: FaCommentDollar,
   },
   {
     name: 'Wide Range of Instruments',
     description:
       'Trade financial or synthetic indices (VIX) On Deriv!',
-    icon: DeviceLockIcon,
+    icon: FaMailBulk,
   },
   {
     name: '2nd Chance Account',
     description:
       'Naija happens - get a 2nd account free of charge',
-    icon: DeviceChartIcon,
+    icon: FaRegHandshake,
   },
 ]
 
