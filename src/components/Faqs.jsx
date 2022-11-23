@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
-import { Disclosure, Transition } from '@headlessui/react'
+import { Disclosure, Transition,RadioGroup } from '@headlessui/react'
 import { BiMinus } from 'react-icons/bi'
 import { BsPlusLg } from 'react-icons/bs'
-import { useRef } from 'react'
-
+import { useRef, useState } from 'react'
+import { ChallengeFaq } from '@/components/ChallengeFaq'
+import { ClassicFaq } from '@/components/ClassicFaq'
+import clsx from 'clsx'
 const faqs = [
   {
     id: 1,
@@ -161,7 +163,8 @@ const faqs = [
 export function Faqs() {
   const buttonRefs = useRef([])
   const openedRef = useRef(null)
-
+  let [activePeriod, setActivePeriod] = useState('Classic')
+  let [prevPeriod, setPrevPeriod] = useState('Classic')
   const clickRecent = (index) => {
     const clickedButton = buttonRefs.current[index]
     if (clickedButton === openedRef.current) {
@@ -180,107 +183,59 @@ export function Faqs() {
       aria-labelledby="faqs-title"
       className="border-t border-gray-200 py-20 sm:py-32"
     >
-      <Container>
-        <div className="mx-auto pb-10 lg:max-w-screen-md">
-          <h2
-            id="faqs-title"
-            className="text-3xl font-medium tracking-tight text-gray-900"
-          >
-            Frequently asked questions
-          </h2>
-          <p className="mt-2 text-lg text-gray-600">
-          If you have anything else,{' '}
-            <Link
-            target={'_blank'}
-              href="/contact"
-              className="text-gray-900 underline"
+      <div className="mt-8 flex justify-center">
+          <div className="relative">
+            <RadioGroup
+              value={activePeriod}
+              onClick={() => setPrevPeriod(activePeriod)}
+              onChange={setActivePeriod}
+              className="grid grid-cols-3"
             >
-              reach out to us
-            </Link>
-          </p>
-        </div>
-        <div className="mx-auto grid grid-cols-1 gap-5 lg:max-w-screen-md">
-          {faqs.map(({ id, question, list, answer, lists }, idx) => (
-            <Disclosure key={id}>
-              {({ open }) => (
-                <>
-                  <div key={id}>
-                    <Disclosure.Button
-                      as="div"
-                      className="text-md mb-3 w-full cursor-pointer rounded-lg text-left font-bold"
-                    >
-                      <button
-                        className="flex w-full justify-between"
-                        data-value={open}
-                        ref={(ref) => {
-                          buttonRefs.current[idx] = ref
-                        }}
-                        onClick={() => clickRecent(idx)}
-                      >
-                        {question}
-                        {open ? (
-                          <span className="rounded-full border-[1px] border-slate-300 p-1.5">
-                            <BiMinus />
-                          </span>
-                        ) : (
-                          <span className="rounded-full border-[1px] border-slate-300 p-1.5">
-                            <BsPlusLg />
-                          </span>
-                        )}
-                      </button>
-                    </Disclosure.Button>
-                    <Transition
-                      show={open}
-                      enter="transition duration-100 ease-out"
-                      enterFrom="transform scale-95 opacity-0"
-                      enterTo="transform scale-100 opacity-100"
-                      leave="transition duration-75 ease-out"
-                      leaveFrom="transform scale-100 opacity-100"
-                      leaveTo="transform scale-95 opacity-0"
-                    >
-                      {open && (
-                        <Disclosure.Panel
-                          static
-                          className="my-2 flex w-full flex-col justify-between rounded-lg text-left"
-                        >
-                          {answer && answer}
-                          {list && (
-                            <ul className="ml-3 list-item">
-                              {list.map(({ id, title }) => (
-                                <li className="ml-2 list-disc py-1" key={id}>
-                                  {title}
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                          {lists &&
-                            lists.map(({ id, title, line, litems }) => (
-                              <div key={id}>
-                                <h1 className="py-4 text-[#28a745]">
-                                  {title}
-                                </h1>
-                                {line && <p className='py-2'>{line}</p>}
-                                {litems.map(({ id, li, more }) => (
-                                  <>
-                                    <li key={id} className="py-2">{li}</li>
-                                    {more &&
-                                      more.map(({ id, text }) => (
-                                        <p key={id} className="pl-6 py-1">{text}</p>
-                                      ))}
-                                  </>
-                                ))}
-                              </div>
-                            ))}
-                        </Disclosure.Panel>
-                      )}
-                    </Transition>
-                  </div>
-                </>
+              {['Classic', 'Challenge'].map((period) => (
+                <RadioGroup.Option
+                  key={period}
+                  value={period}
+                  className={clsx(
+                    'cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400',
+                    period === 'Classic'
+                      ? 'rounded-l-lg'
+                      : period === 'Challenge'
+                      ? 'rounded-r-lg'
+                      : ''
+                  )}
+                >
+                  {period}
+                </RadioGroup.Option>
+              ))}
+            </RadioGroup>
+            <div
+              aria-hidden="true"
+              className={clsx(
+                'pointer-events-none absolute inset-0 z-10 grid grid-cols-3 overflow-hidden rounded-lg bg-[#28a745] transition-all duration-300',
+                activePeriod === 'Classic'
+                  ? '[clip-path:inset(0_66%_0_0)]'
+                  : activePeriod === 'Challenge'
+                  ? '[clip-path:inset(0_33%_0_33%)]'
+                  : '[clip-path:inset(0_0_0_calc(66%-1px))]'
               )}
-            </Disclosure>
-          ))}
+            >
+              {['Classic', 'Challenge'].map((period) => (
+                <div
+                  key={period}
+                  className={clsx(
+                    'py-2 text-center text-sm font-semibold text-white [&:not(:focus-visible)]:focus:outline-none',
+                    period === 'Challenge' && '-ml-px'
+                  )}
+                >
+                  {period}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </Container>
+        {activePeriod === 'Classic' && <ClassicFaq />}
+    {activePeriod === 'Challenge' && <ChallengeFaq />}
     </section>
+    
   )
 }

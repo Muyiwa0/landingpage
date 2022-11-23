@@ -101,22 +101,18 @@ export function Footer() {
                   Start Trading
                 </a>
               </Link>
-              <Button
-                // href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                variant="outline"
-                onClick={()=> setOpen(true)}
-              >
-                {/* <a
-                  target="_blank"
-                 
-                > */}
-                  <PlayIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">Why FT9ja?</span>
-                {/* </a> */}
-              </Button>
               <>
 			<ModalVideo channel='youtube' autoplay isOpen={open} videoId="OXFym18nXbY" onClose={() => setOpen(false)} />
 		</>
+              <Button
+                variant="outline"
+                onClick={()=> setOpen(true)}
+                style={{ alignContent: 'baseline'}}
+              >
+                  <PlayIcon className="h-6 w-6 flex-none" />
+                  <span className="ml-2">Why FT9ja?</span>
+                
+              </Button>
             </div>
           </div>
         </div>

@@ -2,14 +2,19 @@ import React from 'react'
 
 function terms() {
   return (
-    <>
+    <div 
+    style={{
+      marginLeft: '15%',
+      marginRight: '15%',
+    }}
+    >
   <p style={{ textAlign:"center" }}>
     <span style={{ fontSize:"35px", float:"center" }}>Terms and Conditions</span>
   </p>
   <p>&nbsp;</p>
   <ol>
     <li>
-      <span style={{ fontWeight: 400 }}> AGREEMENT TO TERMS</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> AGREEMENT TO TERMS</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -73,7 +78,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={2}>
     <li>
-      <span style={{ fontWeight: 400 }}> INTELLECTUAL PROPERTY RIGHTS</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> INTELLECTUAL PROPERTY RIGHTS</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -110,7 +115,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={3}>
     <li>
-      <span style={{ fontWeight: 400 }}> USER REPRESENTATIONS</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> USER REPRESENTATIONS</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -141,7 +146,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={4}>
     <li>
-      <span style={{ fontWeight: 400 }}> USER REGISTRATION</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> USER REGISTRATION</span>
     </li>
   </ol>
   <p>
@@ -160,7 +165,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={5}>
     <li>
-      <span style={{ fontWeight: 400 }}> PROHIBITED ACTIVITIES</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> PROHIBITED ACTIVITIES</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -343,7 +348,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={6}>
     <li>
-      <span style={{ fontWeight: 400 }}> USER GENERATED CONTRIBUTIONS</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> USER GENERATED CONTRIBUTIONS</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -465,7 +470,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={7}>
     <li>
-      <span style={{ fontWeight: 400 }}> CONTRIBUTION LICENSE</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> CONTRIBUTION LICENSE</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -501,7 +506,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={8}>
     <li>
-      <span style={{ fontWeight: 400 }}> SUBMISSIONS</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> SUBMISSIONS</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -525,7 +530,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={9}>
     <li>
-      <span style={{ fontWeight: 400 }}> THIRD-PARTY WEBSITE AND CONTENT</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> THIRD-PARTY WEBSITE AND CONTENT</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -566,7 +571,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={10}>
     <li>
-      <span style={{ fontWeight: 400 }}> SITE MANAGEMENT</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> SITE MANAGEMENT</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -591,7 +596,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={11}>
     <li>
-      <span style={{ fontWeight: 400 }}> PRIVACY POLICY</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> PRIVACY POLICY</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -612,7 +617,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={12}>
     <li>
-      <span style={{ fontWeight: 400 }}> TERM AND TERMINATION</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> TERM AND TERMINATION</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -646,7 +651,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={13}>
     <li>
-      <span style={{ fontWeight: 400 }}> MODIFICATIONS AND INTERRUPTIONS</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> MODIFICATIONS AND INTERRUPTIONS</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -681,7 +686,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={14}>
     <li>
-      <span style={{ fontWeight: 400 }}> GOVERNING LAW&nbsp;</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> GOVERNING LAW&nbsp;</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -697,7 +702,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={15}>
     <li>
-      <span style={{ fontWeight: 400 }}> DISPUTE RESOLUTION</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> DISPUTE RESOLUTION</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -716,7 +721,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={16}>
     <li>
-      <span style={{ fontWeight: 400 }}> CORRECTIONS</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> CORRECTIONS</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -733,7 +738,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={17}>
     <li>
-      <span style={{ fontWeight: 400 }}> DISCLAIMER</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> DISCLAIMER</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -772,7 +777,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={18}>
     <li>
-      <span style={{ fontWeight: 400 }}> LIMITATIONS OF LIABILITY</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> LIMITATIONS OF LIABILITY</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -797,7 +802,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={19}>
     <li>
-      <span style={{ fontWeight: 400 }}> INDEMNIFICATION</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> INDEMNIFICATION</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -825,7 +830,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={20}>
     <li>
-      <span style={{ fontWeight: 400 }}> USER DATA</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> USER DATA</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -845,7 +850,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={21}>
     <li>
-      <span style={{ fontWeight: 400 }}>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}>
         {" "}
         ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES
       </span>
@@ -873,7 +878,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={22}>
     <li>
-      <span style={{ fontWeight: 400 }}> MISCELLANEOUS</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> MISCELLANEOUS</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -903,7 +908,7 @@ function terms() {
   <p>&nbsp;</p>
   <ol start={23}>
     <li>
-      <span style={{ fontWeight: 400 }}> CONTACT US</span>
+      <span style={{ fontWeight: "bolder", fontSize:"100%" }}> CONTACT US</span>
     </li>
   </ol>
   <p>&nbsp;</p>
@@ -933,7 +938,7 @@ function terms() {
     <span style={{ fontWeight: 400 }}>info@ft9ja.com</span>
   </p>
   <p>&nbsp;</p>
-</>
+</div>
 
 
   )
