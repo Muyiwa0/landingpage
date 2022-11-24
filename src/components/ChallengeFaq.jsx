@@ -179,25 +179,6 @@ export function ChallengeFaq() {
       aria-labelledby="faqs-title"
       className="border-t border-gray-200 py-20 sm:py-32"
     >
-      <Container>
-        <div className="mx-auto pb-10 lg:max-w-screen-md">
-          <h2
-            id="faqs-title"
-            className="text-3xl font-medium tracking-tight text-gray-900"
-          >
-            Frequently asked questions
-          </h2>
-          <p className="mt-2 text-lg text-gray-600">
-            If you have anything else,{' '}
-            <Link
-              target={'_blank'}
-              href="/contact"
-              className="text-gray-900 underline"
-            >
-              reach out to us
-            </Link>
-          </p>
-        </div>
         <div className="mx-auto grid grid-cols-1 gap-5 lg:max-w-screen-md">
           {faqs.map(({ id, question, list, answer, lists }, idx) => (
             <Disclosure key={id}>
@@ -281,7 +262,6 @@ export function ChallengeFaq() {
             </Disclosure>
           ))}
         </div>
-      </Container>
     </section>
   )
 }
