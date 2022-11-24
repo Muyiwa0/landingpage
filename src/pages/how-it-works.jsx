@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { PrimaryFeatures } from '@/components/PrimaryFeatures'
+import { PrimaryFeatures2 } from '@/components/PrimaryFeatures2'
 import { RadioGroup } from '@headlessui/react'
 import clsx from 'clsx'
 import { SecondFeatures } from '@/components/SecondFeatures'
@@ -80,7 +80,7 @@ const HowItWorks = () => {
           </div>
         </div>
       </div>
-      {activePeriod === 'FT9ja Classic' && <PrimaryFeatures />}
+      {activePeriod === 'FT9ja Classic' && <PrimaryFeatures2 />}
       {activePeriod === 'FT9ja Challenge' && <SecondFeatures />}
       {activePeriod === 'Compare Models' && <CompareModels />}
       <Rules />
