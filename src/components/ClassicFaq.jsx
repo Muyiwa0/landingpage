@@ -18,7 +18,7 @@ const faqs = [
         litems: [
           {
             id: 1,
-            li: 'We provide 3 Account Sizes for Traders to start with: $5,000 (N3,500,000), $10,000 (N7,000,000), and $25,000(N17,500,000).',
+            li: 'We provide 3 Account Sizes for Traders to start with: $3,000 (N2,100,000), $5,000 (N3,500,000), and $25,000(N17,500,000).',
           },
           {
             id: 2,
@@ -174,94 +174,88 @@ export function ClassicFaq() {
   }
 
   return (
-    <section
-      id="faqs"
-      aria-labelledby="faqs-title"
-      className="border-t border-gray-200 py-20 sm:py-32"
-    >
-        <div className="mx-auto grid grid-cols-1 gap-5 lg:max-w-screen-md">
-          {faqs.map(({ id, question, list, answer, lists }, idx) => (
-            <Disclosure key={id}>
-              {({ open }) => (
-                <>
-                  <div key={id}>
-                    <Disclosure.Button
-                      as="div"
-                      className="text-md mb-3 w-full cursor-pointer rounded-lg text-left font-bold"
+    <div className="mx-auto grid grid-cols-1 gap-5 lg:max-w-screen-md">
+      {faqs.map(({ id, question, list, answer, lists }, idx) => (
+        <Disclosure key={id}>
+          {({ open }) => (
+            <>
+              <div key={id}>
+                <Disclosure.Button
+                  as="div"
+                  className="text-md mb-3 w-full cursor-pointer rounded-lg text-left font-bold"
+                >
+                  <button
+                    className="flex w-full justify-between"
+                    data-value={open}
+                    ref={(ref) => {
+                      buttonRefs.current[idx] = ref
+                    }}
+                    onClick={() => clickRecent(idx)}
+                  >
+                    {question}
+                    {open ? (
+                      <span className="rounded-full border-[1px] border-slate-300 p-1.5">
+                        <BiMinus />
+                      </span>
+                    ) : (
+                      <span className="rounded-full border-[1px] border-slate-300 p-1.5">
+                        <BsPlusLg />
+                      </span>
+                    )}
+                  </button>
+                </Disclosure.Button>
+                <Transition
+                  show={open}
+                  enter="transition duration-100 ease-out"
+                  enterFrom="transform scale-95 opacity-0"
+                  enterTo="transform scale-100 opacity-100"
+                  leave="transition duration-75 ease-out"
+                  leaveFrom="transform scale-100 opacity-100"
+                  leaveTo="transform scale-95 opacity-0"
+                >
+                  {open && (
+                    <Disclosure.Panel
+                      static
+                      className="my-2 flex w-full flex-col justify-between rounded-lg text-left"
                     >
-                      <button
-                        className="flex w-full justify-between"
-                        data-value={open}
-                        ref={(ref) => {
-                          buttonRefs.current[idx] = ref
-                        }}
-                        onClick={() => clickRecent(idx)}
-                      >
-                        {question}
-                        {open ? (
-                          <span className="rounded-full border-[1px] border-slate-300 p-1.5">
-                            <BiMinus />
-                          </span>
-                        ) : (
-                          <span className="rounded-full border-[1px] border-slate-300 p-1.5">
-                            <BsPlusLg />
-                          </span>
-                        )}
-                      </button>
-                    </Disclosure.Button>
-                    <Transition
-                      show={open}
-                      enter="transition duration-100 ease-out"
-                      enterFrom="transform scale-95 opacity-0"
-                      enterTo="transform scale-100 opacity-100"
-                      leave="transition duration-75 ease-out"
-                      leaveFrom="transform scale-100 opacity-100"
-                      leaveTo="transform scale-95 opacity-0"
-                    >
-                      {open && (
-                        <Disclosure.Panel
-                          static
-                          className="my-2 flex w-full flex-col justify-between rounded-lg text-left"
-                        >
-                          {answer && answer}
-                          {list && (
-                            <ul className="ml-3 list-item">
-                              {list.map(({ id, title }) => (
-                                <li className="ml-2 list-disc py-1" key={id}>
-                                  {title}
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                          {lists &&
-                            lists.map(({ id, title, line, litems }) => (
-                              <div key={id}>
-                                <h1 className="py-4 text-[#28a745]">{title}</h1>
-                                {line && <p className="py-2">{line}</p>}
-                                {litems.map(({ id, li, more }) => (
-                                  <>
-                                    <li key={id} className="py-2">
-                                      {li}
-                                    </li>
-                                    {more &&
-                                      more.map(({ id, text }) => (
-                                        <p key={id} className="py-1 pl-6">
-                                          {text}
-                                        </p>
-                                      ))}
-                                  </>
-                                ))}
-                              </div>
-                            ))}
-                        </Disclosure.Panel>
+                      {answer && answer}
+                      {list && (
+                        <ul className="ml-3 list-item">
+                          {list.map(({ id, title }) => (
+                            <li className="ml-2 list-disc py-1" key={id}>
+                              {title}
+                            </li>
+                          ))}
+                        </ul>
                       )}
-                    </Transition>
-                  </div>
-                </>
-              )}
-            </Disclosure>
-          ))}
-        </div>
-    </section>
+                      {lists &&
+                        lists.map(({ id, title, line, litems }) => (
+                          <div key={id}>
+                            <h1 className="py-4 text-[#28a745]">{title}</h1>
+                            {line && <p className="py-2">{line}</p>}
+                            {litems.map(({ id, li, more }) => (
+                              <>
+                                <li key={id} className="py-2">
+                                  {li}
+                                </li>
+                                {more &&
+                                  more.map(({ id, text }) => (
+                                    <p key={id} className="py-1 pl-6">
+                                      {text}
+                                    </p>
+                                  ))}
+                              </>
+                            ))}
+                          </div>
+                        ))}
+                    </Disclosure.Panel>
+                  )}
+                </Transition>
+              </div>
+            </>
+          )}
+        </Disclosure>
+      ))}
+    </div>
   )
 }

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Container } from '@/components/Container'
-import { Disclosure, Transition,RadioGroup } from '@headlessui/react'
+import { Disclosure, Transition, RadioGroup } from '@headlessui/react'
 import { BiMinus } from 'react-icons/bi'
 import { BsPlusLg } from 'react-icons/bs'
 import { useRef, useState } from 'react'
@@ -46,7 +46,6 @@ const faqs = [
             li: '10% profit target',
           },
         ],
-       
       },
       {
         id: 3,
@@ -201,61 +200,60 @@ export function Faqs() {
               reach out to us
             </Link>
           </p>
-        </div>
-      <div className="mt-8 flex justify-center">
-          <div className="relative">
-            <RadioGroup
-              value={activePeriod}
-              onClick={() => setPrevPeriod(activePeriod)}
-              onChange={setActivePeriod}
-              className="grid grid-cols-3"
-            >
-              {['Classic', 'Challenge'].map((period) => (
-                <RadioGroup.Option
-                  key={period}
-                  value={period}
-                  className={clsx(
-                    'cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400',
-                    period === 'Classic'
-                      ? 'rounded-l-lg'
-                      : period === 'Challenge'
-                      ? 'rounded-r-lg'
-                      : ''
-                  )}
-                >
-                  {period}
-                </RadioGroup.Option>
-              ))}
-            </RadioGroup>
-            <div
-              aria-hidden="true"
-              className={clsx(
-                'pointer-events-none absolute inset-0 z-10 grid grid-cols-3 overflow-hidden rounded-lg bg-[#28a745] transition-all duration-300',
-                activePeriod === 'Classic'
-                  ? '[clip-path:inset(0_66%_0_0)]'
-                  : activePeriod === 'Challenge'
-                  ? '[clip-path:inset(0_33%_0_33%)]'
-                  : '[clip-path:inset(0_0_0_calc(66%-1px))]'
-              )}
-            >
-              {['Classic', 'Challenge'].map((period) => (
-                <div
-                  key={period}
-                  className={clsx(
-                    'py-2 text-center text-sm font-semibold text-white [&:not(:focus-visible)]:focus:outline-none',
-                    period === 'Challenge' && '-ml-px'
-                  )}
-                >
-                  {period}
-                </div>
-              ))}
+          <div className="mt-8 flex justify-center">
+            <div className="relative">
+              <RadioGroup
+                value={activePeriod}
+                onClick={() => setPrevPeriod(activePeriod)}
+                onChange={setActivePeriod}
+                className="grid grid-cols-3"
+              >
+                {['Classic', 'Challenge'].map((period) => (
+                  <RadioGroup.Option
+                    key={period}
+                    value={period}
+                    className={clsx(
+                      'cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400',
+                      period === 'Classic'
+                        ? 'rounded-l-lg'
+                        : period === 'Challenge'
+                        ? 'rounded-r-lg'
+                        : ''
+                    )}
+                  >
+                    {period}
+                  </RadioGroup.Option>
+                ))}
+              </RadioGroup>
+              <div
+                aria-hidden="true"
+                className={clsx(
+                  'pointer-events-none absolute inset-0 z-10 grid grid-cols-3 overflow-hidden rounded-lg bg-[#28a745] transition-all duration-300',
+                  activePeriod === 'Classic'
+                    ? '[clip-path:inset(0_66%_0_0)]'
+                    : activePeriod === 'Challenge'
+                    ? '[clip-path:inset(0_33%_0_33%)]'
+                    : '[clip-path:inset(0_0_0_calc(66%-1px))]'
+                )}
+              >
+                {['Classic', 'Challenge'].map((period) => (
+                  <div
+                    key={period}
+                    className={clsx(
+                      'py-2 text-center text-sm font-semibold text-white [&:not(:focus-visible)]:focus:outline-none',
+                      period === 'Challenge' && '-ml-px'
+                    )}
+                  >
+                    {period}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-        </Container>
-        {activePeriod === 'Classic' && <ClassicFaq />}
-    {activePeriod === 'Challenge' && <ChallengeFaq />}
+      </Container>
+      {activePeriod === 'Classic' && <ClassicFaq />}
+      {activePeriod === 'Challenge' && <ChallengeFaq />}
     </section>
-    
   )
 }
