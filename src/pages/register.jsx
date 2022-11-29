@@ -5,9 +5,15 @@ import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { SelectField, TextField } from '@/components/Fields'
 import { useState } from 'react'
+import Paystack from '@/components/Paystack'
 
 export default function Register() {
   const [referral, setReferral] = useState()
+  const [show, setShow] = useState(false)
+  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [amount, setAmount] = useState(30000)
   const handleChange = (e) => {
     if (e.target.value === 'Referral') setReferral('referral')
     else if (e.target.value != 'referral') setReferral('')
@@ -30,13 +36,21 @@ export default function Register() {
           </>
         }
       >
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            setShow(true)
+            console.log(email)
+          }}
+        >
           <div className="grid grid-cols-2 gap-6">
             <TextField
               label="First Name"
               id="firstname"
               name="firstname"
               type="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               autoComplete="given-name"
               required
             />
@@ -54,6 +68,8 @@ export default function Register() {
               id="email"
               name="email"
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               autoComplete="email"
               required
             />
@@ -64,6 +80,8 @@ export default function Register() {
               name="phone"
               type="phone"
               autoComplete="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               required
             />
             <SelectField
@@ -90,16 +108,17 @@ export default function Register() {
               id="payout"
               name="payout"
               required
+              onChange={(e) => setAmount(e.target.value)}
             >
               <optgroup label="FT9ja Classic">
-                <option>$3000</option>
-                <option>$5000</option>
-                <option>$25,000</option>
+                <option>3000</option>
+                <option>5000</option>
+                <option>25000</option>
               </optgroup>
               <optgroup label="FT9ja Challenge">
-                <option>$5000</option>
-                <option>$10000</option>
-                <option>$25,000</option>
+                <option>5000</option>
+                <option>10000</option>
+                <option>25000</option>
               </optgroup>
             </SelectField>
 
@@ -173,6 +192,9 @@ export default function Register() {
           </Button>
         </form>
       </AuthLayout>
+      {show && (
+        <Paystack name={name} email={email} phone={phone} amount={amount} />
+      )}
     </>
   )
 }
