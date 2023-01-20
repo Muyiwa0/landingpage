@@ -4,11 +4,13 @@ import React from 'react'
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
+import Iframe from 'react-iframe'
 import axios from 'axios'
 export default function Login() {
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [error, setError] = React.useState('')
+
   let handleuserLogin = (e) => {
     e.preventDefault()
     axios
@@ -25,9 +27,10 @@ export default function Login() {
         // axiosInstance.defaults.headers.common[
         //   'Authorization'
         // ] = `Bearer ${localStorage.getItem('access_token')}`
+        
         localStorage.setItem('refresh_token', res.data.refresh_token)
         localStorage.setItem('access_token', res.data.access_token)
-        window.location.href = 'http://dashboard.ft9ja.com/'
+        window.location.href = `http://dashboard.ft9ja.com/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
         console.log('login success')
       })
       .catch((err) => {
@@ -79,6 +82,7 @@ export default function Login() {
             Sign in to account
           </Button>
         </form>
+        <iframe src="http://localhost:3001/" style={{"display":"none"}}></iframe>
       </AuthLayout>
     </>
   )

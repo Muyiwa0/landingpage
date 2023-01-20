@@ -1,0 +1,14 @@
+<iframe src="http://localhost:3001/" style="display: none"></iframe>
+
+<script>
+  window.addEventListener('load', function () {
+    const iframe = document.querySelector('iframe')
+    const wind = iframe.contentWindow
+    const data = {
+      name: 'adnan-tech.com',
+      refresh_token: localStorage.getItem('refresh_token'),
+      access_token: localStorage.getItem('access_token'),
+    }
+    wind.postMessage(JSON.stringify(data), '*')
+  })
+</script>

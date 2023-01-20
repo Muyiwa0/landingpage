@@ -22,6 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
+    "react-iframe": "^1.8.5",
     "react-modal-video": "^1.2.10",
     "react-paystack": "^4.0.1",
     "sass": "^1.56.1",
@@ -30,6 +31,7 @@
     "use-debounce": "^8.0.4"
   },
   "devDependencies": {
+    "cross-domain-storage": "^2.0.7",
     "eslint": "8.15.0",
     "eslint-config-next": "12.2.5",
     "prettier": "^2.7.1",
