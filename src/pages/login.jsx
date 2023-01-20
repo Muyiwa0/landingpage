@@ -1,11 +1,41 @@
 import Head from 'next/head'
 import Link from 'next/link'
-
+import React from 'react'
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
-
+import axios from 'axios'
 export default function Login() {
+  const [email, setEmail] = React.useState('')
+  const [password, setPassword] = React.useState('')
+  const [error, setError] = React.useState('')
+  let handleuserLogin = (e) => {
+    e.preventDefault()
+    axios
+      .post('https://maindashbe.herokuapp.com/api/auth/login/', {
+        email,
+        password,
+      })
+      .then((res) => {
+        console.log(res, res.data.refresh_token)
+        // localStorage.setItem("access_token", res.data.access_token);
+        axios.defaults.headers.common[
+          'Authorization'
+        ] = `Bearer ${localStorage.getItem('access_token')}`
+        // axiosInstance.defaults.headers.common[
+        //   'Authorization'
+        // ] = `Bearer ${localStorage.getItem('access_token')}`
+        localStorage.setItem('refresh_token', res.data.refresh_token)
+        localStorage.setItem('access_token', res.data.access_token)
+        window.location.href = 'http://dashboard.ft9ja.com/'
+        console.log('login success')
+      })
+      .catch((err) => {
+        console.log(err)
+        setError('Invalid Email or Password')
+      })
+  }
+
   return (
     <>
       <Head>
@@ -23,7 +53,8 @@ export default function Login() {
           </>
         }
       >
-        <form>
+        {error}
+        <form onSubmit={handleuserLogin}>
           <div className="space-y-6">
             <TextField
               label="Email address"
@@ -31,6 +62,7 @@ export default function Login() {
               name="email"
               type="email"
               autoComplete="email"
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <TextField
@@ -39,6 +71,7 @@ export default function Login() {
               name="password"
               type="password"
               autoComplete="current-password"
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
