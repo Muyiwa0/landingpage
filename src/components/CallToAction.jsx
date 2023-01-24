@@ -23,7 +23,7 @@ export function CallToAction() {
             hours.
           </p>
           <div className="mt-8 flex justify-center">
-            <Link href="https://temp-app-pockettailwind.herokuapp.com/#pricing">
+            <Link href="/#pricing">
               <a className="rounded-md bg-white py-2 px-8 text-black duration-300 hover:bg-black hover:text-white">
                 Trade Now
               </a>

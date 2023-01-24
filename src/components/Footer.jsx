@@ -61,8 +61,11 @@ export function Footer() {
               <p className="pt-3 text-center md:text-left">
                 {' '}
                 <span className="font-bold">Whatsapp Number: </span>
-                <span className="text-[#28a745]"><a href="https://api.whatsapp.com/send?phone=2348138462394">+2348138462394</a></span>
-                
+                <span className="text-[#28a745]">
+                  <a href="https://api.whatsapp.com/send?phone=2348138462394">
+                    +2348138462394
+                  </a>
+                </span>
               </p>
               <p className="text-center text-sm md:text-left">
                 Mon to Fri - 9am to 5pm WAT
@@ -95,23 +98,28 @@ export function Footer() {
             <h1 className="mb-8 text-center text-2xl font-bold md:text-left">
               Apply Online
             </h1>
-            <div className="flex justify-center flex-col sm:flex-row md:flex-col lg:flex-row md:text-right">
-              <Link href="https://temp-app-pockettailwind.herokuapp.com/#pricing">
-                <a className="sm:mr-2 lg:mr-2 lg:mb-0 md:mr-0 rounded-xl sm:mb-0 mb-2 md:mb-2 border-[1px] border-black bg-black py-3 px-6 text-center text-base text-white duration-300 hover:border-[1px] hover:bg-white hover:text-black">
+            <div className="flex flex-col justify-center sm:flex-row md:flex-col md:text-right lg:flex-row">
+              <Link href="/#pricing">
+                <a className="mb-2 rounded-xl border-[1px] border-black bg-black py-3 px-6 text-center text-base text-white duration-300 hover:border-[1px] hover:bg-white hover:text-black sm:mr-2 sm:mb-0 md:mr-0 md:mb-2 lg:mr-2 lg:mb-0">
                   Start Trading
                 </a>
               </Link>
               <>
-			<ModalVideo channel='youtube' autoplay isOpen={open} videoId="OXFym18nXbY" onClose={() => setOpen(false)} />
-		</>
+                <ModalVideo
+                  channel="youtube"
+                  autoplay
+                  isOpen={open}
+                  videoId="OXFym18nXbY"
+                  onClose={() => setOpen(false)}
+                />
+              </>
               <Button
                 variant="outline"
-                onClick={()=> setOpen(true)}
-                style={{ alignContent: 'baseline'}}
+                onClick={() => setOpen(true)}
+                style={{ alignContent: 'baseline' }}
               >
-                  <PlayIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">Why FT9ja?</span>
-                
+                <PlayIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">Why FT9ja?</span>
               </Button>
             </div>
           </div>
@@ -145,17 +153,11 @@ export function Footer() {
           </div>
           <p className="mt-6 text-sm text-gray-500 md:mt-0">
             All right reserved &copy; 2022 FT9ja -{' '}
-             <Link
-              className="duration-200 hover:underline"
-              href="/terms"
-            >
+            <Link className="duration-200 hover:underline" href="/terms">
               Terms & Conditions
             </Link>{' '}
             and{' '}
-            <Link
-              className="duration-200 hover:underline"
-              href="/privacy"
-            >
+            <Link className="duration-200 hover:underline" href="/privacy">
               Privacy
             </Link>
           </p>

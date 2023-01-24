@@ -365,27 +365,32 @@ export function Hero() {
               now.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-4 lg:justify-start">
-              <Link href="https://temp-app-pockettailwind.herokuapp.com/#pricing">
+              <Link href="/#pricing">
                 <a className="rounded-md border-[1px] border-black bg-black py-2 px-9 text-white duration-300 hover:bg-white hover:text-black">
                   Start Trading
                 </a>
               </Link>
-              
-              
-      <>
-			<ModalVideo channel='youtube' autoplay isOpen={open} videoId="OXFym18nXbY" onClose={() => setOpen(false)} />
-		</>
+
+              <>
+                <ModalVideo
+                  channel="youtube"
+                  autoplay
+                  isOpen={open}
+                  videoId="OXFym18nXbY"
+                  onClose={() => setOpen(false)}
+                />
+              </>
               <Button
                 // href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 variant="outline"
-                onClick={()=> setOpen(true)}
+                onClick={() => setOpen(true)}
               >
                 {/* <a
                   target="_blank"
                  
                 > */}
-                  <PlayIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">Why FT9ja?</span>
+                <PlayIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">Why FT9ja?</span>
                 {/* </a> */}
               </Button>
             </div>

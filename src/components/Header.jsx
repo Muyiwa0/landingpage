@@ -54,7 +54,7 @@ export function Header() {
                   How it works
                 </a>
               </Link>
-              <Link href="https://temp-app-pockettailwind.herokuapp.com/#pricing">
+              <Link href="/#pricing">
                 <a
                   className={`mx-1 rounded-lg p-3 duration-300 hover:bg-slate-200`}
                 >
@@ -80,7 +80,7 @@ export function Header() {
                   Community
                 </a>
               </Link>
-              <Link href="https://ft9ja.netlify.app/">
+              <Link href="http://dashboard.ft9ja.com/apps">
                 <a
                   target="_blank"
                   className={`mx-1 rounded-lg p-3 duration-300 hover:bg-slate-200`}
@@ -150,7 +150,7 @@ export function Header() {
                                 How it works
                               </a>
                             </Link>
-                            <Link href="https://temp-app-pockettailwind.herokuapp.com/#pricing">
+                            <Link href="/#pricing">
                               <a
                                 className={`rounded-lg p-3 duration-300 hover:bg-slate-200`}
                               >
@@ -176,7 +176,7 @@ export function Header() {
                                 Community
                               </a>
                             </Link>
-                            <Link href="https://ft9ja.netlify.app/">
+                            <Link href="http://dashboard.ft9ja.com/apps">
                               <a
                                 target="_blank"
                                 className={`rounded-lg p-3 duration-300 hover:bg-slate-200`}
