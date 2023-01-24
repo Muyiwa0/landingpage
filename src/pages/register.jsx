@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-
+import axios from 'axios'
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { SelectField, TextField } from '@/components/Fields'
@@ -9,11 +9,19 @@ import Paystack from '@/components/Paystack'
 
 export default function Register() {
   const [referral, setReferral] = useState()
-  const [show, setShow] = useState(false)
   const [email, setEmail] = useState('')
-  const [name, setName] = useState('')
+  // const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [amount, setAmount] = useState(30000)
+  const [password1, setPassword] = useState('')
+  const [password2, setPassword2] = useState('')
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setLastname] = useState('')
+  const [broker, setBroker] = useState('')
+  const [acc_size, setAccsize] = useState('')
+  const [payout, setPayout] = useState('')
+  const [referral_code, setReferralcode] = useState('')
+  const [error, setError] = useState('')
   const handleChange = (e) => {
     if (e.target.value === 'Referral') setReferral('referral')
     else if (e.target.value != 'referral') setReferral('')
@@ -39,8 +47,42 @@ export default function Register() {
         <form
           onSubmit={(e) => {
             e.preventDefault()
-            setShow(true)
-            console.log(email)
+            console.log('omo')
+            if (password1 !== password2) {
+              setError('Passwords do not match')
+            } else {
+              axios
+                .post(
+                  'https://maindashbe.herokuapp.com/api/auth/registration/',
+                  {
+                    email,
+                    password1,
+                    firstname,
+                    lastname,
+                    phone,
+                    broker,
+                    acc_size,
+                    payout,
+                    password2,
+                    referral_code,
+                  }
+                )
+                .then((res) => {
+                  //console.log(res);
+                  localStorage.setItem('access_token', res.data.access_token)
+                  localStorage.setItem('refresh_token', res.data.refresh_token)
+                  axios.defaults.headers.common[
+                    'Authorization'
+                  ] = `Bearer ${localStorage.getItem('access_token')}`
+                  console.log('Register success')
+                  // window.location.href = `http://dashboard.ft9ja.com/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
+                  window.location.href = `http://localhost:3001/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
+                })
+                .catch((err) => {
+                  console.log(err.response.data.password1)
+                  setError(err.response.data.password1)
+                })
+            }
           }}
         >
           <div className="grid grid-cols-2 gap-6">
@@ -49,8 +91,8 @@ export default function Register() {
               id="firstname"
               name="firstname"
               type="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
               autoComplete="given-name"
               required
             />
@@ -59,7 +101,9 @@ export default function Register() {
               id="lastname"
               name="lastname"
               type="name"
-              autoComplete="family-name"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+              autoComplete="given-name"
               required
             />
             <TextField
@@ -90,6 +134,8 @@ export default function Register() {
               id="broker"
               name="broker"
               required
+              value={broker}
+              onChange={(e) => setBroker(e.target.value)}
             >
               <optgroup label="FT9ja Classic">
                 <option>ICMARKETS</option>
@@ -108,6 +154,7 @@ export default function Register() {
               id="payout"
               name="payout"
               required
+              value={amount}
               onChange={(e) => setAmount(e.target.value)}
             >
               <optgroup label="FT9ja Classic">
@@ -128,6 +175,8 @@ export default function Register() {
               id="payout"
               name="payout"
               required
+              value={payout}
+              onChange={(e) => setPayout(e.target.value)}
             >
               <optgroup label="FT9ja Classic">
                 <option>Weekly</option>
@@ -162,6 +211,8 @@ export default function Register() {
                 name="referral_code"
                 type="referral_code"
                 autoComplete="referral_code"
+                value={referral_code}
+                onChange={(e) => setReferralcode(e.target.value)}
               />
             )}
             <TextField
@@ -171,6 +222,8 @@ export default function Register() {
               name="password"
               type="password"
               autoComplete="password"
+              value={password1}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
             <TextField
@@ -180,9 +233,12 @@ export default function Register() {
               name="password2"
               type="password"
               autoComplete="password"
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
               required
             />
           </div>
+          {error}
           <Button
             type="submit"
             color="cyan"
@@ -192,9 +248,6 @@ export default function Register() {
           </Button>
         </form>
       </AuthLayout>
-      {show && (
-        <Paystack name={name} email={email} phone={phone} amount={amount} />
-      )}
     </>
   )
 }
