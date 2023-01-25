@@ -80,7 +80,7 @@ export function Header() {
                   Community
                 </a>
               </Link>
-              <Link href="http://dashboard.ft9ja.com/apps">
+              <Link href="https://dashboard.ft9ja.com/apps">
                 <a
                   target="_blank"
                   className={`mx-1 rounded-lg p-3 duration-300 hover:bg-slate-200`}
@@ -176,7 +176,7 @@ export function Header() {
                                 Community
                               </a>
                             </Link>
-                            <Link href="http://dashboard.ft9ja.com/apps">
+                            <Link href="https://dashboard.ft9ja.com/apps">
                               <a
                                 target="_blank"
                                 className={`rounded-lg p-3 duration-300 hover:bg-slate-200`}

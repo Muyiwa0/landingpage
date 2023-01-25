@@ -27,10 +27,10 @@ export default function Login() {
         // axiosInstance.defaults.headers.common[
         //   'Authorization'
         // ] = `Bearer ${localStorage.getItem('access_token')}`
-        
+
         localStorage.setItem('refresh_token', res.data.refresh_token)
         localStorage.setItem('access_token', res.data.access_token)
-        window.location.href = `http://dashboard.ft9ja.com/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
+        window.location.href = `https://dashboard.ft9ja.com/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
         console.log('login success')
       })
       .catch((err) => {
@@ -82,7 +82,10 @@ export default function Login() {
             Sign in to account
           </Button>
         </form>
-        <iframe src="http://localhost:3001/" style={{"display":"none"}}></iframe>
+        <iframe
+          src="http://localhost:3001/"
+          style={{ display: 'none' }}
+        ></iframe>
       </AuthLayout>
     </>
   )
