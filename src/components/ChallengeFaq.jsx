@@ -174,7 +174,7 @@ export function ChallengeFaq() {
   }
 
   return (
-    <div className="mx-auto grid grid-cols-1 gap-5 lg:max-w-screen-md">
+    <div className="mx-auto grid grid-cols-1 gap-5 px-4 sm:px-6 lg:max-w-screen-md lg:px-8">
       {faqs.map(({ id, question, list, answer, lists }, idx) => (
         <Disclosure key={id}>
           {({ open }) => (

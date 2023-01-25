@@ -28,7 +28,7 @@ const plans = [
         title: 'Evaluation',
         step: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
         text: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
-        
+
         points: [
           {
             id: 1,
@@ -47,7 +47,7 @@ const plans = [
           },
         ],
         desc: 'NOTE: 4 trading weeks is regarded as 1 month',
-        
+
         // desc: [
         //   {
         //     id: 1,
@@ -66,7 +66,7 @@ const plans = [
         //     text: "NOTE: 4 trading weeks is regarded as 1 month"
         //   }
         // ],
-        
+
       },
       {
         id: 2,
