@@ -26,7 +26,7 @@ const HowItWorks = () => {
             value={activePeriod}
             onClick={() => setPrevPeriod(activePeriod)}
             onChange={setActivePeriod}
-            className="grid grid-cols-3 text-center"
+            className="grid grid-cols-2 text-center"
           >
             <RadioGroup.Option
               value={'FT9ja Classic'}
@@ -56,7 +56,7 @@ const HowItWorks = () => {
           <div
             aria-hidden="true"
             className={clsx(
-              'pointer-events-none absolute inset-0 z-10 grid grid-cols-3 overflow-hidden rounded-lg bg-[#28a745] transition-all duration-300',
+              'pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg bg-[#28a745] transition-all duration-300',
               activePeriod === 'FT9ja Classic'
                 ? '[clip-path:inset(0_66%_0_0)]'
                 : activePeriod === 'FT9ja Challenge'

@@ -183,7 +183,7 @@ export function Faqs() {
       className="border-t border-gray-200 py-20 sm:py-32"
     >
       <Container>
-        <div className="mx-auto pb-10 lg:max-w-screen-md">
+        <div className="mx-auto pb-10 text-center lg:max-w-screen-md">
           <h2
             id="faqs-title"
             className="text-3xl font-medium tracking-tight text-gray-900"
@@ -206,14 +206,14 @@ export function Faqs() {
                 value={activePeriod}
                 onClick={() => setPrevPeriod(activePeriod)}
                 onChange={setActivePeriod}
-                className="grid grid-cols-3"
+                className="grid grid-cols-2"
               >
                 {['Classic', 'Challenge'].map((period) => (
                   <RadioGroup.Option
                     key={period}
                     value={period}
                     className={clsx(
-                      'cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400',
+                      'cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-center text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400',
                       period === 'Classic'
                         ? 'rounded-l-lg'
                         : period === 'Challenge'
@@ -228,12 +228,10 @@ export function Faqs() {
               <div
                 aria-hidden="true"
                 className={clsx(
-                  'pointer-events-none absolute inset-0 z-10 grid grid-cols-3 overflow-hidden rounded-lg bg-[#28a745] transition-all duration-300',
+                  'pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg bg-[#28a745] transition-all duration-300',
                   activePeriod === 'Classic'
-                    ? '[clip-path:inset(0_66%_0_0)]'
-                    : activePeriod === 'Challenge'
-                    ? '[clip-path:inset(0_33%_0_33%)]'
-                    : '[clip-path:inset(0_0_0_calc(66%-1px))]'
+                    ? '[clip-path:inset(0_50%_0_0)]'
+                    : '[clip-path:inset(0_0_0_calc(50%-1px))]'
                 )}
               >
                 {['Classic', 'Challenge'].map((period) => (
