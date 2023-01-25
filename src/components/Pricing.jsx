@@ -66,7 +66,6 @@ const plans = [
         //     text: "NOTE: 4 trading weeks is regarded as 1 month"
         //   }
         // ],
-
       },
       {
         id: 2,
@@ -575,57 +574,61 @@ function Plan({ plan }) {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {features.map(({ id, title, text, step, desc, points }) => (
-                console.log(title),
-                <>
-                  {desc ? (
+              {features.map(
+                ({ id, title, text, step, desc, points }) => (
+                  console.log(title),
+                  (
                     <>
-                      <Collapsible
-                        id={id}
-                        title={title}
-                        text={text}
-                        step={step}
-                        desc={desc}
-                        points={points}
-                      />
-                    </>
-                  ) : (
-                    <tr key={id}>
-                      <td className="border-r-[1px] border-gray-200 px-8 py-4 text-sm font-medium text-gray-800">
-                        {title}
-                      </td>
-                      {typeof text !== 'object' ? (
-                        <td
-                          colSpan="3"
-                          className="whitespace-nowrap px-6 py-4 text-center text-sm text-gray-800"
-                        >
-                          {text}
-                        </td>
-                      ) : !step ? (
-                        text.map(({ id, text }) => (
-                          <td
-                            key={id}
-                            className="whitespace-nowrap border-r-[1px] border-gray-200 px-6 py-4 text-center text-sm text-gray-800"
-                          >
-                            {text}
-                          </td>
-                        ))
+                      {desc ? (
+                        <>
+                          <Collapsible
+                            id={id}
+                            title={title}
+                            text={text}
+                            step={step}
+                            desc={desc}
+                            points={points}
+                          />
+                        </>
                       ) : (
-                        <td
-                          key={id}
-                          colSpan="3"
-                          className="whitespace-nowrap border-r-[1px] border-gray-200 px-6 py-4 text-center text-sm text-gray-800"
-                        >
-                          <p className="font-bold">{step}</p>
-                          {text.map(({ id, text }) => (
-                            <p key={id}>{text}</p>
-                          ))}
-                        </td>
+                        <tr key={id}>
+                          <td className="border-r-[1px] border-gray-200 px-8 py-4 text-sm font-medium text-gray-800">
+                            {title}
+                          </td>
+                          {typeof text !== 'object' ? (
+                            <td
+                              colSpan="3"
+                              className="whitespace-nowrap px-6 py-4 text-center text-sm text-gray-800"
+                            >
+                              {text}
+                            </td>
+                          ) : !step ? (
+                            text.map(({ id, text }) => (
+                              <td
+                                key={id}
+                                className="whitespace-nowrap border-r-[1px] border-gray-200 px-6 py-4 text-center text-sm text-gray-800"
+                              >
+                                {text}
+                              </td>
+                            ))
+                          ) : (
+                            <td
+                              key={id}
+                              colSpan="3"
+                              className="whitespace-nowrap border-r-[1px] border-gray-200 px-6 py-4 text-center text-sm text-gray-800"
+                            >
+                              <p className="font-bold">{step}</p>
+                              {text.map(({ id, text }) => (
+                                <p key={id}>{text}</p>
+                              ))}
+                            </td>
+                          )}
+                        </tr>
                       )}
-                    </tr>
-                  )}
-                </>
-              ))}
+                    </>
+                  )
+                )
+              )}
               <tr>
                 <td></td>
                 {prices.map(({ id, price }) => (
@@ -770,7 +773,7 @@ export function Pricing() {
                   key={period}
                   value={period}
                   className={clsx(
-                    'cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400',
+                    'cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-center text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400',
                     period === 'Classic'
                       ? 'rounded-l-lg'
                       : period === 'Compare'
