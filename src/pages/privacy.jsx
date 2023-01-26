@@ -14,13 +14,21 @@ function privacy() {
       <h3>
         <strong>What information do we collect about you?</strong>
       </h3>
+      <br />
       <p>
         <span style={{ fontWeight: 400 }}>
           The information/data we collect from you comes directly from you in
           connection with you using our services. This includes:
         </span>
       </p>
-      <ol>
+      <br />
+      <ol
+        style={{
+          listStyleType: 'decimal',
+          marginLeft: '3%',
+          marginBottom: '10px',
+        }}
+      >
         <li style={{ fontWeight: 400 }}>
           <span style={{ fontWeight: 400 }}>
             Identification and contact data which includes the data that you
@@ -66,6 +74,7 @@ function privacy() {
       <h3>
         <strong>What do we do with your data/information?</strong>
       </h3>
+      <br />
       <p>
         <span style={{ fontWeight: 400 }}>
           We primarily use your data to manage your account and also process any
@@ -82,6 +91,7 @@ function privacy() {
       <h3>
         <strong>How do we store your information/data?</strong>
       </h3>
+      <br />
       <p>
         <span style={{ fontWeight: 400 }}>
           Your data is stored in a remote server that uses full security
@@ -93,7 +103,14 @@ function privacy() {
       <h3>
         <strong>What are your data protection rights?</strong>
       </h3>
-      <ul>
+      <br />
+      <ul
+        style={{
+          listStyleType: 'square',
+          marginLeft: '3%',
+          marginBottom: '10px',
+        }}
+      >
         <li style={{ fontWeight: 400 }}>
           <span style={{ fontWeight: 400 }}>
             The right to access you’re the data we have about you&nbsp;– You
@@ -125,13 +142,20 @@ function privacy() {
       <h3>
         <strong>How we use cookies</strong>
       </h3>
+      <br />
       <p>
         <span style={{ fontWeight: 400 }}>
           Our website uses functionality, and advertising cookies to improve
           your experience on our website through:
         </span>
       </p>
-      <ul>
+      <ul
+        style={{
+          listStyleType: 'square',
+          marginLeft: '3%',
+          marginBottom: '10px',
+        }}
+      >
         <li style={{ fontWeight: 400 }}>
           <span style={{ fontWeight: 400 }}>Keeping you signed in</span>
         </li>
