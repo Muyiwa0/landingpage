@@ -4,8 +4,8 @@ function privacy() {
   return (
     <div
       style={{
-        marginLeft: '15%',
-        marginRight: '15%',
+        marginLeft: '20%',
+        marginRight: '20%',
       }}
     >
       <h1 style={{ fontSize: '35px', textAlign: 'center' }}>
