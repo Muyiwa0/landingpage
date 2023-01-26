@@ -483,18 +483,8 @@ function terms() {
       </ul>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
-      <ol
-        style={{
-          listStyleType: 'square',
-          marginLeft: '3%',
-          marginBottom: '10px',
-        }}
-      >
-        <li
-          style={{
-            marginBottom: '10px',
-          }}
-        >
+      <ol>
+        <li>
           <span style={{ fontWeight: 'bolder', fontSize: '100%' }}>
             {' '}
             USER GENERATED CONTRIBUTIONS
