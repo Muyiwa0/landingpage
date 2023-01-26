@@ -4,8 +4,8 @@ function terms() {
   return (
     <div 
     style={{
-      marginLeft: '15%',
-      marginRight: '15%',
+      marginLeft: '3%',
+      marginRight: '3%',
     }}
     >
   <p style={{ textAlign:"center" }}>
