@@ -1,43 +1,44 @@
-// const sslRedirect = require('heroku-ssl-redirect');
-const express = require('express');
-const next = require('next');
+const express = require('express')
+const cookieParser = require('cookie-parser')
+const next = require('next')
 
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
+const port = parseInt(process.env.PORT, 10) || 3000
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
 
-const handle = app.getRequestHandler();
+const sslRedirect = (environments = ['production'], status = 302) => {
+  const currentEnv = process.env.NODE_ENV
+  const isCurrentEnv = environments.includes(currentEnv)
+  return (req, res, next) => {
+    if (isCurrentEnv && req.headers['x-forwarded-proto'] !== 'https') {
+      res.redirect(status, 'https://' + req.hostname + req.originalUrl)
+    } else {
+      next()
+    }
+  }
+}
 
 app
   .prepare()
   .then(() => {
+    const server = express()
+    server.use(express.json())
+    server.use(express.urlencoded({ extended: true }))
+    server.use(cookieParser())
 
-    const server = express();
+    server.use(sslRedirect())
 
-    server.use((req, res, next) => {
-      const hostname = req.hostname === 'www.app.domain.com' ? 'app.domain.com' : req.hostname;
+    server.get('*', (req, res) => handle(req, res))
 
-      if (req.headers['x-forwarded-proto'] === 'http' || req.hostname === 'www.app.domain.com') {
-        res.redirect(301, `https://${hostname}${req.url}`);
-        return;
-      }
+    server.post('/api/auth/*', (req, res) => handle(req, res))
 
-      res.setHeader('strict-transport-security', 'max-age=31536000; includeSubDomains; preload');
-      next();
-    });
-
-    server.get('*', (req, res) => handle(req, res));
-
-    server.listen(
-      4242,
-      error => {
-        if (error) throw error;
-        console.error('Listening on port 4242');
-      }
-    );
-
+    server.listen(port, (error) => {
+      if (error) throw error
+      console.log(`Listening on port ${port}`)
+    })
   })
-  .catch(error => {
-    console.error(error);
-    process.exit(1);
-  });
-A
+  .catch((error) => {
+    console.error(error)
+    process.exit(1)
+  })
