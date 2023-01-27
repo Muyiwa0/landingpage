@@ -36,6 +36,9 @@
     "eslint": "8.15.0",
     "eslint-config-next": "12.2.5",
     "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.13"
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "express": "*",
+    "body-parser": "*",
+    "bcrypt": "^0.8.5"
   }
 }
