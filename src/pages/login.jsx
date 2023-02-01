@@ -55,7 +55,7 @@ export default function Login() {
             <Link href="/register">
               <span className="cursor-pointer text-[#28a745]">Sign up</span>
             </Link>{' '}
-            for a free trial.
+            for a new account.
           </>
         }
       >

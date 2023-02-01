@@ -3,7 +3,7 @@ import { Header } from '@/components/Header'
 import React, { useState } from 'react'
 import { ImFacebook, ImWhatsapp } from 'react-icons/im'
 import { GrInstagram } from 'react-icons/gr'
-import img from '../images/contactt.png'
+import img from '../images/cuatecontact.svg'
 import Image from 'next/image'
 import Head from 'next/head'
 
@@ -130,7 +130,11 @@ const Contact = () => {
               <ImWhatsapp className="bg-black bg-transparent text-4xl" />
             </div>
             <p className="text-center">Message us on WhatsApp</p>
-            <p className="py-1"><a href="https://api.whatsapp.com/send?phone=2348138462394">+2348138462394</a></p>
+            <p className="py-1">
+              <a href="https://api.whatsapp.com/send?phone=2348138462394">
+                +2348138462394
+              </a>
+            </p>
             <p className="text-center text-xs">
               Mon to Fri 08:00AM to 05:00PM WAT.
             </p>

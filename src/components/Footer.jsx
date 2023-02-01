@@ -128,24 +128,32 @@ export function Footer() {
           <div className="flex pt-5 md:py-5">
             <a
               href="https://facebook.com/FT9ja-101059375510372/"
+              target={'_blank'}
+              rel="noreferrer"
               className="mx-2 rounded-full border-[1px] border-black bg-black p-2 text-white duration-300 hover:bg-white hover:text-black"
             >
               <ImFacebook className="text-2xl" />
             </a>
             <a
               href="https://www.instagram.com/ft9ja.official/"
+              target={'_blank'}
+              rel="noreferrer"
               className="mx-2 rounded-full border-[1px] border-black bg-black p-2 text-white duration-300 hover:bg-white hover:text-black"
             >
               <GrInstagram className="text-2xl" />
             </a>
             <a
               href="https://twitter.com/ft9ja_official"
+              target={'_blank'}
+              rel="noreferrer"
               className="mx-2 rounded-full border-[1px] border-black bg-black p-2 text-white duration-300 hover:bg-white hover:text-black"
             >
               <ImTwitter className="text-2xl" />
             </a>
             <a
               href="https://www.youtube.com/channel/UCM3RtiMpxAQ3pNUnvUP9xcw"
+              target={'_blank'}
+              rel="noreferrer"
               className="mx-2 rounded-full border-[1px] border-black bg-black p-2 text-white duration-300 hover:bg-white hover:text-black"
             >
               <ImYoutube className="text-2xl" />
@@ -153,13 +161,23 @@ export function Footer() {
           </div>
           <p className="mt-6 text-sm text-gray-500 md:mt-0">
             All right reserved &copy; 2022 FT9ja -{' '}
-            <Link className="duration-200 hover:underline" href="/terms">
+            <a
+              className="duration-200 hover:underline"
+              target="_blank"
+              rel="noreferrer"
+              href="/terms"
+            >
               Terms & Conditions
-            </Link>{' '}
+            </a>{' '}
             and{' '}
-            <Link className="duration-200 hover:underline" href="/privacy">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              className="duration-200 hover:underline"
+              href="/privacy"
+            >
               Privacy
-            </Link>
+            </a>
           </p>
         </div>
       </Container>

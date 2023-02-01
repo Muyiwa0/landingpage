@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import img from '../images/mini.png'
+import img from '../images/tradingdays.svg'
 import { motion } from 'framer-motion'
 
 const RulesBlock2 = () => {
@@ -24,20 +24,19 @@ const RulesBlock2 = () => {
           <Image src={img} alt="rules block" />
           <div>
             <p>
-            FT9ja Classic
-            <br/>
-You are required to open and close trading
-positions for 2 or more days in a trading
-week. And at least 10 separate days in a
-trading month
+              FT9ja Classic
+              <br />
+              You are required to open and close trading positions for 2 or more
+              days in a trading week. And at least 10 separate days in a trading
+              month
             </p>
             <br />
             <p>
-            FT9ja Challenge
-            <br/>
-You are required to open and close trading
-positions for 2 or more days in a trading
-week. And at least 6 separate days in each phase.
+              FT9ja Challenge
+              <br />
+              You are required to open and close trading positions for 2 or more
+              days in a trading week. And at least 6 separate days in each
+              phase.
             </p>
           </div>
         </div>
