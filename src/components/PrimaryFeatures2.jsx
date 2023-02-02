@@ -566,7 +566,7 @@ export function PrimaryFeatures2() {
         <Container>
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
             <h2 className="text-3xl font-medium tracking-tight text-white">
-              How Ft9ja Classic Works?
+              How FT9ja Classic Works?
             </h2>
             <p className="mt-2 text-lg text-gray-400">
               We believe you have what it takes to be successful. Sign up for a
