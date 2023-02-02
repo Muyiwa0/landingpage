@@ -23,60 +23,65 @@ const SecondRulesBlock = () => {
         <div className="mx-auto flex max-w-screen-sm items-center justify-center">
           <Image src={img} alt="" />
         </div>
-        <div className="grid grid-cols-1">
+        <div style={{ marginTop: '4%' }} className="grid grid-cols-1">
           <div className="mx-auto max-w-screen-sm">
-            <h1 style={{ fontSize: 'revert' }}>FT9ja Classic</h1>
-            <p>
+            <h1 style={{ fontSize: '-webkit-xxx-large', textAlign: 'center' }}>
+              FT9ja Classic
+            </h1>
+            <div>
               <br />
               <br />
-              1ST PAYOUT
-              <br />
-              <p>
+              <h1 style={{ fontSize: '2.1rem' }}>1ST PAYOUT</h1>
+              {/* <br /> */}
+              <p style={{ fontSize: '1.2rem' }}>
                 You are eligible for the first payout after trading for at least
                 10 days, even if you are on the weekly plan.
               </p>
               <br />
-              2ND CHANCE ACCOUNTS
-              <br />
+              <h1 style={{ fontSize: '2.1rem' }}>2ND CHANCE ACCOUNTS</h1>
+              <p style={{ fontSize: '1.2rem' }}>
               &apos; 2nd Chance Account s&apos; are not eligible for the Talent
               Bonus.
+              </p>
               <br />
               <br />
-              PAYOUT DATE
-              <br />
+              <h1 style={{ fontSize: '2.1rem' }}>PAYOUT DATE</h1>
+              <p style={{ fontSize: '1.2rem' }}>
               FT9ja processes payouts on Fridays, even if it&apos;s requested
               before Friday.
+              </p>
               <br />
               <br />
-              PROFIT SPLIT
-              <br />
-              Profit Split percentage in Aso Account is based on when you
+              <h1 style={{ fontSize: '2.1rem' }}>PROFIT SPLIT</h1>
+              <p style={{ fontSize: '1.2rem' }}>Split percentage in Aso Account is based on when you
               qualify for Aso Account -- counted from when you place your first
-              trade in the &ldquo;1st chance account&ldquo;.
+              trade in the &ldquo;1st chance account&ldquo;.</p>
               <br />
               <br />
-              ONE-TIME FEE REFUND
-              <br />
-              No one-time fee refund for FT9ja Classic Traders
-            </p>
+              <h1 style={{ fontSize: '2.1rem' }}>ONE-TIME FEE REFUND</h1>
+              <p style={{ fontSize: '1.2rem' }}>No one-time fee refund for FT9ja Classic Traders</p>
+            
             <br />
             <p>
-              <h1 style={{ fontSize: 'revert' }}>FT9ja Challenge</h1>
+              <h1
+                style={{ fontSize: '-webkit-xxx-large', textAlign: 'center' }}
+              >
+                FT9ja Challenge
+              </h1>
               <br />
               <br />
-              PAYOUT DATE
+              <h1 style={{ fontSize: '2.1rem' }}>PAYOUT DATE</h1>
+              <p style={{ fontSize: '1.2rem' }}> FT9ja processes payouts on Fridays, even if it&apos;s requested
+              before Friday.</p>
               <br />
-              FT9ja processes payouts on Fridays, even if it&apos;s requested
-              before Friday.
               <br />
-              <br />
-              ONE-TIME FEE REFUND
-              <br />
-              FT9ja Challenge Traders are eligible for a one-time fee refund. It
-              will be paid with their 1st payout in Aso Account.
+              <h1 style={{ fontSize: '2.1rem' }}>ONE-TIME FEE REFUND</h1>
+              <p style={{ fontSize: '1.2rem' }}>FT9ja Challenge Traders are eligible for a one-time fee refund. It
+              will be paid with their 1st payout in Aso Account.</p>
             </p>
           </div>
         </div>
+      </div>
       </motion.div>
     </div>
   )

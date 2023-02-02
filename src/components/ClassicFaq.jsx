@@ -85,25 +85,32 @@ const faqs = [
       },
       {
         id: 3,
-        title: 'Minimum Trading Days: 2 days per week and 6 days in each phase',
+        title: 'Minimum Trading Days: 2 days a week and 10 days a month.',
       },
     ],
   },
   {
+    id: 3,
+    question: 'What is a Zuma Account',
+    lists: '',
+    answer:
+      'Every Trader starts with a ZumaRock Account. ZumaRock Accounts are the gateway to AsoRock Accounts. Although ZumaRock Accounts are demo accounts, you still get paid 5% weekly or 10% monthly on the profit you make! That"s the Talent Bonus.',
+  },
+  {
     id: 4,
-    question: 'What is the Aso Account?',
+    question: 'What is an Aso Account?',
     lists: '',
     answer: '',
     list: [
       {
         id: 1,
         title:
-          'When you excel in the Challenge and Verification stage, you become our AsoRock Trader. Aso Account Traders are FT9ja Traders! They are Traders that have proven to be in the league of the best Traders in Nigeria. Aso Account Traders get paid 80% of the profit.',
+          'Aso Accounts are live accounts successful Zuma Account Traders are eligible for by positively growing their accounts to 25% over time (no time limits). Aso Account Traders are FT9ja Traders! They are Traders that have proven to be in the league of the best Traders in Nigeria. Aso Account Traders get paid up to 80% of the profit.',
       },
       {
         id: 2,
         title:
-          'Account can be compounded to 2X of the original Account Size. For example, a $25,000 account can be compounded up to $50,000.',
+          'Account can be compounded to 2X of the original Account Size. For example, a $25,000 account can be compounded to up to $50,000.',
       },
     ],
   },
@@ -135,9 +142,7 @@ const faqs = [
       },
       {
         id: 2,
-        title: `At FT9ja, we invest our funds into talented, profitable, and reliable Traders. We discover our AsoRock Traders by
-        onboarding them through ZumaRock Account which is a simulated/demo trading account. Traders get paid even during
-        the onboarding period!`,
+        title: `At FT9ja, we invest our funds into talented, profitable, and reliable Traders. We discover our AsoRock Traders by onboarding them through ZumaRock Account which is a simulated/demo trading account. Traders get paid even during the onboarding period!`,
       },
     ],
   },
@@ -153,7 +158,7 @@ const faqs = [
     list: '',
     question: 'Which Brokers do you offer?',
     lists: '',
-    answer: 'You can choose between IC Markets and FXTM',
+    answer: 'You can choose between IC Markets, FXTM, and Deriv.',
   },
 ]
 

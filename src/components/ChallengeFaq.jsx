@@ -135,9 +135,7 @@ const faqs = [
       },
       {
         id: 2,
-        title: `At FT9ja, we invest our funds into talented, profitable, and reliable Traders. We discover our AsoRock Traders by
-        onboarding them through ZumaRock Account which is a simulated/demo trading account. Traders get paid even during
-        the onboarding period!`,
+        title: `At FT9ja, we invest our funds into talented, profitable, and reliable Traders. We discover our AsoRock Traders by onboarding them through the Challenge and Verification Accounts which is a simulated/demo trading account.`,
       },
     ],
   },

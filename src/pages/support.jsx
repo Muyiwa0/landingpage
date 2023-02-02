@@ -52,7 +52,7 @@ const Support = () => {
     },
     {
       id: 3,
-      title: 'My account and login',
+      title: 'How it works',
       links: [
         {
           id: 1,
@@ -73,7 +73,7 @@ const Support = () => {
     },
     {
       id: 4,
-      title: 'Getting Started',
+      title: 'Rules - FT9ja Classic',
       links: [
         {
           id: 1,
@@ -94,7 +94,7 @@ const Support = () => {
     },
     {
       id: 5,
-      title: 'Frequently Asked Questions',
+      title: 'Rules - FT9ja Challenge',
       links: [
         {
           id: 1,
@@ -115,7 +115,7 @@ const Support = () => {
     },
     {
       id: 6,
-      title: 'My account and login',
+      title: 'Getting Paid',
       links: [
         {
           id: 1,
@@ -136,7 +136,7 @@ const Support = () => {
     },
     {
       id: 7,
-      title: 'Getting Started',
+      title: 'FT9ja Referral Program',
       links: [
         {
           id: 1,
@@ -157,7 +157,7 @@ const Support = () => {
     },
     {
       id: 8,
-      title: 'Frequently Asked Questions',
+      title: 'FT9ja Hero',
       links: [
         {
           id: 1,
@@ -178,7 +178,7 @@ const Support = () => {
     },
     {
       id: 9,
-      title: 'My account and login',
+      title: 'Further Questions?',
       links: [
         {
           id: 1,

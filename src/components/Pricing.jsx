@@ -84,17 +84,17 @@ const plans = [
           {
             id: 1,
             point:
-              '80% Profit Split: if you qualify for the Aso Account within 3 months of placing your first trade.',
+              '80% Profit Split: if you qualify for the Aso Account within 1 months of placing your first trade.',
           },
           {
             id: 2,
             point:
-              '65% Profit Split: if you qualify for the Aso Account within 3-6 months.',
+              '60% Profit Split: if you qualify for the Aso Account within 1-3 months.',
           },
           {
             id: 4,
             point:
-              '50% Profit Split: if you qualify for the Aso Account after 6 months.',
+              '40% Profit Split: if you qualify for the Aso Account after 3 months.',
           },
         ],
       },
@@ -133,14 +133,14 @@ const plans = [
         title: 'Max. Daily DrawDown',
         step: '',
         text: '5%',
-        desc: `You are allowed a maximum daily drawdown of 5%. Daily drawdown is calculated using the equity at 00:00 WAT. As such, it is not fixed like Account Drawdown. Drawdown refers to the equity not balance. It takes into account the closed trades and the floating trades.`,
+        desc: `You are allowed a maximum daily drawdown of 5%. Daily drawdown is calculated using the equity at 00:00 WAT. As such, it is not fixed like Account Drawdown. Drawdown is calculated based on Equity and/or Balance. Equity takes into account both the closed and the floating trades.`,
       },
       {
         id: 7,
         title: 'Max. Account DrawDown',
         step: '',
         text: '10%',
-        desc: `You are allowed a maximum overall account drawdown of 10%. That is $2,700 for a $3,000 account, $4,500 for a $5,000 account, and $22,500 for a $25,000 account Drawdown refers to the equity not balance. It takes into account the closed trades and the floating trades.`,
+        desc: `You are allowed a maximum overall account drawdown of 10%. That is $2,700 for a $3,000 account, $4,500 for a $5,000 account, and $22,500 for a $25,000 account Drawdown is calculated based on Equity and/or Balance. Equity takes into account both the closed and the floating trades.`,
       },
       {
         id: 8,
@@ -262,7 +262,7 @@ const plans = [
               '65% Profit Split: if you qualify for the Aso Account within 3-6 months.',
           },
           {
-            id: 3,
+            id: 4,
             point:
               '50% Profit Split: if you qualify for the Aso Account after 6 months.',
           },
@@ -279,14 +279,14 @@ const plans = [
         title: 'Max. Daily DrawDown',
         step: '',
         text: '5%',
-        desc: `You are allowed a maximum daily drawdown of 5%. Daily drawdown is calculated using the equity at 00:00 WAT. As such, it is not fixed like Account Drawdown. Drawdown refers to the equity not balance. It takes into account the closed trades and the floating trades.`,
+        desc: `You are allowed a maximum daily drawdown of 5%. Daily drawdown is calculated using the equity at 00:00 WAT. As such, it is not fixed like Account Drawdown. Drawdown is calculated based on Equity and/or Balance. Equity takes into account both the closed and the floating trades.`,
       },
       {
         id: 7,
         title: 'Max. Account DrawDown',
         step: '',
         text: '10%',
-        desc: `You are allowed a maximum overall account drawdown of 10%. That is $2,700 for a $3,000 account, $4,500 for a $5,000 account, and $22,500 for a $25,000 account Drawdown refers to the equity not balance. It takes into account the closed trades and the floating trades.`,
+        desc: `You are allowed a maximum overall account drawdown of 10%. That is $2,700 for a $3,000 account, $4,500 for a $5,000 account, and $22,500 for a $25,000 account Drawdown is calculated based on Equity and/or Balance. Equity takes into account both the closed and the floating trades.`,
       },
       {
         id: 8,
@@ -755,7 +755,7 @@ export function Pricing() {
             Greatness Awaits! Start Now.
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            Choose between the revolutionary FT9ja Classic and the Traditional
+            Choose between the revolutionary FT9ja Classic and the traditional
             Challenge Funding Model. Select an Account Size and start trading
             within 24 hours.
           </p>

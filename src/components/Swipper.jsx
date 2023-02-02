@@ -42,7 +42,6 @@ export default function App() {
       title: 'Starting out with a $25,000 Zuma Account',
       // subtitle: 'A subtitle',
     },
-    
   ]
 
   const [prevEl, setPrevEl] = useState(null)
@@ -69,7 +68,7 @@ export default function App() {
               </p>
             </span>
           </div>
-          <div className="relative px-10">
+          <div style={{ marginTop: '4%' }} className="relative px-10">
             <Swiper
               onSlideChange={(swiper) => setSwiperRef(swiper.activeIndex)}
               breakpoints={{
@@ -86,28 +85,21 @@ export default function App() {
               // navigation={true}
             >
               <SwiperSlide className="text-justify text-white">
-              Sam makes 25% profit within the first month =&gt;
-N4,375,000 (25% of N17,500,000)
-Sam is on a monthly payout plan:
-Talent Bonus of N437,500 (10% of N4,375,000)
-is paid to Sam
+                Sam makes 25% profit within the first month =&gt; N4,375,000
+                (25% of N17,500,000) Sam is on a monthly payout plan: Talent
+                Bonus of N437,500 (10% of N4,375,000) is paid to Sam
               </SwiperSlide>
               <SwiperSlide className="text-justify text-white">
-              Sam has now grown the Zuma Account to 25%
-within 1 month. As such, he now qualifies for
-the Aso Account at 80% Profit Split level.
-He makes 10% profit at the end of the first
-month trading the Aso Account=&gt; N1,750,000
-(10% of N17,500,000).
+                Sam has now grown the Zuma Account to 25% within 1 month. As
+                such, he now qualifies for the Aso Account at 80% Profit Split
+                level. He makes 10% profit at the end of the first month trading
+                the Aso Account=&gt; N1,750,000 (10% of N17,500,000).
               </SwiperSlide>
               <SwiperSlide className="text-justify text-white">
-              Profit Split N1,400,000 (80% of N1,750,000) is
-paid to Sam.
-With a monthly income of around 1.4 million
-Naira (if consistent), Sam is now in the league of
-professional Traders in Nigeria.
+                Profit Split N1,400,000 (80% of N1,750,000) is paid to Sam. With
+                a monthly income of around 1.4 million Naira (if consistent),
+                Sam is now in the league of professional Traders in Nigeria.
               </SwiperSlide>
-           
             </Swiper>
             <div
               ref={(node) => setPrevEl(node)}

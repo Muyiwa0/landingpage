@@ -20,7 +20,7 @@ const RulesBlock2 = () => {
   return (
     <div>
       <motion.div {...Animations}>
-        <div className="mx-auto grid max-w-screen-lg grid-cols-1 md:grid-cols-2">
+        <div className="mx-auto grid max-w-screen-lg grid-cols-1 items-center md:grid-cols-2">
           <Image src={img} alt="rules block" />
           <div>
             <p>

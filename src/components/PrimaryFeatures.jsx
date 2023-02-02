@@ -25,25 +25,19 @@ const MotionAppScreenBody = motion(AppScreen.Body)
 const features = [
   {
     name: 'Sign up',
-    description: `Choose your Account Size, select a Broker, and you’ll receive login details to a ZumaRock
-    Account™ within 24 hours of purchase. This is the account you’ll begin trading.`,
+    description: `Signing up takes less than a minute. Choose between FT9ja Classic and the Traditional Challenge Funding Model, Select an Account Size and start trading within 24 hours`,
     icon: DeviceUserIcon,
     screen: InviteScreen,
   },
   {
     name: 'Start Trading',
-    description: `Choose between 5% weekly or 10% monthly Talent Bonus. When you grow your
-    Zuma Account to 25% (no time limit), you move to the Aso Account and you start earning up to
-    80% Profit Split.
-    `,
+    description: `Ft9ja Traders get paid up to 80% Profit Split. What's more. FT9ja Classic Traders get paid up to 10% even during the evaluation (Talent Bonus). Always remember to trade within our guidelines    `,
     icon: DeviceNotificationIcon,
     screen: StocksScreen,
   },
   {
-    name: 'Fast Payout',
-    description: `Receive payouts as soon as 10 days. You choose your medium of getting paid: bank
-    account or Paypal. Choose between weekly or monthly payouts. It is as simple as this getting paid
-    with FT9ja!.`,
+    name: 'Start Earning',
+    description: `You choose your medium of getting paid: bank account or paypal. You choose between weekly or monthly payouts. It is as simple as this getting paid with FT9ja!`,
     icon: DeviceTouchIcon,
     screen: InvestScreen,
   },
@@ -566,10 +560,12 @@ export function PrimaryFeatures() {
         <Container>
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
             <h2 className="text-3xl font-medium tracking-tight text-white">
-            How It Works?
+              How It Works?
             </h2>
             <p className="mt-2 text-lg text-gray-400">
-            We believe you have what it takes to be successful. Sign up for a funding model, choose an account size, and start trading to earn as soon as 10 days.
+              We believe you have what it takes to be successful. Sign up for a
+              funding model, choose an account size, and start trading to earn
+              as soon as 10 days.
             </p>
           </div>
         </Container>
