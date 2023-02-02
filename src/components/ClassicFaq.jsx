@@ -22,7 +22,7 @@ const faqs = [
           },
           {
             id: 2,
-            li: 'Pay the one-time fee, and you’ll receive the login details to the server via the MT4 platform within 24 hours of purchase',
+            li: 'Pay the one-time fee, and you’ll receive the login details to the server via the MT4/MT5 platform within 24 hours of purchase',
           },
           {
             id: 3,
