@@ -33,37 +33,54 @@ const faqs = [
       {
         id: 2,
         title: 'STEP 2: Start Trading',
-        line: 'FT9ja Challenge',
+        line: 'There are two way to earn:',
         litems: [
           {
             id: 1,
-            li: '4 weeks trading period',
+            li: 'The first way to earn: Talent Bonus in Zuma Account. ',
+            more: [
+              {
+                id: 1,
+                text: 'You can choose between the weekly or monthly payout plans ',
+              },
+              {
+                id: 2,
+                text: 'You can get paid 5% of the profit at the end of the week as the Talent Bonus. Or if you choose the monthly payout plan, you get paid 10% at the end of the month. ',
+              },
+              {
+                id: 3,
+                text: 'Note: the Maximum Talent Bonus is 5% of the Account Size',
+              },
+            ],
           },
-          {
-            id: 2,
-            li: '10% profit target',
-          },
-        ],
-      },
-      {
-        id: 3,
-        title: '',
-        line: 'Verification',
-        litems: [
           {
             id: 1,
-            li: '8 weeks trading period',
-          },
-          {
-            id: 2,
-            li: '5% profit target',
+            li: 'Second way to earn: Profit Split in Aso Account.',
+            more: [
+              {
+                id: 0,
+                text: 'Grow your Zuma Account to 25% of your starting Account Size to qualify for Aso Account.',
+              },
+              {
+                id: 1,
+                text: '80% Profit Split: if you qualify for the Aso Account within 1 months of placing your first trade.',
+              },
+              {
+                id: 2,
+                text: '60% Profit Split: if you qualify for the Aso Account within 1-3 months.',
+              },
+              {
+                id: 4,
+                text: '40% Profit Split: if you qualify for the Aso Account after 3 months.',
+              },
+            ],
           },
         ],
       },
       {
         id: 4,
         title: 'STEP 3: Get Paid Bi-Weekly or Monthly',
-        line: 'You choose your medium of getting paid: bank account or Paypal. You choose between Bi-weekly or monthly payouts. It is as simple as this getting paid with FT9ja',
+        line: 'You choose your medium of getting paid: bank account or Paypal. You choose between weekly or monthly payouts.Payouts are issued every week as you have traded for 2 separate days in the preceding week. Or monthly as long as you have traded for 10 separare days in the preceding month. It is as simple as this getting paid with FT9ja!',
         litems: [],
       },
     ],
