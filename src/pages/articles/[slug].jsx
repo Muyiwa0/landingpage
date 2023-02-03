@@ -21,8 +21,9 @@ const Faq = () => {
           title: 'What is FT9ja?',
           morea: `We are Nigeria's 1st next-generational proprietary trading firm. Built with love by Nigerian Traders for Nigerians. Our Traders trade CFD Forex, Crypto, Indices, and Commodities
           `,
-          break2:`break2`,
-          moreb: 'We empower you to take your Trading to the next level with up to $50,000 in Funding. You trade with our funds, and we split the profit. It’s really a win-win! We want to see Nigerian retail Traders succeed',
+          break2: `break2`,
+          moreb:
+            'We empower you to take your Trading to the next level with up to $50,000 in Funding. You trade with our funds, and we split the profit. It’s really a win-win! We want to see Nigerian retail Traders succeed',
           link: '/articles/what-is-ft9ja',
         },
         {
@@ -32,7 +33,7 @@ const Faq = () => {
           
           `,
           moreb: 'No monthly charges or other hidden fees.',
-          break2:`break2`,
+          break2: `break2`,
           morec:
             'Timely Payouts: weekly or monthly payouts allow our Traders to get paid promptly and consistently.',
           mored:
@@ -102,7 +103,7 @@ const Faq = () => {
           id: 3,
           title: 'Will I be responsible for losses?',
           answer: `No! We cover the losses.`,
-          link: '/articles/will-i-be-responsible-for-losses/',
+          link: '/articles/will-i-be-responsible-for-losses',
         },
         {
           id: 4,
@@ -149,7 +150,7 @@ const Faq = () => {
         {
           id: 10,
           title: 'Free 2nd Chance Account. How do I get it?',
-          answer: `Ft9ja is the only prop firm in the world that offers a second chance account free of charge! You can simply request it and it will be sent to you ASAP.
+          answer: `FT9ja is the only prop firm in the world that offers a second chance account free of charge! You can simply request it and it will be sent to you ASAP.
          
           `,
           break: 'break',
@@ -565,12 +566,12 @@ const Faq = () => {
         {
           id: 1,
           title: 'I need more clarification. How can I contact you?',
-          answer: `All our contact lines are open and you can contact us via any of these means.`,
-          more2: `Email Address: info@ft9ja.com `,
-          more3: `Whatsapp: +2348138462394`,
-          more4: `We’re only a dm away on both Facebook and Instagram.`,
-          more5: `Facebook: @ft9ja`,
-          more6: `Instagram: @ft9ja.official`,
+          more0: `All our contact lines are open and you can contact us via any of these means.`,
+          point3: `Email Address: info@ft9ja.com `,
+          point4: `Whatsapp: +2348138462394`,
+          more: `We’re only a dm away on both Facebook and Instagram.`,
+          point6: `Facebook: @ft9ja`,
+          point7: `Instagram: @ft9ja.official`,
           more7: `We also have our offices in Abuja and Lagos. You can book an appointment on calendly.com/ft9ja for our Abuja office or calendly.com/ft9ja-lagos for our Lagos office.`,
 
           link: '/articles/i-need-more-clarification-how-can-i-contact-you',
@@ -588,11 +589,11 @@ const Faq = () => {
           id: 3,
           title: 'I want to partner with you. How should I contact you?',
           answer: `All our contact lines are open and you can contact us via any of these means.`,
-          more2: `Email Address: info@ft9ja.com `,
-          more3: `Whatsapp: +2348138462394`,
-          more4: `We’re only a dm away on both Facebook and Instagram.`,
-          more5: `Facebook: @ft9ja`,
-          more6: `Instagram: @ft9ja.official`,
+          point3: `Email Address: info@ft9ja.com `,
+          point4: `Whatsapp: +2348138462394`,
+          more: `We’re only a dm away on both Facebook and Instagram.`,
+          point6: `Facebook: @ft9ja`,
+          point7: `Instagram: @ft9ja.official`,
 
           link: '/articles/i-want-to-partner-with-you-how-should-i-contact-you',
         },
@@ -774,6 +775,7 @@ const Faq = () => {
                   <p>{answer.more6 && answer.more6}</p>
                   <p>{answer.more7 && answer.more7}</p>
                   <p>{answer.more8 && answer.more8}</p>
+                  <p>{answer.more9 && answer.more9}</p>
                   <p>{answer.morea && answer.morea}</p>
                   {answer.break2 && <br />}
                   <p>{answer.moreb && answer.moreb}</p>
