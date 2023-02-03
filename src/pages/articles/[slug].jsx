@@ -87,7 +87,7 @@ const Faq = () => {
           title: 'Are you a Broker?',
           point3: `No, we are not.
           `,
-          point4: `We have accounts with third-party Brokers which we give our Traders access to.`,
+          point4: `We have accounts with third-party Brokers which we give our Traders access to funding.`,
           link: '/articles/are-you-a-broker',
         },
         {
@@ -159,7 +159,7 @@ const Faq = () => {
         },
         {
           id: 11,
-          title: 'Can I request a second chance account Aso account?          ',
+          title: 'Can I request a second chance Aso account?          ',
           answer: `Answer: You can only request for a second chance account on the Zuma account which is the evaluation stage.`,
           link: '/articles/can-i-request-a-second-chance-account-aso-account',
         },
@@ -179,7 +179,7 @@ const Faq = () => {
           id: 14,
           title:
             'How long does it take for me to get my Aso account login details after passing the Zuma account and Challenge/verification account ?          ',
-          answer: `You’ll get your Aso account login details within 7 working days.
+          answer: `You’ll get your funded account login details within 7 working days.
           `,
           link: '/articles/how-long-does-it-take-for-me-to-get-my-aso-account-login-details',
         },
