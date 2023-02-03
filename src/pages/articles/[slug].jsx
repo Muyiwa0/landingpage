@@ -588,7 +588,7 @@ const Faq = () => {
         {
           id: 3,
           title: 'I want to partner with you. How should I contact you?',
-          answer: `All our contact lines are open and you can contact us via any of these means.`,
+          more0: `All our contact lines are open and you can contact us via any of these means.`,
           point3: `Email Address: info@ft9ja.com `,
           point4: `Whatsapp: +2348138462394`,
           more: `We’re only a dm away on both Facebook and Instagram.`,
