@@ -19,25 +19,27 @@ const Faq = () => {
         {
           id: 1,
           title: 'What is FT9ja?',
-          answer: `We are Nigeria's 1st next-generational proprietary trading firm. Built with love by Nigerian Traders for Nigerians. Our Traders trade CFD Forex, Crypto, Indices, and Commodities
-          We empower you to take your Trading to the next level with up to $50,000 in Funding. You trade with our funds, and we split the profit. It’s really a win-win! We want to see Nigerian retail Traders succeed
+          morea: `We are Nigeria's 1st next-generational proprietary trading firm. Built with love by Nigerian Traders for Nigerians. Our Traders trade CFD Forex, Crypto, Indices, and Commodities
           `,
+          break2:`break2`,
+          moreb: 'We empower you to take your Trading to the next level with up to $50,000 in Funding. You trade with our funds, and we split the profit. It’s really a win-win! We want to see Nigerian retail Traders succeed',
           link: '/articles/what-is-ft9ja',
         },
         {
           id: 2,
           title: 'Why FT9ja?',
-          answer: `We speak your language. We are a Nigerian-based Prop Trading firm with our offices in Abuja and Lagos.
+          morea: `We speak your language. We are a Nigerian-based Prop Trading firm with our offices in Abuja and Lagos.
           
           `,
-          more: 'No monthly charges or other hidden fees.',
-          more1:
+          moreb: 'No monthly charges or other hidden fees.',
+          break2:`break2`,
+          morec:
             'Timely Payouts: weekly or monthly payouts allow our Traders to get paid promptly and consistently.',
-          more2:
+          mored:
             'Freedom to use any responsible trading style. You can use stacking, hedging, or trade the news.',
-          more3:
+          moree:
             'Second Chance Account: we give you a second account free of charge if you blow the 1st one.',
-          more4: 'Trade Synthetic Indices via Deriv broker.',
+          moref: 'Trade Synthetic Indices via Deriv broker.',
           link: '/articles/why-ft9ja',
         },
         {
@@ -772,7 +774,17 @@ const Faq = () => {
                   <p>{answer.more6 && answer.more6}</p>
                   <p>{answer.more7 && answer.more7}</p>
                   <p>{answer.more8 && answer.more8}</p>
-                  <p>{answer.more9 && answer.more9}</p>
+                  <p>{answer.morea && answer.morea}</p>
+                  {answer.break2 && <br />}
+                  <p>{answer.moreb && answer.moreb}</p>
+                  {answer.break2 && <br />}
+                  <p>{answer.morec && answer.morec}</p>
+                  {answer.break2 && <br />}
+                  <p>{answer.mored && answer.mored}</p>
+                  {answer.break2 && <br />}
+                  <p>{answer.moree && answer.moree}</p>
+                  {answer.break2 && <br />}
+                  <p>{answer.moref && answer.moref}</p>
                   <p>
                     <a
                       target="_blank"
