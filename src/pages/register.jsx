@@ -79,8 +79,13 @@ export default function Register() {
                   // window.location.href = `http://localhost:3001/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
                 })
                 .catch((err) => {
-                  console.log(err.response.data.password1)
-                  setError(err.response.data.password1)
+                  console.log(err.response.data)
+                  if (err.response.data.password1) {
+                    setError(err.response.data.password1)
+                  }
+                  if (err.response.data.email) {
+                    setError('Email Already registered, Login instead')
+                  }
                 })
             }
           }}
