@@ -18,6 +18,10 @@ const HowItWorks = () => {
     <>
       <Head>
         <title>How it works - FT9ja</title>
+        <meta
+          name="description"
+          content="How does this work? · The first way to earn: Talent Bonus in Zuma Account. You can choose between the weekly or monthly payout plans. · Second way To earn: Profit Split in Aso Account."
+        />
       </Head>
       <Header />
       <div className="flex justify-center bg-gray-900 px-2 pt-10 lg:mx-0">
