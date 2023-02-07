@@ -262,14 +262,14 @@ function AppDemo() {
     <AppScreen>
       <AppScreen.Body>
         <div className="p-3">
-          <div className="flex justify-between gap-2 pb-2">
+          <div className="flex justify-between gap-2 pb-4 pt-[10px] sm:pb-2 sm:pt-0">
             <span className="border-r-2 border-gray-400 pr-2">Returns</span>
             <span className="sm:px-2">10%</span>
             <span className="sm:px-2">25%</span>
             <span className="font-bold text-[#28a745] sm:px-2">50%</span>
             <span className="sm:px-2">100%</span>
           </div>
-          <div className="mt-1 flex justify-between gap-2 border-t border-gray-200 py-1">
+          <div className="mt-1 flex justify-between gap-2 border-t border-gray-200 py-2">
             <span className="flex flex-col border-r-2 border-gray-400 pr-2 text-center text-sm sm:px-2">
               <span>Funding</span>
               <span className="mt-[-6px]">Model</span>
@@ -283,7 +283,7 @@ function AppDemo() {
               <span className="mt-[-6px]">Challenge</span>
             </span>
           </div>
-          <div className="mt-1 flex justify-between gap-1 border-t border-gray-200 py-1 sm:gap-2">
+          <div className="mt-1 flex justify-between gap-1 border-t border-gray-200 py-2 sm:gap-2">
             <div className="flex flex-col px-[1px] text-center text-sm sm:px-2">
               <span>$41</span>
               <span className="my-[-6px]">Trade with</span>
@@ -386,7 +386,7 @@ export function Hero() {
               >
                 {/* <a
                   target="_blank"
-                 
+
                 > */}
                 <PlayIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2">Why FT9ja?</span>
