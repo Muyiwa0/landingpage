@@ -179,7 +179,8 @@ const Support = () => {
         },
         {
           id: 3,
-          title: 'How long does it take for me to get my account login details?',
+          title:
+            'How long does it take for me to get my account login details?',
           link: '/articles/how-long-does-it-take-for-me-to-get-my-account-login-details',
         },
         {
@@ -209,7 +210,8 @@ const Support = () => {
         },
         {
           id: 8,
-          title: 'What percentage of my funded challenge account will I get paid?',
+          title:
+            'What percentage of my funded challenge account will I get paid?',
           link: '/articles/what-percentage-of-my-funded-challenge-account-will-i-get-paid',
         },
         {
@@ -375,7 +377,8 @@ const Support = () => {
         },
         {
           id: 2,
-          title: 'I want to make FT9ja better. How do I make a suggestion or complaint??',
+          title:
+            'I want to make FT9ja better. How do I make a suggestion or complaint??',
           link: '/articles/i-want-to-make-ft9ja-better-how-do-i-make-a-suggestion-or-complaint',
         },
         {
@@ -383,7 +386,6 @@ const Support = () => {
           title: 'I want to partner with you. How should I contact you?',
           link: '/articles/i-want-to-partner-with-you-how-should-i-contact-you',
         },
-        
       ],
     },
   ]
@@ -431,6 +433,10 @@ const Support = () => {
     <div>
       <Head>
         <title>Support/FAQs - FT9ja</title>
+        <meta
+          name="description"
+          content="We are Nigeria's 1st next-generational proprietary trading firm. Our aim is to scout for talented but undercapitalized Financial-asset Traders in Nigeria (FT9ja) and empower them. They trade with our funds, and we split the profit. It’s really a win-win! We want to see retail Traders succeed."
+        />
       </Head>
       <Header />
       <div className="w-full" onClick={handleClose}>

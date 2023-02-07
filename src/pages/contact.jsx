@@ -24,6 +24,10 @@ const Contact = () => {
     <div>
       <Head>
         <title>Contact - FT9ja</title>
+        <meta
+          name="description"
+          content="Need help or more information? We're here for you. Connect with our customer service specialist through the most convenient way for you."
+        />
       </Head>
       <Header />
       <div className="w-full bg-black">

@@ -30,7 +30,11 @@ export default function Register() {
   return (
     <>
       <Head>
-        <title>Sign Up - FT9ja</title>
+        <title>Register - FT9ja</title>
+        <meta
+          name="description"
+          content="Select your desired account size, pay, and start trading in less than 24 hours. If you encounter any issues on this page, please let us know immediately on Whatsapp (08138462394)."
+        />
       </Head>
       <AuthLayout
         title="Sign up for an account"
