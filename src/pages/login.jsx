@@ -37,7 +37,7 @@ export default function Login() {
       })
       .catch((err) => {
         console.log(err)
-        setError('Invalid Email or Password')
+        setError('Invalid Email or Password, Recheck')
         setLoading(false)
       })
   }
