@@ -13,8 +13,8 @@ const Rules = () => {
   return (
     <div className="w-full">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center pt-10">
-          <div className="relative">
+        <div className="justify-center pt-10">
+          <div className="">
             <RadioGroup
               value={activePeriod}
               onChange={setActivePeriod}
