@@ -45,7 +45,7 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>Sign In - FT9ja</title>
+        <title>FT9ja - Sign In</title>
         <meta
           name="description"
           content="Select your desired account size, pay, and start trading in less than 24 hours. If you encounter any issues on this page, please let us know immediately on Whatsapp (08138462394)."

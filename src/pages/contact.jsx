@@ -23,7 +23,7 @@ const Contact = () => {
   return (
     <div>
       <Head>
-        <title>Contact - FT9ja</title>
+        <title>FT9ja - Contact</title>
         <meta
           name="description"
           content="Need help or more information? We're here for you. Connect with our customer service specialist through the most convenient way for you."
