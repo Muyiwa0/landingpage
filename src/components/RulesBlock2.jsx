@@ -21,7 +21,7 @@ const RulesBlock2 = () => {
     <div>
       <motion.div {...Animations}>
         <div className="mx-auto grid max-w-screen-lg grid-cols-1 items-center md:grid-cols-2">
-          <div className="p-12">
+          <div className="p-12 w-96 mx-auto">
             <Image src={img} alt="rules block" />
           </div>
           <div>

@@ -5,7 +5,7 @@ function privacy() {
   return (
     <>
       <Head>
-        <title>Privacy - FT9ja</title>
+        <title>FT9ja - Privacy</title>
         <meta
           name="description"
           content="Your data is stored in a remote server that uses full security protocols. We only keep your personal data for a period of 5 years after which we delete the data."

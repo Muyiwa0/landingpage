@@ -432,7 +432,7 @@ const Support = () => {
   return (
     <div>
       <Head>
-        <title>Support/FAQs - FT9ja</title>
+        <title>FT9ja - Support/FAQs</title>
         <meta
           name="description"
           content="We are Nigeria's 1st next-generational proprietary trading firm. Our aim is to scout for talented but undercapitalized Financial-asset Traders in Nigeria (FT9ja) and empower them. They trade with our funds, and we split the profit. It’s really a win-win! We want to see retail Traders succeed."

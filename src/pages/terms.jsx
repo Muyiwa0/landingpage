@@ -4,7 +4,7 @@ function terms() {
   return (
     <>
       <Head>
-        <title>Terms - FT9ja</title>
+        <title>FT9ja - Terms</title>
         <meta
           name="description"
           content={`These Terms of Use constitute a legally binding agreement made between you whether personally or on behalf of an entity ("you") and Asokoro Technologies Limited doing business as FT9ja ("FT9ja," "we," "us," or "our") concerning your access to and use of the ft9ja.com website.`}
