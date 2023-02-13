@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>FT9ja - Invest at the perfect time.</title>
+        <title>FT9ja - We Fund Traders</title>
         <meta
           name="description"
           content="By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses."
