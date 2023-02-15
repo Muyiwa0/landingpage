@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+https://old.ft9ja.com
+
+# Sitemaps
+Sitemap: https://old.ft9ja.com/sitemap.xml
