@@ -20,7 +20,66 @@ const SecondRulesBlock = () => {
   return (
     <div>
       <motion.div {...Animations}>
-        <div className="mx-auto flex max-w-screen-sm items-center justify-center">
+        <div className="mx-auto grid max-w-screen-lg grid-cols-1 items-center md:grid-cols-2">
+          <div className="p-12 w-96 mx-auto">
+            <Image src={img} alt="rules block" />
+          </div>
+          <div className='flex flex-col'>
+            <div className='rounded-[10px] p-3 mb-1'>
+              <p className='font-semibold mb-2'>
+                FT9ja Classic
+              </p>
+              <p className='my-1'>1ST Payout</p>
+              <p className='text-xs mb-2'>You are eligible for the first payout after trading for at least
+                10 days, even if you are on the weekly plan.</p>
+              <p className='my-1'>2ND Chance Accounts</p>
+              <p className='text-xs'>
+                &apos;2nd Chance Account s&apos; are not eligible for the
+                Talent Bonus.
+              </p>
+            </div>
+
+            <div className='rounded-[10px] p-3 mb-1'>
+              <p className='font-semibold mb-2'>
+                PAYOUT DATE
+              </p>
+              <p className='text-xs'>
+                  FT9ja processes payouts on Fridays, even if it&apos;s
+                  requested before Friday.
+              </p>
+            </div>
+
+            <div className='rounded-[10px] p-3 mb-1'>
+              <p className='font-semibold mb-2'>
+                PROFIT SPLIT
+              </p>
+              <p className='text-xs'>
+                Split percentage in Aso Account is based on when you qualify for
+                Aso Account -- counted from when you place your first trade in
+                the &ldquo;1st chance account&ldquo;.
+              </p>
+            </div>
+
+            <div className='rounded-[10px] p-3 mb-1'>
+              <p className='font-semibold mb-2'>
+                ONE-TIME FEE REFUND
+              </p>
+              <p className='text-xs'>
+                  FT9ja Challenge Traders are eligible for a one-time fee
+                  refund. It will be paid with their 1st payout in Aso Account.
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  )
+}
+
+export default SecondRulesBlock
+
+/**
+ *  {/* <div className="mx-auto flex max-w-screen-sm items-center justify-center">
           <div className="p-12 w-96 md:w-auto mx-auto">
             <Image src={img} alt="" />
           </div>
@@ -78,10 +137,4 @@ const SecondRulesBlock = () => {
               </p>
             </div>
           </div>
-        </div>
-      </motion.div>
-    </div>
-  )
-}
-
-export default SecondRulesBlock
+        </div> */

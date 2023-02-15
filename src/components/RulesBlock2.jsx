@@ -24,22 +24,28 @@ const RulesBlock2 = () => {
           <div className="p-12 w-96 mx-auto">
             <Image src={img} alt="rules block" />
           </div>
-          <div>
-            <p>
-              FT9ja Classic
-              <br />
-              You are required to open and close trading positions for 2 or more
-              days in a trading week. And at least 10 separate days in a trading
-              month
-            </p>
-            <br />
-            <p>
-              FT9ja Challenge
-              <br />
-              You are required to open and close trading positions for 2 or more
-              days in a trading week. And at least 6 separate days in each
-              phase.
-            </p>
+          <div className='flex flex-col'>
+            <div className='p-3 mb-1'>
+              <p className='font-semibold mb-2'>
+                FT9ja Classic
+              </p>
+              <p className='text-xs'>
+                You are required to open and close trading positions for 2 or more
+                days in a trading week. And at least 10 separate days in a trading
+                month
+              </p>
+            </div>
+
+            <div className='p-3 mb-1'>
+              <p className='font-semibold mb-2'>
+                FT9ja Challenge
+              </p>
+              <p className='text-xs'>
+                You are required to open and close trading positions for 2 or more
+                days in a trading week. And at least 6 separate days in each
+                phase.
+              </p>
+            </div>
           </div>
         </div>
       </motion.div>
