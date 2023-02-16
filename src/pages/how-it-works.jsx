@@ -20,7 +20,7 @@ const HowItWorks = () => {
         <title>FT9ja - How it works</title>
         <meta
           name="description"
-          content="How does this work? · The first way to earn: Talent Bonus in Zuma Account. You can choose between the weekly or monthly payout plans. · Second way To earn: Profit Split in Aso Account."
+          content="We believe you have what it takes to be successful. Sign up for a funding model, choose an account size, and start trading to earn as soon as 10 days. Talent Bonus: Get paid during evaluation. 2nd Chance Account: Naija happens - get a 2nd account free of charge. Flexibility: No time limit to achieve 25% profit target. Deriv Prop Firm. Synthetic Indices Prop Firm."
         />
       </Head>
       <Header />

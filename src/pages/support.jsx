@@ -435,7 +435,7 @@ const Support = () => {
         <title>FT9ja - Support/FAQs</title>
         <meta
           name="description"
-          content="We are Nigeria's 1st next-generational proprietary trading firm. Our aim is to scout for talented but undercapitalized Financial-asset Traders in Nigeria (FT9ja) and empower them. They trade with our funds, and we split the profit. It’s really a win-win! We want to see retail Traders succeed."
+          content="Hello! How can we help? Joining FT9ja. Frequently Asked Questions (FAQ). How FT9ja works. FT9ja Rules. FT9ja’s Referral Program.  Learn more about our Ambassador program, FT9ja Hero."
         />
       </Head>
       <Header />
