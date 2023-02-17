@@ -29,7 +29,7 @@ const RulesBlock2 = () => {
               <p className='font-semibold mb-2'>
                 FT9ja Classic
               </p>
-              <p className='text-xs'>
+              <p className=''>
                 You are required to open and close trading positions for 2 or more
                 days in a trading week. And at least 10 separate days in a trading
                 month
@@ -40,7 +40,7 @@ const RulesBlock2 = () => {
               <p className='font-semibold mb-2'>
                 FT9ja Challenge
               </p>
-              <p className='text-xs'>
+              <p className=''>
                 You are required to open and close trading positions for 2 or more
                 days in a trading week. And at least 6 separate days in each
                 phase.
