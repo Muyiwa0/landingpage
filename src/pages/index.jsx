@@ -17,7 +17,7 @@ export default function Home() {
         <title>FT9ja - We Fund Traders</title>
         <meta
           name="description"
-          content="By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses."
+          content="We are Nigeria's 1st next-generational prop trading firm. Our aim is to scout for talented but undercapitalized Financial-asset Traders in Nigeria (FT9ja) and empower them. They trade with our funds, and we split the profit. It’s really a win-win! We want to see retail Traders succeed."
         />
       </Head>
       <Header />
