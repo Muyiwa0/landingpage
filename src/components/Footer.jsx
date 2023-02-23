@@ -82,7 +82,7 @@ export function Footer() {
                 </a>
               </p>
               <p className="pt-3 text-center md:text-left">
-                Lagos: 362 Herbert Macaulay Way, Yaba
+                Lagos: 30b Oladimeji Alo Street, Lekki Phase 1, Lagos
               </p>
               <p className="text-center md:text-left">
                 <a
