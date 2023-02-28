@@ -6,6 +6,7 @@ import { GrInstagram } from 'react-icons/gr'
 import img from '../images/cuatecontact.svg'
 import Image from 'next/image'
 import Head from 'next/head'
+import axios from 'axios'
 
 const Contact = () => {
   const [inputs, setInputs] = useState('')
@@ -19,6 +20,16 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log(inputs)
+    axios
+      .post('https://maindashbe.herokuapp.com/api/contact/', {
+        name: inputs.name,
+        email: inputs.email,
+        message: inputs.message,
+        subject: inputs.subject,
+      })
+      .then((res) => {
+        console.log(res)
+      })
   }
   return (
     <div>
