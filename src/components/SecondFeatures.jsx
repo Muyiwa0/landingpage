@@ -18,6 +18,9 @@ import {
   TransistorLogo,
   TupleLogo,
 } from '@/components/StockLogos'
+// import challengeSignUp from '@/images/animations/Sign-Up-Challenge.gif'
+// import challengeStartTrading from '@/images/animations/Start-Trading-Challenge-Option.gif'
+import Image from 'next/image'
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -415,11 +418,11 @@ function FeaturesDesktop() {
           </div>
         ))}
       </Tab.List>
-      <div className="relative col-span-6">
+      <div className="relative col-span-6 ml-32">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <CircleBackground color="#13B5C8" className="animate-spin-slower" />
         </div>
-        <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
+        {/* <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
           <Tab.Panels as={Fragment}>
             <AnimatePresence
               initial={false}
@@ -441,7 +444,26 @@ function FeaturesDesktop() {
               )}
             </AnimatePresence>
           </Tab.Panels>
-        </PhoneFrame>
+        </PhoneFrame> */}
+        {/* {selectedIndex === 0 ? (
+          <Image
+            src={challengeSignUp}
+            alt=""
+            height={730}
+            width={400}
+            priority
+            style={{ borderRadius: '70px', backgroundColor: 'red' }}
+          />
+        ) : (
+          <Image
+            src={challengeStartTrading}
+            alt=""
+            height={730}
+            width={400}
+            priority
+            style={{ borderRadius: '70px' }}
+          />
+        )} */}
       </div>
     </Tab.Group>
   )
@@ -491,16 +513,37 @@ function FeaturesMobile() {
             ref={(ref) => (slideRefs.current[featureIndex] = ref)}
             className="w-full flex-none snap-center px-4 sm:px-6"
           >
-            <div className="relative transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
+            <div className="relative h-[900px] transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <CircleBackground
                   color="#13B5C8"
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
-              <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
+              {/* <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
                 <feature.screen />
-              </PhoneFrame>
+              </PhoneFrame> */}
+              <div className="relative mx-auto w-full max-w-[366px]">
+                {/* {activeIndex === 0 ? (
+                  <Image
+                    src={challengeSignUp}
+                    alt=""
+                    height={730}
+                    width={400}
+                    priority
+                    style={{ borderRadius: '60px' }}
+                  />
+                ) : (
+                  <Image
+                    src={challengeStartTrading}
+                    alt=""
+                    height={730}
+                    width={400}
+                    priority
+                    style={{ borderRadius: '60px' }}
+                  />
+                )} */}
+              </div>
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />
                 <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">
@@ -564,13 +607,13 @@ export function SecondFeatures() {
         >
           <Container>
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
-          <h2 className="text-3xl font-medium tracking-tight text-white">
-          How FT9ja Challenge Works?
-          </h2>
-          <p className="mt-2 text-lg text-gray-400">
-          FT9ja now offer the popular Challenge Funding Model.
-          </p>
-        </div>
+              <h2 className="text-3xl font-medium tracking-tight text-white">
+                How FT9ja Challenge Works?
+              </h2>
+              <p className="mt-2 text-lg text-gray-400">
+                FT9ja now offer the popular Challenge Funding Model.
+              </p>
+            </div>
           </Container>
           <div className="mt-16 md:hidden">
             <FeaturesMobile />

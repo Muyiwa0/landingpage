@@ -10,7 +10,7 @@ import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Reviews } from '@/components/Reviews'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -23,7 +23,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <PrimaryFeatures />
+        <PrimaryFeatures props={data} />
         <SecondaryFeatures />
         <CallToAction />
         <Reviews />
@@ -33,4 +33,15 @@ export default function Home() {
       <Footer />
     </>
   )
+}
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(
+    'https://lottie.host/e6757790-868b-473d-9d0f-ac15c7ffe904/MAj5WiSf5m.json'
+  )
+  const data = await res.json()
+
+  // Pass data to the page via props
+  return { props: { data } }
 }

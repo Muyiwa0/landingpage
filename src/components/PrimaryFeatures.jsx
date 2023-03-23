@@ -18,6 +18,12 @@ import {
   TransistorLogo,
   TupleLogo,
 } from '@/components/StockLogos'
+import startTrading from '@/images/animations/starttrading.json'
+import signUp from '@/images/animations/signup.json'
+import startEarning from '@/images/animations/startearning.json'
+// import signIn from '@/images/animations/Sign-in.gif'
+import Image from 'next/image'
+import Lottie from 'react-lottie'
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -361,11 +367,16 @@ function usePrevious(value) {
   return ref.current
 }
 
-function FeaturesDesktop() {
+function FeaturesDesktop({ data }) {
   let [changeCount, setChangeCount] = useState(0)
   let [selectedIndex, setSelectedIndex] = useState(0)
   let prevIndex = usePrevious(selectedIndex)
   let isForwards = prevIndex === undefined ? true : selectedIndex > prevIndex
+
+  const ref = useRef(null)
+  useEffect(() => {
+    import('@lottiefiles/lottie-player')
+  })
 
   let onChange = useDebouncedCallback(
     (selectedIndex) => {
@@ -375,6 +386,20 @@ function FeaturesDesktop() {
     100,
     { leading: true }
   )
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData:
+      selectedIndex === 0
+        ? signUp
+        : selectedIndex === 1
+        ? startTrading
+        : startEarning,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  }
 
   return (
     <Tab.Group
@@ -412,11 +437,11 @@ function FeaturesDesktop() {
           </div>
         ))}
       </Tab.List>
-      <div className="relative col-span-6">
+      <div className="relative col-span-6 ">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <CircleBackground color="#28a745" className="animate-spin-slower" />
         </div>
-        <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
+        {/* <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
           <Tab.Panels as={Fragment}>
             <AnimatePresence
               initial={false}
@@ -438,7 +463,9 @@ function FeaturesDesktop() {
               )}
             </AnimatePresence>
           </Tab.Panels>
-        </PhoneFrame>
+        </PhoneFrame> */}
+
+        <Lottie options={defaultOptions} width={400} />
       </div>
     </Tab.Group>
   )
@@ -476,6 +503,20 @@ function FeaturesMobile() {
     }
   }, [slideContainerRef, slideRefs])
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData:
+      activeIndex === 0
+        ? signUp
+        : activeIndex === 1
+        ? startTrading
+        : startEarning,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  }
+
   return (
     <>
       <div
@@ -486,18 +527,21 @@ function FeaturesMobile() {
           <div
             key={featureIndex}
             ref={(ref) => (slideRefs.current[featureIndex] = ref)}
-            className="w-full flex-none snap-center px-4 sm:px-6"
+            className=" w-full flex-none snap-center px-4 sm:px-6"
           >
-            <div className="relative transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
+            <div className="relative h-[910px] transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <CircleBackground
                   color="#13B5C8"
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
-              <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
+              {/* <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
                 <feature.screen />
-              </PhoneFrame>
+              </PhoneFrame> */}
+              <div className="relative mx-auto w-full max-w-[366px]">
+                <Lottie options={defaultOptions} width={330} />
+              </div>
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />
                 <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">
@@ -536,7 +580,7 @@ function FeaturesMobile() {
   )
 }
 
-export function PrimaryFeatures() {
+export function PrimaryFeatures({ data }) {
   const Animations = {
     initial: 'initial',
     animate: 'animate',
@@ -573,7 +617,7 @@ export function PrimaryFeatures() {
           <FeaturesMobile />
         </div>
         <Container className="hidden md:mt-20 md:block">
-          <FeaturesDesktop />
+          <FeaturesDesktop props={data} />
         </Container>
       </motion.div>
     </section>
