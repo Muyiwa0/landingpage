@@ -10,6 +10,7 @@ import axios from 'axios'
 
 const Contact = () => {
   const [inputs, setInputs] = useState('')
+  const [message, setMessage] = useState('')
 
   const handleChange = (event) => {
     const name = event.target.name
@@ -29,6 +30,8 @@ const Contact = () => {
       })
       .then((res) => {
         console.log(res)
+        setInputs('')
+        setMessage('Thank you for contacting. You message has been sent.')
       })
   }
   return (
@@ -69,6 +72,7 @@ const Contact = () => {
           You can also leave your message here and we’ll respond to you within
           24 hours.
         </p>
+        <p className="mb-2 text-center">{message}</p>
         <div className="mx-5 mb-10 rounded-lg border-2 border-gray-200 p-5">
           <form onSubmit={handleSubmit} className="flex flex-col">
             <label className="block py-3 text-sm font-semibold text-gray-900">

@@ -6,38 +6,22 @@ import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
 import Iframe from 'react-iframe'
 import axios from 'axios'
-export default function Login() {
+export default function forgotPassword() {
   const [email, setEmail] = React.useState('')
-  const [password, setPassword] = React.useState('')
   const [error, setError] = React.useState('')
   const [loading, setLoading] = React.useState(false)
 
-  let handleuserLogin = (e) => {
+  let handleUserPasswordReset = (e) => {
     e.preventDefault()
     setLoading(true)
     axios
-      .post('https://maindashbe.herokuapp.com/api/auth/login/', {
-        email,
-        password,
-      })
+      .post('https://maindashbe.herokuapp.com/api/auth/password/reset/', {email})
       .then((res) => {
-        console.log(res, res.data.refresh_token)
-        // localStorage.setItem("access_token", res.data.access_token);
-        axios.defaults.headers.common[
-          'Authorization'
-        ] = `Bearer ${localStorage.getItem('access_token')}`
-        // axiosInstance.defaults.headers.common[
-        //   'Authorization'
-        // ] = `Bearer ${localStorage.getItem('access_token')}`
-
-        localStorage.setItem('refresh_token', res.data.refresh_token)
-        localStorage.setItem('access_token', res.data.access_token)
-        window.location.href = `https://dashboard.ft9ja.com/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
-        console.log('login success')
+        window.location.href = '/confimemail'
       })
       .catch((err) => {
         console.log(err)
-        setError('Invalid Email or Password, Recheck')
+        setError('Invalid Email address. Please recheck and try again.')
         setLoading(false)
       })
   }
@@ -45,26 +29,23 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>FT9ja - Sign In</title>
+        <title>FT9ja - Forgot password</title>
         <meta
           name="description"
           content="Select your desired account size, pay, and start trading in less than 24 hours. If you encounter any issues on this page, please let us know immediately on Whatsapp (08138462394)."
         />
       </Head>
       <AuthLayout
-        title="Sign in to account"
+        title="Forgot password?"
         subtitle={
           <>
-            Don’t have an account?{' '}
-            <Link href="/register">
-              <span className="cursor-pointer text-[#28a745]">Sign up</span>
-            </Link>{' '}
-            for a new account.
+            Don’t worry we will send reset instructions. 
+            Enter your email address and submit the form to reset your password
           </>
         }
       >
         {error}
-        <form onSubmit={handleuserLogin}>
+        <form onSubmit={handleUserPasswordReset}>
           <div className="space-y-6">
             <TextField
               label="Email address"
@@ -75,15 +56,6 @@ export default function Login() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <TextField
-              label="Password"
-              id="password"
-              name="password"
-              type="password"
-              autoComplete="current-password"
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
           </div>
           <Button
             type="submit"
@@ -91,7 +63,7 @@ export default function Login() {
             color="cyan"
             className={`mt-8 w-full ${loading && 'bg-gray-800'}`}
           >
-            {loading ? 'Loading...' : 'Sign in to account'}
+            {loading ? 'Loading...' : 'Reset my password'}
             {loading && (
               <div role="status">
                 <svg
@@ -114,19 +86,6 @@ export default function Login() {
             )}
           </Button>
         </form>
-        <iframe
-          src="http://localhost:3001/"
-          style={{ display: 'none' }}
-        ></iframe>
-
-        <div style={{'margin-top': '20px'}}>
-          Forgot password?{' '}
-          <Link href="/forgot-password">
-            <span className="cursor-pointer text-[#28a745]">Click here</span>
-          </Link>{' '}
-          to reset your password.
-        </div>
-
       </AuthLayout>
     </>
   )
