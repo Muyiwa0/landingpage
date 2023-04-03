@@ -6,7 +6,8 @@ import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
 import Iframe from 'react-iframe'
 import axios from 'axios'
-export default function forgotPassword() {
+
+export default function ForgotPassword() {
   const [email, setEmail] = React.useState('')
   const [error, setError] = React.useState('')
   const [loading, setLoading] = React.useState(false)
