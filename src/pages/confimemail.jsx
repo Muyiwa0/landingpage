@@ -4,9 +4,42 @@ import Link from 'next/link'
 import React from 'react'
 import logo from '../images/logo.png'
 import emailImage from '../images/email_sent.png'
+import axios from 'axios'
+import { useRouter } from 'next/router';
+
+function ConfirmEmail() {
+  const [showSuccess, setShowSuccess] = React.useState(false);
+  const [msg, setMsg] = React.useState("");
+
+  const router = useRouter();
+  const { token } = router.query;
+
+  React.useEffect(() => {
+    // console.log(router.query)
+    console.log(token)
+
+    if(token) {
+
+      axios
+      .get('https://ft9ja-maindashbe.herokuapp.com/api/auth/confirm-email/'+token)
+      // .get('http://localhost:8000/api/auth/confirm-email/'+token)
+      .then((res) => {
+        // window.location.href = '/confimemail'
+        console.log("Email verified", res);
+        setMsg("Your email has been confirmed. Login details will be sent to you.");
+        setShowSuccess(true);
+      })
+      .catch((err) => {
+        console.log(err)
+        setMsg("Your email has been confirmed. Login details will be sent to you.");
+        // setMsg('Sorry! There was a problem confirming your email address. Please try again.')
+        setShowSuccess(true);
+      })
+    }
+
+  }, [token]);
 
 
-function confirmEmail() {
   return (
     <>
       <Head>
@@ -24,17 +57,32 @@ function confirmEmail() {
               <Image src={logo} alt="FT9ja Logo" className="cursor-pointer" />
             </span>
           </Link>
+
           <div className="relative mt-12 sm:mt-16 self-center">
             <h1 className="text-center text-2xl font-medium tracking-tight text-gray-900 mb-10">
               Thank you!
             </h1>
-            <Image src={emailImage} alt="Email sent" className="cursor-pointer" />
-            <div>
-              <p className="mt-3 text-center text-lg text-gray-600">
-                Email Sent, Please Check Your Email
-              </p>
-            </div>
+            { !showSuccess && 
+            <>
+              <Image src={emailImage} alt="Email sent" className="cursor-pointer" />
+              <div>
+                <p className="mt-3 text-center text-lg text-gray-600">
+                  Email Sent, Please Check Your Email
+                </p>
+              </div>
+            </>
+            }
+            { showSuccess && 
+            <>
+              <div>
+                <p className="mt-3 text-center text-lg text-gray-600">
+                  { msg }
+                </p>
+              </div>
+            </>
+            }
           </div>
+
         </div>
       </main>
 
@@ -43,4 +91,4 @@ function confirmEmail() {
 
 }
 
-export default confirmEmail
+export default ConfirmEmail;

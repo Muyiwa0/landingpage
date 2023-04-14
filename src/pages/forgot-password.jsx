@@ -16,7 +16,8 @@ export default function ForgotPassword() {
     e.preventDefault()
     setLoading(true)
     axios
-      .post('https://maindashbe.herokuapp.com/api/auth/password/reset/', {email})
+      .post('https://ft9ja-maindashbe.herokuapp.com/api/auth/password_reset/', {email})
+      // .post('http://localhost:8000/api/auth/password_reset/', {email})
       .then((res) => {
         window.location.href = '/confimemail'
       })

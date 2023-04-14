@@ -57,7 +57,7 @@ export default function Register() {
             } else {
               axios
                 .post(
-                  'https://maindashbe.herokuapp.com/api/auth/registration/',
+                  'https://ft9ja-maindashbe.herokuapp.com/api/auth/registration/',
                   {
                     email,
                     password1,

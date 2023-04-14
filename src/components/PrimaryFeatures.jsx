@@ -20,7 +20,7 @@ import {
 } from '@/components/StockLogos'
 import startTrading from '@/images/animations/starttrading.json'
 import signUp from '@/images/animations/signup.json'
-import startEarning from '@/images/animations/startearning.json'
+import startEarning from '@/images/animations/startEarning.json'
 // import signIn from '@/images/animations/Sign-in.gif'
 import Image from 'next/image'
 import Lottie from 'react-lottie'

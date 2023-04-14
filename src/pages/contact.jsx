@@ -22,7 +22,7 @@ const Contact = () => {
     event.preventDefault()
     console.log(inputs)
     axios
-      .post('https://maindashbe.herokuapp.com/api/contact/', {
+      .post('https://ft9ja-maindashbe.herokuapp.com/api/contact/', {
         name: inputs.name,
         email: inputs.email,
         message: inputs.message,
