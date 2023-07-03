@@ -6,83 +6,79 @@ import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
 import Iframe from 'react-iframe'
 import axios from 'axios'
-export default function Login() {
-  const [email, setEmail] = React.useState('')
+
+import { useRouter } from 'next/router';
+
+export default function ResetPassword() {
   const [password, setPassword] = React.useState('')
   const [error, setError] = React.useState('')
   const [loading, setLoading] = React.useState(false)
+  const [showSuccess, setShowSuccess] = React.useState(false)
 
-  let handleuserLogin = (e) => {
+  // const [searchParams] = useSearchParams();
+  // let navigate = useNavigate();
+
+  const router = useRouter();
+  const { token } = router.query;
+
+  React.useEffect(() => {
+    // console.log(router.query)
+    console.log(token)
+
+  }, [token]);
+
+  let handleUserPasswordReset = (e) => {
     e.preventDefault()
     setLoading(true)
     axios
-      .post('https://ft9ja-maindashbe.herokuapp.com/api/auth/login/', {
-      // .post('http://localhost:8000/api/auth/login/', {
-        email,
-        password,
-      })
+      .post('https://ft9ja-maindashbe.herokuapp.com/api/auth/password_reset/confirm/', {token, password})
+      // .post('http://localhost:8000/api/auth/password_reset/confirm/', {token, password})
       .then((res) => {
-        console.log(res, res.data.refresh_token)
-        // localStorage.setItem("access_token", res.data.access_token);
-        axios.defaults.headers.common[
-          'Authorization'
-        ] = `Bearer ${localStorage.getItem('access_token')}`
-        // axiosInstance.defaults.headers.common[
-        //   'Authorization'
-        // ] = `Bearer ${localStorage.getItem('access_token')}`
-
-        localStorage.setItem('refresh_token', res.data.refresh_token)
-        localStorage.setItem('access_token', res.data.access_token)
-        window.location.href = `https://ft9ja-dashboard.herokuapp.com/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
-        // window.location.href = `http://localhost:3001/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
-        console.log('login success')
+        // window.location.href = '/confimemail'
+        console.log("Reset verified", res);
+        setShowSuccess(true);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err)
-        setError('Invalid Email or Password, Recheck')
-        setLoading(false)
+        setError('There was a problem resetting your password. Please try again.')
+        setLoading(false);
       })
+  }
+
+  let goToLogin = (e) => {
+    e.preventDefault();
+    window.location.href = '/login'
   }
 
   return (
     <>
       <Head>
-        <title>FT9ja - Sign In</title>
+        <title>FT9ja - Reset password</title>
         <meta
           name="description"
           content="Select your desired account size, pay, and start trading in less than 24 hours. If you encounter any issues on this page, please let us know immediately on Whatsapp (08138462394)."
         />
       </Head>
       <AuthLayout
-        title="Sign in to account"
+        title="Password reset"
         subtitle={
-          <>
-            Don’t have an account?{' '}
-            <Link href="/register">
-              <span className="cursor-pointer text-[#28a745]">Sign up</span>
-            </Link>{' '}
-            for a new account.
+          <>            
+            Please set your new password below
           </>
         }
       >
         {error}
-        <form onSubmit={handleuserLogin}>
+
+        { !showSuccess && 
+        <form onSubmit={handleUserPasswordReset}>
           <div className="space-y-6">
-            <TextField
-              label="Email address"
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <TextField
-              label="Password"
+          <TextField
+              label="New Password"
               id="password"
               name="password"
               type="password"
-              autoComplete="current-password"
+              autoComplete="new-password"
               onChange={(e) => setPassword(e.target.value)}
               required
             />
@@ -93,7 +89,7 @@ export default function Login() {
             color="cyan"
             className={`mt-8 w-full ${loading && 'bg-gray-800'}`}
           >
-            {loading ? 'Loading...' : 'Sign in to account'}
+            {loading ? 'Loading...' : 'Reset my password'}
             {loading && (
               <div role="status">
                 <svg
@@ -116,19 +112,21 @@ export default function Login() {
             )}
           </Button>
         </form>
-        <iframe
-          src="http://localhost:3001/"
-          style={{ display: 'none' }}
-        ></iframe>
+        }
 
-        <div style={{'margin-top': '20px'}}>
-          Forgot password?{' '}
-          <Link href="/forgot-password">
-            <span className="cursor-pointer text-[#28a745]">Click here</span>
-          </Link>{' '}
-          to reset your password.
+        { showSuccess && 
+        <div className="space-y-6">
+            Success! Password has been changed.
+
+            <Button
+              type="submit"
+              disabled={loading}
+              color="cyan"
+              className={`mt-8 w-full`}
+              onClick={goToLogin}
+            >Sign in now</Button>
         </div>
-
+        }
       </AuthLayout>
     </>
   )
