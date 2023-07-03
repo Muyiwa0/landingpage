@@ -9,6 +9,8 @@ import Rules from '@/components/Rules'
 import Swipper from '@/components/Swipper'
 import { Footer } from '@/components/Footer'
 import Head from 'next/head'
+import pattern from '@/images/pattern.png'
+import Image from 'next/image'
 
 const HowItWorks = () => {
   let [activePeriod, setActivePeriod] = useState('FT9ja Classic')
@@ -24,8 +26,16 @@ const HowItWorks = () => {
         />
       </Head>
       <Header />
-      <div className="flex justify-center bg-gray-900 px-2 pt-10 lg:mx-0">
-        <div className="relative">
+      <div className="relative flex flex-col items-center justify-center bg-gray-900 sm:h-[170px]">
+        <Image
+          src={pattern}
+          width={1700}
+          height={1000}
+          priority
+          alt=""
+          className="object-cover opacity-25"
+        />
+        <div className="absolute">
           <RadioGroup
             value={activePeriod}
             onClick={() => setPrevPeriod(activePeriod)}

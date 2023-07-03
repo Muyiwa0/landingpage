@@ -49,8 +49,8 @@ function BackgroundIllustration(props) {
             y2="1025"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#28a745" />
-            <stop offset="1" stopColor="#28a745" stopOpacity="0" />
+            <stop stopColor="#f77e27" />
+            <stop offset="1" stopColor="#f77e27" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -79,8 +79,8 @@ function BackgroundIllustration(props) {
             y2="913"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#28a745" />
-            <stop offset="1" stopColor="#28a745" stopOpacity="0" />
+            <stop stopColor="#f77e27" />
+            <stop offset="1" stopColor="#f77e27" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -355,7 +355,7 @@ export function Hero() {
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <h1 className="text-4xl font-medium tracking-tight text-gray-900">
+            <h1 className="text-[2.7rem] font-medium tracking-tight text-gray-900">
               Every Trader deserves a chance to be successful
             </h1>
             <p className="mt-6 text-lg text-gray-600">
@@ -365,7 +365,7 @@ export function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-4 lg:justify-start">
               <Link href="/#pricing">
-                <a className="rounded-md border-[1px] border-black bg-black py-2 px-9 text-white duration-300 hover:bg-white hover:text-black">
+                <a className="rounded-md border-[1px] border-[#28a745] bg-[#28a745] py-2 px-9 text-white duration-300 hover:bg-white hover:text-black">
                   Start Trading
                 </a>
               </Link>

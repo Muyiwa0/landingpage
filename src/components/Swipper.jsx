@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import img1 from '../images/sam.png'
 import img3 from '../images/sam.png'
+import pattern from '@/images/pattern.png'
 import { IconContext } from 'react-icons'
 
 // Import Swiper styles
@@ -49,8 +50,16 @@ export default function App() {
 
   return (
     <>
-      <div className="w-full bg-gray-900">
-        <div className="mx-auto max-w-screen-md py-10 px-5 sm:px-10 md:py-20">
+      <div className="relative flex h-[650px] w-full flex-col items-center justify-start bg-gray-900 sm:h-[600px]">
+        <Image
+          src={pattern}
+          width={1700}
+          height={5700}
+          priority
+          alt=""
+          className="opacity-25"
+        />
+        <div className="absolute mx-auto w-[100%] max-w-screen-md py-10 px-5 sm:px-10 md:py-20">
           <h1 className="pb-5 text-center text-3xl font-bold text-white sm:text-left">
             Meet Sam
           </h1>

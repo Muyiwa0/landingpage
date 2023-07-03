@@ -180,7 +180,7 @@ export function ChallengeFaq() {
               <div key={id}>
                 <Disclosure.Button
                   as="div"
-                  className="text-md mb-3 w-full cursor-pointer rounded-lg text-left font-bold"
+                  className="text-md mb-3 w-full cursor-pointer rounded-lg border-b pb-2 text-left font-bold"
                 >
                   <button
                     className="flex w-full justify-between"
