@@ -2,9 +2,10 @@ import React from 'react'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import pattern from '@/images/pattern.png'
+import Image from 'next/image'
 
 const CompareModels = () => {
-
   const compare = [
     {
       headings: [
@@ -158,15 +159,21 @@ const CompareModels = () => {
   }
 
   return (
-    <div className='sm:py-15 px-5 bg-gray-900 py-20'>
-      <motion.section
-        {...Animations}
-        className={clsx(
-          'flex flex-col overflow-hidden mx-auto max-w-screen-lg'
-        )}
-      >
+    <div className="relative flex h-[1150px] flex-col items-center justify-start bg-gray-900 sm:h-[900px]">
+      <Image
+        src={pattern}
+        width={1700}
+        height={5700}
+        priority
+        alt=""
+        className="opacity-25"
+      />
+      <motion.section {...Animations} className="absolute w-[90%] sm:w-[80%]">
         {compare.map(({ id, headings, features, buttons }) => (
-          <div key={id} className="overflow-hidden rounded-lg border border-gray-700">
+          <div
+            key={id}
+            className="overflow-hidden rounded-lg border border-gray-700"
+          >
             <table className="block min-w-full divide-y divide-gray-700 overflow-x-auto md:inline-table md:overflow-x-hidden">
               <thead className="bg-gray-800 text-gray-300">
                 <tr>

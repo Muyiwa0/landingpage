@@ -73,7 +73,14 @@ export default function Register() {
                 )
                 .then((res) => {
                   console.log(res)
-                  window.location.href = '/confimemail'
+                  // localStorage.setItem('access_token', res.data.access_token)
+                  // localStorage.setItem('refresh_token', res.data.refresh_token)
+                  // axios.defaults.headers.common[
+                  //   'Authorization'
+                  // ] = `Bearer ${localStorage.getItem('access_token')}`
+                  // console.log('Register success')
+                  // window.location.href = '/Confirmemail'
+                  // window.location.href = `http://localhost:3001/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
                 })
                 .catch((err) => {
                   console.log(err.response.data)

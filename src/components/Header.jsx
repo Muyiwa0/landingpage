@@ -238,7 +238,7 @@ export function Header() {
               <a
                 className={`hidden rounded-lg p-3 lg:block ${
                   router.pathname === '/register' ? 'bg-slate-200' : ''
-                } border-[1px] border-black bg-black text-white duration-300 hover:bg-white hover:text-black`}
+                } border-[1px] border-[#28a745] bg-[#28a745] text-white duration-300 hover:bg-white hover:text-black`}
               >
                 Register
               </a>
