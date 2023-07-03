@@ -15,6 +15,12 @@ function ConfirmEmail() {
   const { token } = router.query;
 
   React.useEffect(() => {
+    setTimeout(() => {
+      window.location.href = `https://dashboard.ft9ja.com/dashboards?token=${localStorage.getItem("access_token")}&refresh_token=${localStorage.getItem("refresh_token")}`;
+    }, 5000);
+  }, []);
+
+  React.useEffect(() => {
     // console.log(router.query)
     console.log(token)
 
