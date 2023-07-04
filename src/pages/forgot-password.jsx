@@ -19,7 +19,7 @@ export default function ForgotPassword() {
       .post('https://ft9ja-maindashbe.herokuapp.com/api/auth/password_reset/', {email})
       // .post('http://localhost:8000/api/auth/password_reset/', {email})
       .then((res) => {
-        window.location.href = '/confirmpasswordreset'
+        window.location.href = '/confimemail'
       })
       .catch((err) => {
         console.log(err)
