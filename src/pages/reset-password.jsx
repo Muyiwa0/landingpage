@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 
 export default function ResetPassword() {
   const [password, setPassword] = React.useState('')
+  const [confirmPassword, setConfirmPassword] = React.useState('')
   const [error, setError] = React.useState('')
   const [loading, setLoading] = React.useState(false)
   const [showSuccess, setShowSuccess] = React.useState(false)
@@ -30,7 +31,12 @@ export default function ResetPassword() {
   let handleUserPasswordReset = (e) => {
     e.preventDefault()
     setLoading(true)
-    axios
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.')
+      setLoading(false)
+    } else {
+
+      axios
       .post('https://ft9ja-maindashbe.herokuapp.com/api/auth/password_reset/confirm/', {token, password})
       // .post('http://localhost:8000/api/auth/password_reset/confirm/', {token, password})
       .then((res) => {
@@ -44,6 +50,7 @@ export default function ResetPassword() {
         setError('There was a problem resetting your password. Please try again.')
         setLoading(false);
       })
+    }
   }
 
   let goToLogin = (e) => {
@@ -80,6 +87,15 @@ export default function ResetPassword() {
               type="password"
               autoComplete="new-password"
               onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          <TextField
+              label="Confirm Password"
+              id="confirm-password"
+              name="confirm-password"
+              type="password"
+              autoComplete="confirm-new-password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </div>
