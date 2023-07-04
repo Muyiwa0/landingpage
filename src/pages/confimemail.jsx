@@ -1,7 +1,12 @@
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
+import logo from '../images/logo.png'
+import emailImage from '../images/email_sent.png'
+import axios from 'axios'
+import { useRouter } from 'next/router';
 
-function confimemail() {
-  return <div>Email Sent, Please Check Your Email</div>
 function ConfirmEmail() {
   const [showSuccess, setShowSuccess] = React.useState(false);
   const [msg, setMsg] = React.useState("");
@@ -86,4 +91,4 @@ function ConfirmEmail() {
 
 }
 
-export default confimemail
+export default ConfirmEmail;

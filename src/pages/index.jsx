@@ -34,14 +34,3 @@ export default function Home({ data }) {
     </>
   )
 }
-
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(
-    'https://lottie.host/e6757790-868b-473d-9d0f-ac15c7ffe904/MAj5WiSf5m.json'
-  )
-  const data = await res.json()
-
-  // Pass data to the page via props
-  return { props: { data } }
-}
