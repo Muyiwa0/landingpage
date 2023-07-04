@@ -668,7 +668,7 @@ const Faq = () => {
       <div className="w-full">
         <div className="mx-auto max-w-screen-xl md:px-10">
           <div className="flex py-10">
-            <div className="hidden h-[100vh] w-1/3 overflow-y-scroll px-5 md:block">
+            <div className="hidden w-1/3 px-5 md:block">
               {supportLinks.map(({ id, title, links }) => (
                 <div key={id} className="py-4">
                   <p className="py-2 font-bold">{title}</p>

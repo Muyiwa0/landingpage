@@ -100,7 +100,7 @@ export function Footer() {
             </h1>
             <div className="flex flex-col justify-center sm:flex-row md:flex-col md:text-right lg:flex-row">
               <Link href="/#pricing">
-                <a className="mb-2 rounded-xl border-[1px] border-[#28a745] bg-[#28a745] py-3 px-6 text-center text-base text-white duration-300 hover:border-[1px] hover:bg-white hover:text-black sm:mr-2 sm:mb-0 md:mr-0 md:mb-2 lg:mr-2 lg:mb-0">
+                <a className="mb-2 rounded-xl border-[1px] border-black bg-black py-3 px-6 text-center text-base text-white duration-300 hover:border-[1px] hover:bg-white hover:text-black sm:mr-2 sm:mb-0 md:mr-0 md:mb-2 lg:mr-2 lg:mb-0">
                   Start Trading
                 </a>
               </Link>

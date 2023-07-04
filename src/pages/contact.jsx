@@ -7,7 +7,6 @@ import img from '../images/cuatecontact.svg'
 import Image from 'next/image'
 import Head from 'next/head'
 import axios from 'axios'
-import pattern from '@/images/pattern.png'
 
 const Contact = () => {
   const [inputs, setInputs] = useState('')
@@ -45,16 +44,8 @@ const Contact = () => {
         />
       </Head>
       <Header />
-      <div className="relative flex h-[650px] w-full flex-col items-center justify-start bg-black sm:h-[350px]">
-        <Image
-          src={pattern}
-          width={1700}
-          height={5700}
-          priority
-          alt=""
-          className="opacity-55"
-        />
-        <div className="absolute mx-auto max-w-screen-lg py-10">
+      <div className="w-full bg-black">
+        <div className="mx-auto max-w-screen-lg py-10">
           <div className="flex flex-col sm:flex-row">
             <div className="mx-5 text-white">
               <h1 className="py-10 text-center text-3xl font-bold sm:text-left">
@@ -129,7 +120,7 @@ const Contact = () => {
               onChange={handleChange}
             />
             <input
-              className="hover:border-gray my-5 cursor-pointer rounded-lg border-2 bg-[#28a745] py-3 font-bold text-white duration-300 hover:bg-gray-900 "
+              className="hover:border-gray my-5 cursor-pointer rounded-lg border-2 bg-black py-3 font-bold text-white duration-300 hover:bg-gray-900 "
               value="Submit"
               type="submit"
             />

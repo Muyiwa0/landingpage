@@ -78,7 +78,7 @@ export default function Register() {
                   // axios.defaults.headers.common[
                   //   'Authorization'
                   // ] = `Bearer ${localStorage.getItem('access_token')}`
-                  
+                  // console.log('Register success')
                   window.location.href = '/confimemail'
                   // window.location.href = `http://localhost:3001/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
                 })

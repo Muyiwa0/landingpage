@@ -1,43 +1,42 @@
 import { useId } from 'react'
-import {
-  FaHandHoldingUsd,
-  FaRegClock,
-  FaRegHandshake,
-  FaCommentDollar,
-  FaOpencart,
-  FaMailBulk,
-} from 'react-icons/fa'
+import { FaHandHoldingUsd,FaRegClock,FaRegHandshake, FaCommentDollar,FaOpencart, FaMailBulk } from "react-icons/fa";
 import { Container } from '@/components/Container'
 
 const features = [
   {
     name: 'Talent Bonus',
-    description: 'Get paid during evaluation',
+    description:
+      'Get paid during evaluation',
     icon: FaHandHoldingUsd,
   },
   {
     name: 'Fast Payout',
-    description: 'Weekly or monthly payout (after the first 10 days)',
+    description:
+      'Weekly or monthly payout (after the first 10 days)',
     icon: FaOpencart,
   },
   {
     name: 'Flexible',
-    description: 'No time limit to achieve 25% profit target.',
+    description:
+      'No time limit to achieve 25% profit target.',
     icon: FaRegClock,
   },
   {
     name: 'One-time Payment',
-    description: 'No hidden fee or monthly payment',
+    description:
+      'No hidden fee or monthly payment',
     icon: FaCommentDollar,
   },
   {
     name: 'Wide Range of Instruments',
-    description: 'Trade financial or synthetic indices (VIX) On Deriv!',
+    description:
+      'Trade financial or synthetic indices (VIX) On Deriv!',
     icon: FaMailBulk,
   },
   {
     name: '2nd Chance Account',
-    description: 'Naija happens - get a 2nd account free of charge',
+    description:
+      'Naija happens - get a 2nd account free of charge',
     icon: FaRegHandshake,
   },
 ]
@@ -51,17 +50,9 @@ function DeviceArrowIcon(props) {
         d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
         fill="#737373"
       />
-
+      
       <path d="M17.35,2.219h-5.934c-0.115,0-0.225,0.045-0.307,0.128l-8.762,8.762c-0.171,0.168-0.171,0.443,0,0.611l5.933,5.934c0.167,0.171,0.443,0.169,0.612,0l8.762-8.763c0.083-0.083,0.128-0.192,0.128-0.307V2.651C17.781,2.414,17.587,2.219,17.35,2.219M16.916,8.405l-8.332,8.332l-5.321-5.321l8.333-8.332h5.32V8.405z M13.891,4.367c-0.957,0-1.729,0.772-1.729,1.729c0,0.957,0.771,1.729,1.729,1.729s1.729-0.772,1.729-1.729C15.619,5.14,14.848,4.367,13.891,4.367 M14.502,6.708c-0.326,0.326-0.896,0.326-1.223,0c-0.338-0.342-0.338-0.882,0-1.224c0.342-0.337,0.881-0.337,1.223,0C14.84,5.826,14.84,6.366,14.502,6.708"></path>
-      <circle
-        cx="10"
-        cy="9"
-        r="1"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeWidth="2"
-        transform="rotate(90 10 9)"
-      />
+      <circle cx="10" cy="9" r="1" stroke="currentColor" strokeLinecap="round"  strokeWidth="2" transform="rotate(90 10 9)"/>
       <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
     </svg>
   )
@@ -78,20 +69,8 @@ function DeviceCardsIcon(props) {
         d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
         fill="#737373"
       />
-      <path
-        d="M31 4H16L10 27H18L14 44L40 16H28L31 4Z"
-        fill="none"
-        stroke="#333"
-        strokeWidth="1"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M21 11L19 19"
-        stroke="#333"
-        strokeWidth="1"
-        strokeLinecap="round"
-      />
+      <path d="M31 4H16L10 27H18L14 44L40 16H28L31 4Z" fill="none" stroke="#333" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M21 11L19 19" stroke="#333" strokeWidth="1" strokeLinecap="round"/>
       {/* <rect x={9} y={6} width={14} height={4} rx={1} fill="#171717" /> */}
       <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
       <defs>
@@ -133,13 +112,7 @@ function DeviceClockIcon(props) {
 
 function DeviceListIcon(props) {
   return (
-    <svg
-      className="svg-icon"
-      viewBox="0 0 32 32"
-      fill="none"
-      aria-hidden="true"
-      {...props}
-    >
+    <svg className="svg-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -157,6 +130,7 @@ function DeviceListIcon(props) {
       /> */}
       <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
     </svg>
+    
   )
 }
 
@@ -234,7 +208,7 @@ export function SecondaryFeatures() {
               key={feature.name}
               className="rounded-2xl border border-gray-200 p-8"
             >
-              <feature.icon className="h-8 w-8 text-[#f77e27]" />
+              <feature.icon className="h-8 w-8" />
               <h3 className="mt-6 font-semibold text-gray-900">
                 {feature.name}
               </h3>

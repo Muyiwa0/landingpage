@@ -20,11 +20,10 @@ import {
 } from '@/components/StockLogos'
 import startTrading from '@/images/animations/starttrading.json'
 import signUp from '@/images/animations/signup.json'
-import startEarning from '@/images/animations/startEarning.json'
+import startEarning from '@/images/animations/startearning.json'
 // import signIn from '@/images/animations/Sign-in.gif'
 import Image from 'next/image'
 import Lottie from 'react-lottie'
-import pattern from '@/images/pattern.png'
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -368,7 +367,7 @@ function usePrevious(value) {
   return ref.current
 }
 
-function FeaturesDesktop() {
+function FeaturesDesktop({ data }) {
   let [changeCount, setChangeCount] = useState(0)
   let [selectedIndex, setSelectedIndex] = useState(0)
   let prevIndex = usePrevious(selectedIndex)
@@ -440,7 +439,7 @@ function FeaturesDesktop() {
       </Tab.List>
       <div className="relative col-span-6 ">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <CircleBackground color="#f77e27" className="animate-spin-slower" />
+          <CircleBackground color="#28a745" className="animate-spin-slower" />
         </div>
         {/* <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
           <Tab.Panels as={Fragment}>
@@ -533,7 +532,7 @@ function FeaturesMobile() {
             <div className="relative h-[910px] transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <CircleBackground
-                  color="#f77e27"
+                  color="#13B5C8"
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
@@ -581,7 +580,7 @@ function FeaturesMobile() {
   )
 }
 
-export function PrimaryFeatures() {
+export function PrimaryFeatures({ data }) {
   const Animations = {
     initial: 'initial',
     animate: 'animate',
@@ -599,17 +598,9 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for investing all your money"
-      className=" relative flex h-[1350px] flex-col items-center justify-center bg-gray-900 sm:h-[1170px]"
+      className="sm:py-15 bg-gray-900 py-20"
     >
-      <Image
-        src={pattern}
-        width={1700}
-        height={5700}
-        priority
-        alt=""
-        className="opacity-25"
-      />
-      <motion.div {...Animations} className="absolute w-[100%]">
+      <motion.div {...Animations}>
         <Container>
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
             <h2 className="text-3xl font-medium tracking-tight text-white">
@@ -626,7 +617,7 @@ export function PrimaryFeatures() {
           <FeaturesMobile />
         </div>
         <Container className="hidden md:mt-20 md:block">
-          <FeaturesDesktop />
+          <FeaturesDesktop props={data} />
         </Container>
       </motion.div>
     </section>

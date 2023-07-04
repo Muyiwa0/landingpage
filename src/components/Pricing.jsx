@@ -510,7 +510,7 @@ function Collapsible({ id, title, text, step, desc, points }) {
           text.map(({ id, text }) => (
             <td
               key={id}
-              className="whitespace-nowrap border-r-[1px] border-gray-200 px-6 py-4 text-center text-sm font-bold text-gray-800"
+              className="whitespace-nowrap border-r-[1px] border-gray-200 px-6 py-4 text-center text-sm text-gray-800"
             >
               {text}
             </td>
@@ -534,7 +534,7 @@ function Collapsible({ id, title, text, step, desc, points }) {
             <p className="">{desc}</p>
             {points &&
               points.map(({ id, point }) => (
-                <li key={id} className="py-1 ">
+                <li key={id} className="py-1">
                   {point}
                 </li>
               ))}
@@ -637,7 +637,7 @@ function Plan({ plan }) {
                     className="whitespace-nowrap border-r-[1px] border-gray-200 px-6 py-4 text-center text-sm text-gray-800"
                   >
                     <Link href="/register">
-                      <a className="rounded-md border-[1px] border-[#28a745] bg-[#28a745] px-6 py-3 text-white duration-300 hover:bg-white hover:text-black">
+                      <a className="rounded-md border-[1px] border-black bg-black px-6 py-3 text-white duration-300 hover:bg-white hover:text-black">
                         Trade with {price}
                       </a>
                     </Link>
@@ -705,14 +705,14 @@ function Compare() {
                   </td>
                   <td className="whitespace-nowrap border-r-[1px] border-gray-200 px-6 py-4 text-center text-sm text-gray-800">
                     <Link href="/register">
-                      <a className="rounded-md border-[1px] border-[#28a745] bg-[#28a745] px-8 py-3 text-white duration-300 hover:bg-white hover:text-black">
+                      <a className="rounded-md border-[1px] border-black bg-black px-8 py-3 text-white duration-300 hover:bg-white hover:text-black">
                         {button1}
                       </a>
                     </Link>
                   </td>
                   <td className="whitespace-nowrap border-r-[1px] border-gray-200 px-6 py-4 text-center text-sm text-gray-800">
                     <Link href="/register">
-                      <a className="rounded-md border-[1px] border-[#28a745] bg-[#28a745] px-8 py-3 text-white duration-300 hover:bg-white hover:text-black">
+                      <a className="rounded-md border-[1px] border-black bg-black px-8 py-3 text-white duration-300 hover:bg-white hover:text-black">
                         {button2}
                       </a>
                     </Link>

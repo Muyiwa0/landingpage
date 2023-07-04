@@ -18,12 +18,8 @@ import {
   TransistorLogo,
   TupleLogo,
 } from '@/components/StockLogos'
-import classicSignUp from '@/images/animations/signup-classic.json'
-import startTrading from '@/images/animations/starttrading.json'
-import startEarning from '@/images/animations/startEarning.json'
+// import classicSignUp from '@/images/animations/Classic-Sign-Up.gif'
 import Image from 'next/image'
-import pattern from '@/images/pattern.png'
-import Lottie from 'react-lottie'
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -388,20 +384,6 @@ function FeaturesDesktop() {
     { leading: true }
   )
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData:
-      selectedIndex === 0
-        ? classicSignUp
-        : selectedIndex === 1
-        ? startTrading
-        : startEarning,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  }
-
   return (
     <Tab.Group
       as="div"
@@ -440,7 +422,7 @@ function FeaturesDesktop() {
       </Tab.List>
       <div className="relative col-span-6 ml-32">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <CircleBackground color="#f77e27" className="animate-spin-slower" />
+          <CircleBackground color="#28a745" className="animate-spin-slower" />
         </div>
         {/* <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
           <Tab.Panels as={Fragment}>
@@ -465,7 +447,14 @@ function FeaturesDesktop() {
             </AnimatePresence>
           </Tab.Panels>
         </PhoneFrame> */}
-        <Lottie options={defaultOptions} width={400} />
+        {/* <Image
+          src={classicSignUp}
+          alt=""
+          height={730}
+          width={400}
+          priority
+          style={{ borderRadius: '70px' }}
+        /> */}
       </div>
     </Tab.Group>
   )
@@ -502,19 +491,6 @@ function FeaturesMobile() {
       observer.disconnect()
     }
   }, [slideContainerRef, slideRefs])
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData:
-      activeIndex === 0
-        ? classicSignUp
-        : activeIndex === 1
-        ? startTrading
-        : startEarning,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  }
 
   return (
     <>
@@ -531,7 +507,7 @@ function FeaturesMobile() {
             <div className="relative h-[900px] transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <CircleBackground
-                  color="#f77e27"
+                  color="#13B5C8"
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
@@ -539,7 +515,14 @@ function FeaturesMobile() {
                 <feature.screen />
               </PhoneFrame> */}
               <div className="relative mx-auto w-full max-w-[366px]">
-                <Lottie options={defaultOptions} width={330} />
+                {/* <Image
+                  src={classicSignUp}
+                  alt=""
+                  height={730}
+                  width={400}
+                  priority
+                  style={{ borderRadius: '60px' }}
+                /> */}
               </div>
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />
@@ -597,17 +580,9 @@ export function PrimaryFeatures2() {
     <section
       id="features"
       aria-label="Features for investing all your money"
-      className="relative flex h-[1350px] flex-col items-center justify-start bg-gray-900 sm:h-[1050px]"
+      className="sm:py-15 bg-gray-900 py-20"
     >
-      <Image
-        src={pattern}
-        width={1700}
-        height={5700}
-        priority
-        alt=""
-        className="opacity-25"
-      />
-      <motion.div {...Animations} className="absolute w-[100%]">
+      <motion.div {...Animations}>
         <Container>
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
             <h2 className="text-3xl font-medium tracking-tight text-white">

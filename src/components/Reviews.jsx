@@ -110,7 +110,7 @@ function StarRating({ rating }) {
           key={index}
           className={clsx(
             'h-5 w-5',
-            rating > index ? 'fill-[#f77e27]' : 'fill-gray-300'
+            rating > index ? 'fill-[#28a745]' : 'fill-gray-300'
           )}
         />
       ))}
@@ -261,8 +261,8 @@ export function Reviews() {
           Feedback from our traders
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          Thousands of Traders love trading with FT9ja Prop Firm. Here&apos;s
-          what some of them say.
+          Thousands of Traders love trading with FT9ja Prop Firm. Here&apos;s what
+          some of them say.
         </p>
         <ReviewGrid />
       </Container>
