@@ -72,7 +72,7 @@ export default function Register() {
                   }
                 )
                 .then((res) => {
-                  console.log(res)
+                  // console.log(res)
                   window.location.href = '/confimemail'
                 })
                 .catch((err) => {
