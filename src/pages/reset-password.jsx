@@ -75,10 +75,10 @@ export default function ResetPassword() {
           </>
         }
       >
-        {error}
+        
 
         { !showSuccess && 
-        <form onSubmit={handleUserPasswordReset}>
+        <form onSubmit={handleUserPasswordReset} className='mx-5 lg:mx-0'>
           <div className="space-y-6">
           <TextField
               label="New Password"
@@ -91,14 +91,15 @@ export default function ResetPassword() {
             />
           <TextField
               label="Confirm Password"
-              id="confirm-password"
+              id="password"
               name="confirm-password"
               type="password"
-              autoComplete="confirm-new-password"
+              autoComplete="new-password"
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </div>
+          {error && <p className='text-red-500 mt-3'>{error}</p>}
           <Button
             type="submit"
             disabled={loading}

@@ -78,7 +78,14 @@ export default function Register() {
                 .catch((err) => {
                   console.log(err.response.data)
                   if (err.response.data.password1) {
-                    setError(err.response.data.password1)
+                    if (password1.length < 8){
+                      setError(err.response.data.password1[0])
+                    }else if(password1.length >= 8){
+                      const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+                      console.log(regex.test(password1))
+                      setError("Password is too common, it must contain alphabets, numbers and symbols")
+                    }
+                    
                   }
                   if (err.response.data.email) {
                     setError('Email Already registered, Login instead')
@@ -223,7 +230,7 @@ export default function Register() {
               id="password"
               name="password"
               type="password"
-              autoComplete="password"
+              autoComplete="new-password"
               value={password1}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -234,13 +241,13 @@ export default function Register() {
               id="password"
               name="password2"
               type="password"
-              autoComplete="password"
+              autoComplete="new-password"
               value={password2}
               onChange={(e) => setPassword2(e.target.value)}
               required
             />
           </div>
-          {error}
+          {error && <p className='text-red-500'>{error}</p>}
           <Button
             type="submit"
             color="cyan"
