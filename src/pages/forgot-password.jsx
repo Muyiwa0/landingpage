@@ -16,9 +16,10 @@ export default function ForgotPassword() {
     e.preventDefault()
     setLoading(true)
     axios
-      .post('https://ft9ja-maindashbe.herokuapp.com/api/auth/password_reset/', {email})
+      .post('https://maindashbe-june-b18731a0e161.herokuapp.com/api/auth/password_reset/', {email})
       // .post('http://localhost:8000/api/auth/password_reset/', {email})
       .then((res) => {
+        // console.log(res)
         window.location.href = '/confirmpasswordreset'
       })
       .catch((err) => {
@@ -46,7 +47,7 @@ export default function ForgotPassword() {
           </>
         }
       >
-        {error}
+        <p className='text-red-500'>{error}</p>
         <form onSubmit={handleUserPasswordReset}>
           <div className="space-y-6">
             <TextField

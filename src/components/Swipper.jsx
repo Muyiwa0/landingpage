@@ -23,21 +23,21 @@ export default function App() {
   const swiperlist = [
     {
       id: 0,
-      img: <Image src={img1} className="pb-5" alt="alsdkjf" />,
+      img: <Image src={img1} className="pb-5" alt="alsdkjf" loading='lazy'/>,
       name: 'Meet Sam',
       title: 'Starting out with a $25,000 Zuma Account',
       // subtitle: 'A subtitle',
     },
     {
       id: 1,
-      img: <Image src={img3} className="pb-5" alt="alsdkjf" />,
+      img: <Image src={img3} className="pb-5" alt="alsdkjf" loading='lazy'/>,
       name: 'Meet Sam',
       title: 'Starting out with a $25,000 Zuma Account',
       // subtitle: 'A subtitle',
     },
     {
       id: 2,
-      img: <Image src={img1} className="pb-5" alt="alsdkjf" />,
+      img: <Image src={img1} className="pb-5" alt="alsdkjf" loading='lazy'/>,
       name: 'Meet Sam',
       title: 'Starting out with a $25,000 Zuma Account',
       // subtitle: 'A subtitle',
@@ -60,12 +60,12 @@ export default function App() {
               <p className="pt-5 text-center text-2xl font-bold text-white sm:text-left">
                 {swiperlist[swiperRef].name}
               </p>
-              <p className="py-5 text-center text-white sm:text-left">
+              <p className="pt-5 text-lg text-center text-white sm:text-left">
                 {swiperlist[swiperRef].title}
               </p>
-              <p className="text-center text-white sm:text-left">
+              {/* <p className="text-center text-white sm:text-left">
                 {swiperlist[swiperRef].subtitle}
-              </p>
+              </p> */}
             </span>
           </div>
           <div style={{ marginTop: '4%' }} className="relative px-10">

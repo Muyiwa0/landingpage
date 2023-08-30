@@ -1,5 +1,6 @@
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
@@ -8,8 +9,14 @@ const Faq = () => {
   const [link, setLink] = useState('')
   const [answer, setAnswer] = useState()
   const [points, setPoints] = useState([])
+  const [feedback, setFeedback] = useState(0)
 
   const router = useRouter()
+  // console.log(router.asPath)
+
+  useEffect(() => {
+    setFeedback(0)
+  }, [router.asPath])
 
   const supportLinks = [
     {
@@ -451,7 +458,7 @@ const Faq = () => {
           
           `,
           point5: `
-          You are allowed to use a mixture of scalping, swing, discretionary trading, and so on as long as you are consistent with your chosen strategy.
+          You are allowed to use a mixture of swing, discretionary trading, and so on as long as you are consistent with your chosen strategy.
           `,
           link: '/articles/am-i-free-to-use-my-own-unique-trading-style',
         },
@@ -460,6 +467,12 @@ const Faq = () => {
           title: 'Can I change my trading account login details?',
           answer: `No. You are not allowed to change your login details for any reason. If you change your password or any other details on the account, it will result in immediate account termination.`,
           link: '/articles/can-i-change-my-trading-account-login-details',
+        },
+        {
+          id: 6,
+          title: 'Do you allow scalping?',
+          answer: `Scalping is allowed. Nonetheless, trades involving holding positions for less than 5 minutes are prohibited.`,
+          link: '/articles/do-you-allow-scalping',
         },
       ],
     },
@@ -662,6 +675,20 @@ const Faq = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const handleFeedback = (quesh, feed) => {
+    const mainFeed = feed === 1 ? "No" : feed === 2 ? "Maybe" : "Yes"
+    const complete = {
+      question: quesh,
+      reaction: mainFeed
+    }
+    axios.post('https://maindashbe-june-b18731a0e161.herokuapp.com/api/faq-reactions/', complete).then(res => {
+      console.log(res)
+    }).ca
+    // console.log(quesh, mainFeed)
+  }
+
+  // console.log(answer)
+
   return (
     <div>
       <Header />
@@ -839,6 +866,23 @@ const Faq = () => {
                   </p>
                   {answer.break1 && <br />}
                   <p>{answer.more16}</p>
+                  <div className='bg-gray-300 flex flex-col items-center gap-5 py-5 rounded-2xl mt-5'>
+                    <h1 className='text-gray-500'>Did this answer your Question?</h1>
+                    <div className='flex gap-3 items-center'>
+                      <p onClick={() => {
+                        setFeedback(1)
+                        handleFeedback(answer.title, 1)
+                      }} className={feedback === 1 ? "scale-125 text-3xl cursor-pointer" : "text-3xl grayscale hover:grayscale-0 cursor-pointer hover:scale-125"}>😞</p>
+                      <p onClick={() => {
+                        setFeedback(2)
+                        handleFeedback(answer.title, 2)
+                      }} className={feedback === 2 ? "scale-125 text-3xl cursor-pointer" : "text-3xl grayscale hover:grayscale-0 cursor-pointer hover:scale-125"}>😐</p>
+                      <p onClick={() => {
+                        setFeedback(3)
+                        handleFeedback(answer.title, 3)
+                      }} className={feedback === 3 ? "scale-125 text-3xl cursor-pointer" : "text-3xl grayscale hover:grayscale-0 cursor-pointer hover:scale-125"}>😃</p>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>

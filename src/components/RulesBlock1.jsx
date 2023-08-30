@@ -1,28 +1,28 @@
 import React from 'react'
 import Image from 'next/image'
 import img from '../images/bro.svg'
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 
 const RulesBlock1 = () => {
-  const Animations = {
-    initial: 'initial',
-    animate: 'animate',
-    variants: {
-      initial: {
-        opacity: 0,
-      },
-      animate: {
-        opacity: 1,
-        transition: { duration: 0.8 },
-      },
-    },
-  }
+  // const Animations = {
+  //   initial: 'initial',
+  //   animate: 'animate',
+  //   variants: {
+  //     initial: {
+  //       opacity: 0,
+  //     },
+  //     animate: {
+  //       opacity: 1,
+  //       transition: { duration: 0.8 },
+  //     },
+  //   },
+  // }
   return (
     <div>
-      <motion.div {...Animations}>
+      <div>
         <div className="mx-auto grid max-w-screen-lg grid-cols-1 items-center md:grid-cols-2">
-          <div className="p-12 w-96 mx-auto">
-            <Image src={img} alt="rules block" />
+          <div className="p-12 lg:w-96 mx-auto">
+            <Image src={img} alt="rules block" loading='lazy'/>
           </div>
           <div>
             <p>
@@ -41,7 +41,7 @@ const RulesBlock1 = () => {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }

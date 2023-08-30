@@ -1,6 +1,6 @@
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ImFacebook, ImWhatsapp } from 'react-icons/im'
 import { GrInstagram } from 'react-icons/gr'
 import img from '../images/cuatecontact.svg'
@@ -11,6 +11,12 @@ import axios from 'axios'
 const Contact = () => {
   const [inputs, setInputs] = useState('')
   const [message, setMessage] = useState('')
+  const [access, setAccess] = useState("")
+  const [refresh, setRefresh] = useState("")
+  useEffect(() => {
+    setAccess(localStorage.getItem("access_token"))
+    setRefresh(localStorage.getItem("refresh_token"))
+  }, [])
 
   const handleChange = (event) => {
     const name = event.target.name
@@ -43,7 +49,7 @@ const Contact = () => {
           content="Need help or more information? We're here for you. Connect with our customer service specialist through the most convenient way for you."
         />
       </Head>
-      <Header />
+      <Header access={access} refresh={refresh} />
       <div className="w-full bg-black">
         <div className="mx-auto max-w-screen-lg py-10">
           <div className="flex flex-col sm:flex-row">
@@ -63,6 +69,7 @@ const Contact = () => {
               height={400}
               className="self-center pb-5"
               alt="alsdkjf"
+              loading='lazy'
             />
           </div>
         </div>

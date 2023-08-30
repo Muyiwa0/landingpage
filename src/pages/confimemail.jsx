@@ -14,33 +14,29 @@ function ConfirmEmail() {
   const router = useRouter();
   const { token } = router.query;
 
-   React.useEffect(() => {
-    setTimeout(() => {
-      window.location.href = `https://dashboard.ft9ja.com/dashboards?token=${localStorage.getItem("access_token")}&refresh_token=${localStorage.getItem("refresh_token")}`;
-    }, 5000);
-  }, []);
 
   React.useEffect(() => {
     // console.log(router.query)
     console.log(token)
 
-    if(token) {
+    if (token) {
 
       axios
-      .get('https://ft9ja-maindashbe.herokuapp.com/api/auth/confirm-email/'+token)
-      // .get('http://localhost:8000/api/auth/confirm-email/'+token)
-      .then((res) => {
-        // window.location.href = '/confimemail'
-        console.log("Email verified", res);
-        setMsg("Your email has been confirmed. Login details will be sent to you.");
-        setShowSuccess(true);
-      })
-      .catch((err) => {
-        console.log(err)
-        setMsg("Your email has been confirmed. Login details will be sent to you.");
-        // setMsg('Sorry! There was a problem confirming your email address. Please try again.')
-        setShowSuccess(true);
-      })
+        .get('https://maindashbe-june-b18731a0e161.herokuapp.com/api/auth/confirm-email/' + token)
+        // .get('http://localhost:8000/api/auth/confirm-email/'+token)
+        .then((res) => {
+          console.log("Email verified", res);
+          setMsg("Your email has been confirmed. You will be redirected to the login page");
+          setShowSuccess(true);
+          window.location.href = '/login'
+        })
+        .catch((err) => {
+          console.log(err)
+          setMsg("Your email has been confirmed. You will be redirected to the login page");
+          window.location.href = '/login'
+          // setMsg('Sorry! There was a problem confirming your email address. Please try again.')
+          setShowSuccess(true);
+        })
     }
 
   }, [token]);
@@ -60,7 +56,7 @@ function ConfirmEmail() {
         <div className="mx-auto flex w-full max-w-2xl flex-col px-4 sm:px-6">
           <Link href="/" aria-label="Home">
             <span className="h-12 w-28  cursor-pointer self-center">
-              <Image src={logo} alt="FT9ja Logo" className="cursor-pointer" />
+              <Image src={logo} alt="FT9ja Logo" className="cursor-pointer" loading='lazy' />
             </span>
           </Link>
 
@@ -68,24 +64,24 @@ function ConfirmEmail() {
             <h1 className="text-center text-2xl font-medium tracking-tight text-gray-900 mb-10">
               Thank you!
             </h1>
-            { !showSuccess && 
-            <>
-              <Image src={emailImage} alt="Email sent" className="cursor-pointer" />
-              <div>
-                <p className="mt-3 text-center text-lg text-gray-600">
-                  Email Sent, Please Check Your Email
-                </p>
+            {!showSuccess &&
+              <div className='flex flex-col items-center'>
+                <Image src={emailImage} alt="Email sent" className="cursor-pointer" loading='lazy' />
+                <div>
+                  <p className="mt-3 text-center text-lg text-gray-600">
+                    A verification email has been sent to your mail. Kindly check your mail to complete your registration.
+                  </p>
+                </div>
               </div>
-            </>
             }
-            { showSuccess && 
-            <>
-              <div>
-                <p className="mt-3 text-center text-lg text-gray-600">
-                  { msg }
-                </p>
-              </div>
-            </>
+            {showSuccess &&
+              <>
+                <div>
+                  <p className="mt-3 text-center text-lg text-gray-600">
+                    {msg}
+                  </p>
+                </div>
+              </>
             }
           </div>
 

@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, RadioGroup, Transition } from '@headlessui/react'
 import clsx from 'clsx'
-import { AnimatePresence, motion } from 'framer-motion'
+// import { AnimatePresence, motion } from 'framer-motion'
 import { Container } from '@/components/Container'
 import Link from 'next/link'
 
@@ -471,19 +471,19 @@ const compare = [
   },
 ]
 
-const Animations = {
-  initial: 'initial',
-  animate: 'animate',
-  variants: {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      transition: { duration: 0.8 },
-    },
-  },
-}
+// const Animations = {
+//   initial: 'initial',
+//   animate: 'animate',
+//   variants: {
+//     initial: {
+//       opacity: 0,
+//     },
+//     animate: {
+//       opacity: 1,
+//       transition: { duration: 0.8 },
+//     },
+//   },
+// }
 
 function Collapsible({ id, title, text, step, desc, points }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -547,8 +547,7 @@ function Collapsible({ id, title, text, step, desc, points }) {
 
 function Plan({ plan }) {
   return (
-    <motion.section
-      {...Animations}
+    <section
       className={clsx(
         'flex flex-col overflow-hidden rounded-3xl bg-white p-6 shadow-lg shadow-gray-900/5'
       )}
@@ -648,14 +647,13 @@ function Plan({ plan }) {
           </table>
         </div>
       ))}
-    </motion.section>
+    </section>
   )
 }
 
 function Compare() {
   return (
-    <motion.section
-      {...Animations}
+    <section
       className={clsx(
         'flex flex-col overflow-hidden rounded-3xl bg-white p-6 shadow-lg shadow-gray-900/5'
       )}
@@ -723,7 +721,7 @@ function Compare() {
           </table>
         </div>
       ))}
-    </motion.section>
+    </section>
   )
 }
 

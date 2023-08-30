@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Popover } from '@headlessui/react'
-import { AnimatePresence, motion } from 'framer-motion'
+// import { AnimatePresence, motion } from 'framer-motion'
 import { Container } from '@/components/Container'
 import { useRouter } from 'next/router'
 import logo from '../images/logo.png'
@@ -19,6 +19,7 @@ function MenuIcon(props) {
   )
 }
 
+
 function ChevronUpIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
@@ -32,7 +33,13 @@ function ChevronUpIcon(props) {
   )
 }
 
-export function Header() {
+function LogOut() {
+  localStorage.removeItem("access_token", "");
+  localStorage.removeItem("refresh_token", "");
+  window.location.href = "https://ft9ja.com/login";
+}
+
+export function Header({ access, refresh }) {
   const router = useRouter()
   return (
     <header className="bg-white">
@@ -41,15 +48,14 @@ export function Header() {
           <div className="relative z-10 flex items-center gap-16">
             <Link href="/" aria-label="Home">
               <span className="h-12 w-20">
-                <Image src={logo} alt="FT9ja Logo" className="cursor-pointer" />
+                <Image src={logo} alt="FT9ja Logo" className="cursor-pointer" loading='lazy' />
               </span>
             </Link>
             <div className="hidden justify-between lg:flex">
               <Link href="/how-it-works">
                 <a
-                  className={`mx-1 rounded-lg p-3 ${
-                    router.pathname === '/how-it-works' ? 'bg-slate-200' : ''
-                  } duration-300 hover:bg-slate-200`}
+                  className={`mx-1 rounded-lg p-3 ${router.pathname === '/how-it-works' ? 'bg-slate-200' : ''
+                    } duration-300 hover:bg-slate-200`}
                 >
                   How it works
                 </a>
@@ -63,9 +69,8 @@ export function Header() {
               </Link>
               <Link href="/support">
                 <a
-                  className={`mx-1 rounded-lg p-3 ${
-                    router.pathname === '/support' ? 'bg-slate-200' : ''
-                  } duration-300 hover:bg-slate-200`}
+                  className={`mx-1 rounded-lg p-3 ${router.pathname === '/support' ? 'bg-slate-200' : ''
+                    } duration-300 hover:bg-slate-200`}
                 >
                   Support/FAQs
                 </a>
@@ -73,9 +78,8 @@ export function Header() {
               <Link href="https://www.community.ft9ja.com/">
                 <a
                   target="_blank"
-                  className={`mx-1 rounded-lg p-3 ${
-                    router.pathname === '#' ? 'bg-slate-200' : ''
-                  } duration-300 hover:bg-slate-200`}
+                  className={`mx-1 rounded-lg p-3 ${router.pathname === '#' ? 'bg-slate-200' : ''
+                    } duration-300 hover:bg-slate-200`}
                 >
                   Community
                 </a>
@@ -90,9 +94,8 @@ export function Header() {
               </Link>
               <Link href="/contact">
                 <a
-                  className={`mx-1 rounded-lg p-3 ${
-                    router.pathname === '/contact' ? 'bg-slate-200' : ''
-                  } duration-300 hover:bg-slate-200`}
+                  className={`mx-1 rounded-lg p-3 ${router.pathname === '/contact' ? 'bg-slate-200' : ''
+                    } duration-300 hover:bg-slate-200`}
                 >
                   Contact
                 </a>
@@ -115,12 +118,12 @@ export function Header() {
                       )
                     }
                   </Popover.Button>
-                  <AnimatePresence initial={false}>
+                  <div>
                     {open && (
                       <>
                         <Popover.Overlay
                           static
-                          as={motion.div}
+                          // as={div}
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
@@ -128,7 +131,7 @@ export function Header() {
                         />
                         <Popover.Panel
                           static
-                          as={motion.div}
+                          // as={div}
                           initial={{ opacity: 0, y: -32 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{
@@ -141,11 +144,10 @@ export function Header() {
                           <div className="mt-8 flex flex-col gap-4">
                             <Link href="/how-it-works">
                               <a
-                                className={`rounded-lg p-3 ${
-                                  router.pathname === '/how-it-works'
-                                    ? 'bg-slate-200'
-                                    : ''
-                                } duration-300 hover:bg-slate-200`}
+                                className={`rounded-lg p-3 ${router.pathname === '/how-it-works'
+                                  ? 'bg-slate-200'
+                                  : ''
+                                  } duration-300 hover:bg-slate-200`}
                               >
                                 How it works
                               </a>
@@ -159,11 +161,10 @@ export function Header() {
                             </Link>
                             <Link href="/support">
                               <a
-                                className={`rounded-lg p-3 ${
-                                  router.pathname === '/support'
-                                    ? 'bg-slate-200'
-                                    : ''
-                                } duration-300 hover:bg-slate-200`}
+                                className={`rounded-lg p-3 ${router.pathname === '/support'
+                                  ? 'bg-slate-200'
+                                  : ''
+                                  } duration-300 hover:bg-slate-200`}
                               >
                                 Support/FAQs
                               </a>
@@ -186,61 +187,58 @@ export function Header() {
                             </Link>
                             <Link href="/contact">
                               <a
-                                className={`rounded-lg p-3 ${
-                                  router.pathname === '/contact'
-                                    ? 'bg-slate-200'
-                                    : ''
-                                } duration-300 hover:bg-slate-200`}
+                                className={`rounded-lg p-3 ${router.pathname === '/contact'
+                                  ? 'bg-slate-200'
+                                  : ''
+                                  } duration-300 hover:bg-slate-200`}
                               >
                                 Contact
                               </a>
                             </Link>
                             <Link href="/login">
                               <a
-                                className={`mx-1 rounded-lg p-3 ${
-                                  router.pathname === '/login'
-                                    ? 'bg-slate-200'
-                                    : ''
-                                } duration-300 hover:bg-slate-200`}
+                                onClick={() => { access && refresh && LogOut() }}
+                                className={`mx-1 rounded-lg p-3 ${router.pathname === '/login'
+                                  ? 'bg-slate-200'
+                                  : ''
+                                  } duration-300 hover:bg-slate-200`}
                               >
-                                Login
+                                {access && refresh ? "Logout" : "Login"}
                               </a>
                             </Link>
-                            <Link href="/register">
+                            <Link href={access && refresh ? `https://dashboard.ft9ja.com/dashboards?token=${access}&refresh_token=${refresh}` : "/register"}>
                               <a
-                                className={`rounded-lg p-3 ${
-                                  router.pathname === '/register'
-                                    ? 'bg-slate-200'
-                                    : ''
-                                } border-[1px] border-black bg-black text-white duration-300 hover:bg-white hover:text-black`}
+                                className={`rounded-lg p-3 ${router.pathname === '/register'
+                                  ? 'bg-slate-200'
+                                  : ''
+                                  } border-[1px] border-black bg-black text-white duration-300 hover:bg-white hover:text-black`}
                               >
-                                Register
+                                {access && refresh ? "Dashboard" : "Register"}
                               </a>
                             </Link>
                           </div>
                         </Popover.Panel>
                       </>
                     )}
-                  </AnimatePresence>
+                  </div>
                 </>
               )}
             </Popover>
-            <Link href="/login">
+            <Link href={"/login"}>
               <a
-                className={`mx-1 hidden rounded-lg p-3 lg:block ${
-                  router.pathname === '/login' ? 'bg-slate-200' : ''
-                } duration-300 hover:bg-slate-200`}
+                onClick={() => { access && refresh && LogOut() }}
+                className={`mx-1 hidden rounded-lg p-3 lg:block ${router.pathname === '/login' ? 'bg-slate-200' : ''
+                  } duration-300 hover:bg-slate-200`}
               >
-                Login
+                {access && refresh ? "Logout" : "Login"}
               </a>
             </Link>
-            <Link href="/register">
+            <Link href={access && refresh ? `https://dashboard.ft9ja.com/dashboards?token=${access}&refresh_token=${refresh}` : "/register"}>
               <a
-                className={`hidden rounded-lg p-3 lg:block ${
-                  router.pathname === '/register' ? 'bg-slate-200' : ''
-                } border-[1px] border-black bg-black text-white duration-300 hover:bg-white hover:text-black`}
+                className={`hidden rounded-lg p-3 lg:block ${router.pathname === '/register' ? 'bg-slate-200' : ''
+                  } border-[1px] border-black bg-black text-white duration-300 hover:bg-white hover:text-black`}
               >
-                Register
+                {access && refresh ? "Dashboard" : "Register"}
               </a>
             </Link>
           </div>

@@ -17,10 +17,10 @@ function PlaceholderFrame(props) {
   )
 }
 
-export function PhoneFrame({
+export default function PhoneFrame({
   className,
   children,
-  priority = false,
+  priority = true,
   ...props
 }) {
   return (
@@ -35,7 +35,7 @@ export function PhoneFrame({
         alt=""
         className="pointer-events-none absolute inset-0 h-full w-full"
         unoptimized
-        priority={priority}
+        loading='lazy'
       />
     </div>
   )

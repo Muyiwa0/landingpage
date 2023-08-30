@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const CompareModels = () => {
@@ -143,24 +143,23 @@ const CompareModels = () => {
     },
   ]
 
-  const Animations = {
-    initial: 'initial',
-    animate: 'animate',
-    variants: {
-      initial: {
-        opacity: 0,
-      },
-      animate: {
-        opacity: 1,
-        transition: { duration: 0.8 },
-      },
-    },
-  }
+  // const Animations = {
+  //   initial: 'initial',
+  //   animate: 'animate',
+  //   variants: {
+  //     initial: {
+  //       opacity: 0,
+  //     },
+  //     animate: {
+  //       opacity: 1,
+  //       transition: { duration: 0.8 },
+  //     },
+  //   },
+  // }
 
   return (
     <div className='sm:py-15 px-5 bg-gray-900 py-20'>
-      <motion.section
-        {...Animations}
+      <section
         className={clsx(
           'flex flex-col overflow-hidden mx-auto max-w-screen-lg'
         )}
@@ -228,7 +227,7 @@ const CompareModels = () => {
             </table>
           </div>
         ))}
-      </motion.section>
+      </section>
     </div>
   )
 }

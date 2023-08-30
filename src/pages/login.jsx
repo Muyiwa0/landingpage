@@ -4,7 +4,7 @@ import React from 'react'
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
-import Iframe from 'react-iframe'
+// import Iframe from 'react-iframe'
 import axios from 'axios'
 export default function Login() {
   const [email, setEmail] = React.useState('')
@@ -16,13 +16,13 @@ export default function Login() {
     e.preventDefault()
     setLoading(true)
     axios
-      .post('https://ft9ja-maindashbe.herokuapp.com/api/auth/login/', {
+      .post('https://maindashbe-june-b18731a0e161.herokuapp.com/api/auth/login/', {
       // .post('http://localhost:8000/api/auth/login/', {
         email,
         password,
       })
       .then((res) => {
-        console.log(res, res.data.refresh_token)
+        console.log(res)
         // localStorage.setItem("access_token", res.data.access_token);
         axios.defaults.headers.common[
           'Authorization'
@@ -33,13 +33,18 @@ export default function Login() {
 
         localStorage.setItem('refresh_token', res.data.refresh_token)
         localStorage.setItem('access_token', res.data.access_token)
-        window.location.href = `https://ft9ja-dashboard.herokuapp.com/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
+        window.location.href = `https://dashboard.ft9ja.com/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
+        // window.location.href = `http://localhost:3001/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
         // window.location.href = `http://localhost:3001/dashboards?token=${res.data.access_token}&refresh_token=${res.data.refresh_token}`
         console.log('login success')
       })
       .catch((err) => {
-        console.log(err)
-        setError('Invalid Email or Password, Recheck')
+        // console.log(err.response.data.non_field_errors[0])
+        if(err.response.data.non_field_errors[0] === "E-mail is not verified.") {
+          setError(err.response.data.non_field_errors[0])
+        }else {
+          setError("Invalid Email or Password, Recheck")
+        }
         setLoading(false)
       })
   }
@@ -65,7 +70,7 @@ export default function Login() {
           </>
         }
       >
-        {error}
+        <p className='text-red-500'>{error}</p>
         <form onSubmit={handleuserLogin}>
           <div className="space-y-6">
             <TextField

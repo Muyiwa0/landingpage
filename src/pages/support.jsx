@@ -393,6 +393,12 @@ const Support = () => {
   const [search, setSearch] = useState('')
   const [noResult, setNoResult] = useState(false)
   const [result, setResult] = useState('')
+  const [access, setAccess] = useState("")
+  const [refresh, setRefresh] = useState("")
+  useEffect(() => {
+    setAccess(localStorage.getItem("access_token"))
+    setRefresh(localStorage.getItem("refresh_token"))
+  }, [])
 
   const handleChange = (e) => {
     setSearch(e.target.value)
@@ -438,7 +444,7 @@ const Support = () => {
           content="Hello! How can we help? Joining FT9ja. Frequently Asked Questions (FAQ). How FT9ja works. FT9ja Rules. FT9ja’s Referral Program.  Learn more about our Ambassador program, FT9ja Hero."
         />
       </Head>
-      <Header />
+      <Header access={access} refresh={refresh} />
       <div className="w-full" onClick={handleClose}>
         <div className="mx-auto max-w-screen-lg py-5 px-5">
           <div>

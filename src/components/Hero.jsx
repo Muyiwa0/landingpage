@@ -1,23 +1,25 @@
 import { useId, useRef, useState } from 'react'
-import Image from 'next/future/image'
-import clsx from 'clsx'
-import { motion, useInView, useMotionValue } from 'framer-motion'
+// import Image from 'next/future/image'
+// import clsx from 'clsx'
+// import {motion} from 'framer-motion'
+import dynamic from 'next/dynamic'
 
 import { AppScreen } from '@/components/AppScreen'
-import { AppStoreLink } from '@/components/AppStoreLink'
+// import { AppStoreLink } from '@/components/AppStoreLink'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { PhoneFrame } from '@/components/PhoneFrame'
-import logoBbc from '@/images/logos/bbc.svg'
-import logoCbs from '@/images/logos/cbs.svg'
-import logoCnn from '@/images/logos/cnn.svg'
-import logoFastCompany from '@/images/logos/fast-company.svg'
-import logoForbes from '@/images/logos/forbes.svg'
-import logoHuffpost from '@/images/logos/huffpost.svg'
-import logoTechcrunch from '@/images/logos/techcrunch.svg'
-import logoWired from '@/images/logos/wired.svg'
+// import { PhoneFrame } from '@/components/PhoneFrame'
+// import logoBbc from '@/images/logos/bbc.svg'
+// import logoCbs from '@/images/logos/cbs.svg'
+// import logoCnn from '@/images/logos/cnn.svg'
+// import logoFastCompany from '@/images/logos/fast-company.svg'
+// import logoForbes from '@/images/logos/forbes.svg'
+// import logoHuffpost from '@/images/logos/huffpost.svg'
+// import logoTechcrunch from '@/images/logos/techcrunch.svg'
+// import logoWired from '@/images/logos/wired.svg'
 import Link from 'next/link'
 import ModalVideo from 'react-modal-video'
+const PhoneFrame = dynamic(() => import("./PhoneFrame"))
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -110,143 +112,143 @@ const prices = [
 const maxPrice = Math.max(...prices)
 const minPrice = Math.min(...prices)
 
-function Chart({
-  className,
-  activePointIndex,
-  onChangeActivePointIndex,
-  width: totalWidth,
-  height: totalHeight,
-  paddingX = 0,
-  paddingY = 0,
-  gridLines = 6,
-  ...props
-}) {
-  let width = totalWidth - paddingX * 2
-  let height = totalHeight - paddingY * 2
+// function Chart({
+//   className,
+//   activePointIndex,
+//   onChangeActivePointIndex,
+//   width: totalWidth,
+//   height: totalHeight,
+//   paddingX = 0,
+//   paddingY = 0,
+//   gridLines = 6,
+//   ...props
+// }) {
+//   let width = totalWidth - paddingX * 2
+//   let height = totalHeight - paddingY * 2
 
-  let id = useId()
-  let svgRef = useRef()
-  let pathRef = useRef()
-  let isInView = useInView(svgRef, { amount: 0.5, once: true })
-  let pathWidth = useMotionValue(0)
-  let [interactionEnabled, setInteractionEnabled] = useState(false)
+//   let id = useId()
+//   let svgRef = useRef()
+//   let pathRef = useRef()
+//   let isInView = useInView(svgRef, { amount: 0.5, once: true })
+//   let pathWidth = useMotionValue(0)
+//   let [interactionEnabled, setInteractionEnabled] = useState(false)
 
-  let path = ''
-  let points = []
+//   let path = ''
+//   let points = []
 
-  for (let index = 0; index < prices.length; index++) {
-    let x = paddingX + (index / (prices.length - 1)) * width
-    let y =
-      paddingY +
-      (1 - (prices[index] - minPrice) / (maxPrice - minPrice)) * height
-    points.push({ x, y })
-    path += `${index === 0 ? 'M' : 'L'} ${x.toFixed(4)} ${y.toFixed(4)}`
-  }
+//   for (let index = 0; index < prices.length; index++) {
+//     let x = paddingX + (index / (prices.length - 1)) * width
+//     let y =
+//       paddingY +
+//       (1 - (prices[index] - minPrice) / (maxPrice - minPrice)) * height
+//     points.push({ x, y })
+//     path += `${index === 0 ? 'M' : 'L'} ${x.toFixed(4)} ${y.toFixed(4)}`
+//   }
 
-  return (
-    <svg
-      ref={svgRef}
-      viewBox={`0 0 ${totalWidth} ${totalHeight}`}
-      className={clsx(className, 'overflow-visible')}
-      {...(interactionEnabled
-        ? {
-            onPointerLeave: () => onChangeActivePointIndex(null),
-            onPointerMove: (event) => {
-              let x = event.nativeEvent.offsetX
-              let closestPointIndex
-              let closestDistance = Infinity
-              for (
-                let pointIndex = 0;
-                pointIndex < points.length;
-                pointIndex++
-              ) {
-                let point = points[pointIndex]
-                let distance = Math.abs(point.x - x)
-                if (distance < closestDistance) {
-                  closestDistance = distance
-                  closestPointIndex = pointIndex
-                } else {
-                  break
-                }
-              }
-              onChangeActivePointIndex(closestPointIndex)
-            },
-          }
-        : {})}
-      {...props}
-    >
-      <defs>
-        <clipPath id={`${id}-clip`}>
-          <path d={`${path} V ${height + paddingY} H ${paddingX} Z`} />
-        </clipPath>
-        <linearGradient id={`${id}-gradient`} x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="#28a745" />
-          <stop offset="100%" stopColor="#28a745" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      {[...Array(gridLines - 1).keys()].map((index) => (
-        <line
-          key={index}
-          stroke="#a3a3a3"
-          opacity="0.1"
-          x1="0"
-          y1={(totalHeight / gridLines) * (index + 1)}
-          x2={totalWidth}
-          y2={(totalHeight / gridLines) * (index + 1)}
-        />
-      ))}
-      <motion.rect
-        y={paddingY}
-        width={pathWidth}
-        height={height}
-        fill={`url(#${id}-gradient)`}
-        clipPath={`url(#${id}-clip)`}
-        opacity="0.5"
-      />
-      <motion.path
-        ref={pathRef}
-        d={path}
-        fill="none"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        initial={{ pathLength: 0, opacity: 0 }}
-        transition={{ duration: 1 }}
-        {...(isInView
-          ? { stroke: '#28a745', animate: { pathLength: 1, opacity: 1 } }
-          : {})}
-        onUpdate={({ pathLength }) => {
-          pathWidth.set(
-            pathRef.current.getPointAtLength(
-              pathLength * pathRef.current.getTotalLength()
-            ).x
-          )
-        }}
-        onAnimationComplete={() => setInteractionEnabled(true)}
-      />
-      {activePointIndex !== null && (
-        <>
-          <line
-            x1="0"
-            y1={points[activePointIndex].y}
-            x2={totalWidth}
-            y2={points[activePointIndex].y}
-            stroke="#28a745"
-            strokeDasharray="1 3"
-          />
-          <circle
-            r="4"
-            cx={points[activePointIndex].x}
-            cy={points[activePointIndex].y}
-            fill="#fff"
-            strokeWidth="2"
-            stroke="#28a745"
-          />
-        </>
-      )}
-    </svg>
-  )
-}
+//   return (
+//     <svg
+//       ref={svgRef}
+//       viewBox={`0 0 ${totalWidth} ${totalHeight}`}
+//       className={clsx(className, 'overflow-visible')}
+//       {...(interactionEnabled
+//         ? {
+//             onPointerLeave: () => onChangeActivePointIndex(null),
+//             onPointerMove: (event) => {
+//               let x = event.nativeEvent.offsetX
+//               let closestPointIndex
+//               let closestDistance = Infinity
+//               for (
+//                 let pointIndex = 0;
+//                 pointIndex < points.length;
+//                 pointIndex++
+//               ) {
+//                 let point = points[pointIndex]
+//                 let distance = Math.abs(point.x - x)
+//                 if (distance < closestDistance) {
+//                   closestDistance = distance
+//                   closestPointIndex = pointIndex
+//                 } else {
+//                   break
+//                 }
+//               }
+//               onChangeActivePointIndex(closestPointIndex)
+//             },
+//           }
+//         : {})}
+//       {...props}
+//     >
+//       <defs>
+//         <clipPath id={`${id}-clip`}>
+//           <path d={`${path} V ${height + paddingY} H ${paddingX} Z`} />
+//         </clipPath>
+//         <linearGradient id={`${id}-gradient`} x1="0" x2="0" y1="0" y2="1">
+//           <stop offset="0%" stopColor="#28a745" />
+//           <stop offset="100%" stopColor="#28a745" stopOpacity="0" />
+//         </linearGradient>
+//       </defs>
+//       {[...Array(gridLines - 1).keys()].map((index) => (
+//         <line
+//           key={index}
+//           stroke="#a3a3a3"
+//           opacity="0.1"
+//           x1="0"
+//           y1={(totalHeight / gridLines) * (index + 1)}
+//           x2={totalWidth}
+//           y2={(totalHeight / gridLines) * (index + 1)}
+//         />
+//       ))}
+//       <motion.rect
+//         y={paddingY}
+//         width={pathWidth}
+//         height={height}
+//         fill={`url(#${id}-gradient)`}
+//         clipPath={`url(#${id}-clip)`}
+//         opacity="0.5"
+//       />
+//       <motion.path
+//         ref={pathRef}
+//         d={path}
+//         fill="none"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//         initial={{ pathLength: 0, opacity: 0 }}
+//         transition={{ duration: 1 }}
+//         {...(isInView
+//           ? { stroke: '#28a745', animate: { pathLength: 1, opacity: 1 } }
+//           : {})}
+//         onUpdate={({ pathLength }) => {
+//           pathWidth.set(
+//             pathRef.current.getPointAtLength(
+//               pathLength * pathRef.current.getTotalLength()
+//             ).x
+//           )
+//         }}
+//         onAnimationComplete={() => setInteractionEnabled(true)}
+//       />
+//       {activePointIndex !== null && (
+//         <>
+//           <line
+//             x1="0"
+//             y1={points[activePointIndex].y}
+//             x2={totalWidth}
+//             y2={points[activePointIndex].y}
+//             stroke="#28a745"
+//             strokeDasharray="1 3"
+//           />
+//           <circle
+//             r="4"
+//             cx={points[activePointIndex].x}
+//             cy={points[activePointIndex].y}
+//             fill="#fff"
+//             strokeWidth="2"
+//             stroke="#28a745"
+//           />
+//         </>
+//       )}
+//     </svg>
+//   )
+// }
 
 function AppDemo() {
   let [activePointIndex, setActivePointIndex] = useState(null)
@@ -332,21 +334,21 @@ function AppDemo() {
   )
 }
 
-const Animations = {
-  initial: 'initial',
-  animate: 'animate',
-  variants: {
-    initial: {
-      opacity: 0,
-      y: 100,
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  },
-}
+// const Animations = {
+//   initial: 'false',
+//   animate: 'animate',
+//   variants: {
+//     initial: {
+//       opacity: 0.1,
+//       y: 100,
+//     },
+//     animate: {
+//       opacity: 1,
+//       y: 0,
+//       transition: { duration: 0.8 },
+//     },
+//   },
+// }
 
 export function Hero() {
   const [open, setOpen] = useState(false)
@@ -396,17 +398,17 @@ export function Hero() {
           </div>
           <div className="relative mt-10 max-h-[600px] sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 lg:max-h-[800px] xl:col-span-6">
             <BackgroundIllustration className="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/2 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_60%)] sm:top-16 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
-            <motion.div
-              {...Animations}
+            <div
               className="-mx-4 h-[480px] px-2 pb-10 sm:h-[440px] lg:absolute lg:-inset-x-10 lg:-top-10 lg:-bottom-20 lg:h-[510px] lg:px-0 lg:pt-6 xl:-bottom-32"
             >
               <PhoneFrame className="mx-auto max-w-[366px]" priority>
                 <AppDemo />
               </PhoneFrame>
-            </motion.div>
+            </div>
           </div>
         </div>
       </Container>
     </div>
   )
 }
+

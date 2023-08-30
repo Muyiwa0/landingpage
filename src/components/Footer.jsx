@@ -31,7 +31,7 @@ export function Footer() {
           <div className="flex   flex-col text-gray-900">
             <Link href="/">
               <span className="h-12 w-28 pl-2">
-                <Image src={logo} alt="FT9ja Logo" className="cursor-pointer" />
+                <Image src={logo} alt="FT9ja Logo" className="cursor-pointer" loading='lazy' />
               </span>
             </Link>
             <div className="ml-2 pt-3">

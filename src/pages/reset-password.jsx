@@ -37,7 +37,8 @@ export default function ResetPassword() {
     } else {
 
       axios
-      .post('https://ft9ja-maindashbe.herokuapp.com/api/auth/password_reset/confirm/', {token, password})
+      .post('https://maindashbe-june-b18731a0e161.herokuapp.com/api/auth/password_reset/confirm/', {token, password})
+      
       // .post('http://localhost:8000/api/auth/password_reset/confirm/', {token, password})
       .then((res) => {
         // window.location.href = '/confimemail'

@@ -38,7 +38,7 @@ export function AppScreen({ children, className, ...props }) {
       <div className="flex items-center justify-between px-4 pt-2">
         <MenuIcon className="h-6 w-6 flex-none" />
         <span className="w-16 pt-1">
-          <Image src={logo} alt="FT9ja Logo" className="cursor-pointer" />
+          <Image src={logo} alt="FT9ja Logo" className="cursor-pointer" loading='lazy' />
         </span>
         <UserIcon className="h-6 w-6 flex-none" />
       </div>
